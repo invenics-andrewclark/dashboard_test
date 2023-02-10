@@ -85,11 +85,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => SigninWidget(),
             ),
             FFRoute(
-              name: 'DASHBOARD',
-              path: 'dashboard',
-              builder: (context, params) => DashboardWidget(),
-            ),
-            FFRoute(
               name: 'AddOrganiation',
               path: 'addOrganiation',
               asyncParams: {
@@ -101,6 +96,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     false, ['Organisations']),
                 orgcount: params.getParam('orgcount', ParamType.Document),
               ),
+            ),
+            FFRoute(
+              name: 'DASHBOARD',
+              path: 'dashboard',
+              builder: (context, params) => DashboardWidget(),
             ),
             FFRoute(
               name: 'Signup',

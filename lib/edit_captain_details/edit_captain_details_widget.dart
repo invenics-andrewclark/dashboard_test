@@ -61,7 +61,7 @@ class _EditCaptainDetailsWidgetState extends State<EditCaptainDetailsWidget> {
     return StreamBuilder<List<CaptainsRecord>>(
       stream: queryCaptainsRecord(
         queryBuilder: (captainsRecord) => captainsRecord.where('User_Ref',
-            isEqualTo: widget.captaindetailpage!.userRef),
+            isEqualTo: FFAppState().documentReferenceID),
         singleRecord: true,
       ),
       builder: (context, snapshot) {

@@ -111,7 +111,6 @@ class ParameterData {
 final parametersBuilderMap =
     <String, Future<ParameterData> Function(Map<String, dynamic>)>{
   'Signin': ParameterData.none(),
-  'DASHBOARD': ParameterData.none(),
   'AddOrganiation': (data) async => ParameterData(
         allParams: {
           'orgp': getParameter<DocumentReference>(data, 'orgp'),
@@ -119,6 +118,7 @@ final parametersBuilderMap =
               data, 'orgcount', OrganisationsRecord.serializer),
         },
       ),
+  'DASHBOARD': ParameterData.none(),
   'Signup': ParameterData.none(),
   'OrganisationnDetails': (data) async => ParameterData(
         allParams: {
