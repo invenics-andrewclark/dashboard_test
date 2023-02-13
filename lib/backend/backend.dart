@@ -9,11 +9,11 @@ import 'schema/users_record.dart';
 import 'schema/captains_record.dart';
 import 'schema/workers_record.dart';
 import 'schema/organisations_record.dart';
-import 'schema/job_worker_record.dart';
 import 'schema/jobs_record.dart';
-import 'schema/workjobref_record.dart';
-import 'schema/skills_record.dart';
-import 'schema/experience_record.dart';
+import 'schema/worker_skills_record.dart';
+import 'schema/worker_experience_record.dart';
+import 'schema/job_contracts_record.dart';
+import 'schema/job_applications_record.dart';
 import 'schema/serializers.dart';
 
 export 'dart:async' show StreamSubscription;
@@ -25,11 +25,11 @@ export 'schema/users_record.dart';
 export 'schema/captains_record.dart';
 export 'schema/workers_record.dart';
 export 'schema/organisations_record.dart';
-export 'schema/job_worker_record.dart';
 export 'schema/jobs_record.dart';
-export 'schema/workjobref_record.dart';
-export 'schema/skills_record.dart';
-export 'schema/experience_record.dart';
+export 'schema/worker_skills_record.dart';
+export 'schema/worker_experience_record.dart';
+export 'schema/job_contracts_record.dart';
+export 'schema/job_applications_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -239,62 +239,6 @@ Future<FFFirestorePage<OrganisationsRecord>> queryOrganisationsRecordPage({
       isStream: isStream,
     );
 
-/// Functions to query JobWorkerRecords (as a Stream and as a Future).
-Future<int> queryJobWorkerRecordCount({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      JobWorkerRecord.collection(parent),
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<JobWorkerRecord>> queryJobWorkerRecord({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      JobWorkerRecord.collection(parent),
-      JobWorkerRecord.serializer,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<JobWorkerRecord>> queryJobWorkerRecordOnce({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      JobWorkerRecord.collection(parent),
-      JobWorkerRecord.serializer,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<FFFirestorePage<JobWorkerRecord>> queryJobWorkerRecordPage({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  DocumentSnapshot? nextPageMarker,
-  required int pageSize,
-  required bool isStream,
-}) =>
-    queryCollectionPage(
-      JobWorkerRecord.collection(parent),
-      JobWorkerRecord.serializer,
-      queryBuilder: queryBuilder,
-      nextPageMarker: nextPageMarker,
-      pageSize: pageSize,
-      isStream: isStream,
-    );
-
 /// Functions to query JobsRecords (as a Stream and as a Future).
 Future<int> queryJobsRecordCount({
   DocumentReference? parent,
@@ -351,47 +295,47 @@ Future<FFFirestorePage<JobsRecord>> queryJobsRecordPage({
       isStream: isStream,
     );
 
-/// Functions to query WorkjobrefRecords (as a Stream and as a Future).
-Future<int> queryWorkjobrefRecordCount({
+/// Functions to query WorkerSkillsRecords (as a Stream and as a Future).
+Future<int> queryWorkerSkillsRecordCount({
   DocumentReference? parent,
   Query Function(Query)? queryBuilder,
   int limit = -1,
 }) =>
     queryCollectionCount(
-      WorkjobrefRecord.collection(parent),
+      WorkerSkillsRecord.collection(parent),
       queryBuilder: queryBuilder,
       limit: limit,
     );
 
-Stream<List<WorkjobrefRecord>> queryWorkjobrefRecord({
+Stream<List<WorkerSkillsRecord>> queryWorkerSkillsRecord({
   DocumentReference? parent,
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollection(
-      WorkjobrefRecord.collection(parent),
-      WorkjobrefRecord.serializer,
+      WorkerSkillsRecord.collection(parent),
+      WorkerSkillsRecord.serializer,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<List<WorkjobrefRecord>> queryWorkjobrefRecordOnce({
+Future<List<WorkerSkillsRecord>> queryWorkerSkillsRecordOnce({
   DocumentReference? parent,
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollectionOnce(
-      WorkjobrefRecord.collection(parent),
-      WorkjobrefRecord.serializer,
+      WorkerSkillsRecord.collection(parent),
+      WorkerSkillsRecord.serializer,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<FFFirestorePage<WorkjobrefRecord>> queryWorkjobrefRecordPage({
+Future<FFFirestorePage<WorkerSkillsRecord>> queryWorkerSkillsRecordPage({
   DocumentReference? parent,
   Query Function(Query)? queryBuilder,
   DocumentSnapshot? nextPageMarker,
@@ -399,55 +343,112 @@ Future<FFFirestorePage<WorkjobrefRecord>> queryWorkjobrefRecordPage({
   required bool isStream,
 }) =>
     queryCollectionPage(
-      WorkjobrefRecord.collection(parent),
-      WorkjobrefRecord.serializer,
+      WorkerSkillsRecord.collection(parent),
+      WorkerSkillsRecord.serializer,
       queryBuilder: queryBuilder,
       nextPageMarker: nextPageMarker,
       pageSize: pageSize,
       isStream: isStream,
     );
 
-/// Functions to query SkillsRecords (as a Stream and as a Future).
-Future<int> querySkillsRecordCount({
+/// Functions to query WorkerExperienceRecords (as a Stream and as a Future).
+Future<int> queryWorkerExperienceRecordCount({
   DocumentReference? parent,
   Query Function(Query)? queryBuilder,
   int limit = -1,
 }) =>
     queryCollectionCount(
-      SkillsRecord.collection(parent),
+      WorkerExperienceRecord.collection(parent),
       queryBuilder: queryBuilder,
       limit: limit,
     );
 
-Stream<List<SkillsRecord>> querySkillsRecord({
+Stream<List<WorkerExperienceRecord>> queryWorkerExperienceRecord({
   DocumentReference? parent,
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollection(
-      SkillsRecord.collection(parent),
-      SkillsRecord.serializer,
+      WorkerExperienceRecord.collection(parent),
+      WorkerExperienceRecord.serializer,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<List<SkillsRecord>> querySkillsRecordOnce({
+Future<List<WorkerExperienceRecord>> queryWorkerExperienceRecordOnce({
   DocumentReference? parent,
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollectionOnce(
-      SkillsRecord.collection(parent),
-      SkillsRecord.serializer,
+      WorkerExperienceRecord.collection(parent),
+      WorkerExperienceRecord.serializer,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<FFFirestorePage<SkillsRecord>> querySkillsRecordPage({
+Future<FFFirestorePage<WorkerExperienceRecord>>
+    queryWorkerExperienceRecordPage({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+}) =>
+        queryCollectionPage(
+          WorkerExperienceRecord.collection(parent),
+          WorkerExperienceRecord.serializer,
+          queryBuilder: queryBuilder,
+          nextPageMarker: nextPageMarker,
+          pageSize: pageSize,
+          isStream: isStream,
+        );
+
+/// Functions to query JobContractsRecords (as a Stream and as a Future).
+Future<int> queryJobContractsRecordCount({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      JobContractsRecord.collection(parent),
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<JobContractsRecord>> queryJobContractsRecord({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      JobContractsRecord.collection(parent),
+      JobContractsRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<JobContractsRecord>> queryJobContractsRecordOnce({
+  DocumentReference? parent,
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      JobContractsRecord.collection(parent),
+      JobContractsRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<JobContractsRecord>> queryJobContractsRecordPage({
   DocumentReference? parent,
   Query Function(Query)? queryBuilder,
   DocumentSnapshot? nextPageMarker,
@@ -455,55 +456,55 @@ Future<FFFirestorePage<SkillsRecord>> querySkillsRecordPage({
   required bool isStream,
 }) =>
     queryCollectionPage(
-      SkillsRecord.collection(parent),
-      SkillsRecord.serializer,
+      JobContractsRecord.collection(parent),
+      JobContractsRecord.serializer,
       queryBuilder: queryBuilder,
       nextPageMarker: nextPageMarker,
       pageSize: pageSize,
       isStream: isStream,
     );
 
-/// Functions to query ExperienceRecords (as a Stream and as a Future).
-Future<int> queryExperienceRecordCount({
+/// Functions to query JobApplicationsRecords (as a Stream and as a Future).
+Future<int> queryJobApplicationsRecordCount({
   DocumentReference? parent,
   Query Function(Query)? queryBuilder,
   int limit = -1,
 }) =>
     queryCollectionCount(
-      ExperienceRecord.collection(parent),
+      JobApplicationsRecord.collection(parent),
       queryBuilder: queryBuilder,
       limit: limit,
     );
 
-Stream<List<ExperienceRecord>> queryExperienceRecord({
+Stream<List<JobApplicationsRecord>> queryJobApplicationsRecord({
   DocumentReference? parent,
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollection(
-      ExperienceRecord.collection(parent),
-      ExperienceRecord.serializer,
+      JobApplicationsRecord.collection(parent),
+      JobApplicationsRecord.serializer,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<List<ExperienceRecord>> queryExperienceRecordOnce({
+Future<List<JobApplicationsRecord>> queryJobApplicationsRecordOnce({
   DocumentReference? parent,
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollectionOnce(
-      ExperienceRecord.collection(parent),
-      ExperienceRecord.serializer,
+      JobApplicationsRecord.collection(parent),
+      JobApplicationsRecord.serializer,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<FFFirestorePage<ExperienceRecord>> queryExperienceRecordPage({
+Future<FFFirestorePage<JobApplicationsRecord>> queryJobApplicationsRecordPage({
   DocumentReference? parent,
   Query Function(Query)? queryBuilder,
   DocumentSnapshot? nextPageMarker,
@@ -511,8 +512,8 @@ Future<FFFirestorePage<ExperienceRecord>> queryExperienceRecordPage({
   required bool isStream,
 }) =>
     queryCollectionPage(
-      ExperienceRecord.collection(parent),
-      ExperienceRecord.serializer,
+      JobApplicationsRecord.collection(parent),
+      JobApplicationsRecord.serializer,
       queryBuilder: queryBuilder,
       nextPageMarker: nextPageMarker,
       pageSize: pageSize,

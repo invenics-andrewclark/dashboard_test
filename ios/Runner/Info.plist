@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>JanasktiDashboard-Dev</string>
+	<string>Dashboard-Andrew</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,9 +13,16 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>JanasktiDashboard-Dev</string>
+	<string>Dashboard-Andrew</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>hi</string>
+		<string>ta</string>
+		<string>ur</string>
+	</array>
 
 	<key>CFBundleShortVersionString</key>
 	<string>$(FLUTTER_BUILD_NAME)</string>
@@ -28,7 +35,7 @@
             <string>Editor</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>com.googleusercontent.apps.802856385303-0vhi2gvdabq8ibbfjkp15ievqb8nmer1</string>
+                <string>com.googleusercontent.apps.629173650503-kc1gre7mvld20dnrl8mhl9dg3toljhph</string>
                 
             </array>
         </dict>
@@ -37,10 +44,10 @@
         <key>CFBundleTypeRole</key>
         <string>Editor</string>
         <key>CFBundleURLName</key>
-        <string>janasktidashboarddev.com</string>
+        <string>dashboardandrew.com</string>
         <key>CFBundleURLSchemes</key>
         <array>
-        <string>janasktidashboarddev</string>
+        <string>dashboardandrew</string>
         </array>
         </dict>
     </array>
@@ -52,19 +59,12 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>FirebaseAppDelegateProxyEnabled</key>
-	<false/>
 
 	<key>NSCameraUsageDescription</key>
     <string>In order to take a picture or video, this app requires permission to access the camera.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
     <string>In order to upload media, this app requires permission to access the photo library.</string>
 
-    <key>UIBackgroundModes</key>
-    <array>
-        <string>fetch</string>
-        <string>remote-notification</string>
-    </array>
 
 
 	<key>UILaunchStoryboardName</key>

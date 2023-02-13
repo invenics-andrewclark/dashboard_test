@@ -11,63 +11,59 @@ abstract class OrganisationsRecord
   static Serializer<OrganisationsRecord> get serializer =>
       _$organisationsRecordSerializer;
 
-  String? get address;
-
-  String? get state;
-
-  String? get country;
-
-  @BuiltValueField(wireName: 'contact_name')
-  String? get contactName;
-
-  String? get email;
-
-  String? get area;
-
-  @BuiltValueField(wireName: 'phone_number')
-  String? get phoneNumber;
-
-  @BuiltValueField(wireName: 'organisation_registration_id')
-  int? get organisationRegistrationId;
-
   @BuiltValueField(wireName: 'organisation_name')
   String? get organisationName;
-
-  @BuiltValueField(wireName: 'created_on')
-  String? get createdOn;
-
-  @BuiltValueField(wireName: 'pin_code')
-  String? get pinCode;
 
   @BuiltValueField(wireName: 'organisation_logo')
   String? get organisationLogo;
 
+  @BuiltValueField(wireName: 'phone_number')
+  String? get phoneNumber;
+
+  String? get email;
+
+  @BuiltValueField(wireName: 'created_date')
+  DateTime? get createdDate;
+
+  @BuiltValueField(wireName: 'pin_code')
+  String? get pinCode;
+
+  String? get area;
+
+  String? get state;
+
   String? get district;
 
-  @BuiltValueField(wireName: 'org_sector')
-  String? get orgSector;
+  String? get address;
 
-  DocumentReference? get ref;
+  @BuiltValueField(wireName: 'contact_name')
+  String? get contactName;
+
+  @BuiltValueField(wireName: 'organisation_ref')
+  DocumentReference? get organisationRef;
+
+  @BuiltValueField(wireName: 'organisation_captains')
+  BuiltList<DocumentReference>? get organisationCaptains;
+
+  String? get industry;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
 
   static void _initializeBuilder(OrganisationsRecordBuilder builder) => builder
-    ..address = ''
-    ..state = ''
-    ..country = ''
-    ..contactName = ''
-    ..email = ''
-    ..area = ''
-    ..phoneNumber = ''
-    ..organisationRegistrationId = 0
     ..organisationName = ''
-    ..createdOn = ''
-    ..pinCode = ''
     ..organisationLogo = ''
+    ..phoneNumber = ''
+    ..email = ''
+    ..pinCode = ''
+    ..area = ''
+    ..state = ''
     ..district = ''
-    ..orgSector = '';
+    ..address = ''
+    ..contactName = ''
+    ..organisationCaptains = ListBuilder()
+    ..industry = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Organisations');
@@ -92,41 +88,38 @@ abstract class OrganisationsRecord
 }
 
 Map<String, dynamic> createOrganisationsRecordData({
-  String? address,
-  String? state,
-  String? country,
-  String? contactName,
-  String? email,
-  String? area,
-  String? phoneNumber,
-  int? organisationRegistrationId,
   String? organisationName,
-  String? createdOn,
-  String? pinCode,
   String? organisationLogo,
+  String? phoneNumber,
+  String? email,
+  DateTime? createdDate,
+  String? pinCode,
+  String? area,
+  String? state,
   String? district,
-  String? orgSector,
-  DocumentReference? ref,
+  String? address,
+  String? contactName,
+  DocumentReference? organisationRef,
+  String? industry,
 }) {
   final firestoreData = serializers.toFirestore(
     OrganisationsRecord.serializer,
     OrganisationsRecord(
       (o) => o
-        ..address = address
-        ..state = state
-        ..country = country
-        ..contactName = contactName
-        ..email = email
-        ..area = area
-        ..phoneNumber = phoneNumber
-        ..organisationRegistrationId = organisationRegistrationId
         ..organisationName = organisationName
-        ..createdOn = createdOn
-        ..pinCode = pinCode
         ..organisationLogo = organisationLogo
+        ..phoneNumber = phoneNumber
+        ..email = email
+        ..createdDate = createdDate
+        ..pinCode = pinCode
+        ..area = area
+        ..state = state
         ..district = district
-        ..orgSector = orgSector
-        ..ref = ref,
+        ..address = address
+        ..contactName = contactName
+        ..organisationRef = organisationRef
+        ..organisationCaptains = null
+        ..industry = industry,
     ),
   );
 

@@ -1,24 +1,19 @@
 {
-  "indexes": [
-    {
-      "collectionGroup": "Captains",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "tag",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "created_date",
-          "order": "DESCENDING"
-        }
-      ]
-    }
-  ],
+  "indexes": [],
   "fieldOverrides": [
     {
-      "collectionGroup": "fcm_tokens",
-      "fieldPath": "fcm_token",
+      "collectionGroup": "Jobs",
+      "fieldPath": "start_date",
+      "indexes": [
+        {
+          "order": "DESCENDING",
+          "queryScope": "COLLECTION_GROUP"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Jobs",
+      "fieldPath": "start_date",
       "indexes": [
         {
           "order": "ASCENDING",
@@ -28,17 +23,17 @@
     },
     {
       "collectionGroup": "Jobs",
-      "fieldPath": "org_ref_id",
+      "fieldPath": "end_date",
       "indexes": [
         {
-          "order": "ASCENDING",
+          "order": "DESCENDING",
           "queryScope": "COLLECTION_GROUP"
         }
       ]
     },
     {
-      "collectionGroup": "Workjobref",
-      "fieldPath": "refid",
+      "collectionGroup": "jobApplications",
+      "fieldPath": "worker_id",
       "indexes": [
         {
           "order": "ASCENDING",

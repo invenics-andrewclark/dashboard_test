@@ -11,21 +11,18 @@ abstract class CaptainsRecord
   static Serializer<CaptainsRecord> get serializer =>
       _$captainsRecordSerializer;
 
-  @BuiltValueField(wireName: 'User_Ref')
-  DocumentReference? get userRef;
-
   @BuiltValueField(wireName: 'full_name')
   String? get fullName;
 
   String? get phone;
 
-  String? get dob;
+  DateTime? get dob;
 
   String? get gender;
 
-  String? get email;
-
   String? get photo;
+
+  String? get email;
 
   @BuiltValueField(wireName: 'created_date')
   DateTime? get createdDate;
@@ -35,9 +32,9 @@ abstract class CaptainsRecord
 
   String? get area;
 
-  String? get district;
-
   String? get state;
+
+  String? get district;
 
   String? get aadhar;
 
@@ -64,6 +61,15 @@ abstract class CaptainsRecord
 
   String? get tag;
 
+  @BuiltValueField(wireName: 'user_ref')
+  DocumentReference? get userRef;
+
+  @BuiltValueField(wireName: 'organisation_id')
+  DocumentReference? get organisationId;
+
+  @BuiltValueField(wireName: 'job_id')
+  BuiltList<DocumentReference>? get jobId;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -71,14 +77,13 @@ abstract class CaptainsRecord
   static void _initializeBuilder(CaptainsRecordBuilder builder) => builder
     ..fullName = ''
     ..phone = ''
-    ..dob = ''
     ..gender = ''
-    ..email = ''
     ..photo = ''
+    ..email = ''
     ..pinCode = ''
     ..area = ''
-    ..district = ''
     ..state = ''
+    ..district = ''
     ..aadhar = ''
     ..panNumber = ''
     ..accountName = ''
@@ -87,7 +92,8 @@ abstract class CaptainsRecord
     ..ifscCode = ''
     ..referralCode = ''
     ..recruitmentArea = ''
-    ..tag = '';
+    ..tag = ''
+    ..jobId = ListBuilder();
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Captains');
@@ -111,18 +117,17 @@ abstract class CaptainsRecord
 }
 
 Map<String, dynamic> createCaptainsRecordData({
-  DocumentReference? userRef,
   String? fullName,
   String? phone,
-  String? dob,
+  DateTime? dob,
   String? gender,
-  String? email,
   String? photo,
+  String? email,
   DateTime? createdDate,
   String? pinCode,
   String? area,
-  String? district,
   String? state,
+  String? district,
   String? aadhar,
   String? panNumber,
   String? accountName,
@@ -132,23 +137,24 @@ Map<String, dynamic> createCaptainsRecordData({
   String? referralCode,
   String? recruitmentArea,
   String? tag,
+  DocumentReference? userRef,
+  DocumentReference? organisationId,
 }) {
   final firestoreData = serializers.toFirestore(
     CaptainsRecord.serializer,
     CaptainsRecord(
       (c) => c
-        ..userRef = userRef
         ..fullName = fullName
         ..phone = phone
         ..dob = dob
         ..gender = gender
-        ..email = email
         ..photo = photo
+        ..email = email
         ..createdDate = createdDate
         ..pinCode = pinCode
         ..area = area
-        ..district = district
         ..state = state
+        ..district = district
         ..aadhar = aadhar
         ..panNumber = panNumber
         ..accountName = accountName
@@ -157,7 +163,10 @@ Map<String, dynamic> createCaptainsRecordData({
         ..ifscCode = ifscCode
         ..referralCode = referralCode
         ..recruitmentArea = recruitmentArea
-        ..tag = tag,
+        ..tag = tag
+        ..userRef = userRef
+        ..organisationId = organisationId
+        ..jobId = null,
     ),
   );
 

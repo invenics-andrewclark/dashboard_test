@@ -9,7 +9,11 @@ part 'jobs_record.g.dart';
 abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   static Serializer<JobsRecord> get serializer => _$jobsRecordSerializer;
 
-  String? get salary;
+  @BuiltValueField(wireName: 'organisation_name')
+  String? get organisationName;
+
+  @BuiltValueField(wireName: 'job_title')
+  String? get jobTitle;
 
   @BuiltValueField(wireName: 'job_description')
   String? get jobDescription;
@@ -23,6 +27,14 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   @BuiltValueField(wireName: 'max_salary')
   int? get maxSalary;
 
+  @BuiltValueField(wireName: 'mode_of_salary')
+  String? get modeOfSalary;
+
+  @BuiltValueField(wireName: 'number_of_vacancies')
+  int? get numberOfVacancies;
+
+  String? get gender;
+
   @BuiltValueField(wireName: 'min_age')
   int? get minAge;
 
@@ -32,47 +44,32 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   @BuiltValueField(wireName: 'job_image')
   String? get jobImage;
 
-  @BuiltValueField(wireName: 'primary_skill_level')
-  String? get primarySkillLevel;
-
-  @BuiltValueField(wireName: 'primary_skill')
-  String? get primarySkill;
-
-  @BuiltValueField(wireName: 'organisation_name')
-  String? get organisationName;
-
-  @BuiltValueField(wireName: 'job_title')
-  String? get jobTitle;
-
-  @BuiltValueField(wireName: 'mode_of_salary')
-  String? get modeOfSalary;
-
   @BuiltValueField(wireName: 'job_category')
   String? get jobCategory;
+
+  @BuiltValueField(wireName: 'working_hours')
+  int? get workingHours;
+
+  @BuiltValueField(wireName: 'job_sub_category')
+  String? get jobSubCategory;
 
   @BuiltValueField(wireName: 'pin_code')
   String? get pinCode;
 
   String? get area;
 
+  String? get state;
+
   String? get district;
 
-  String? get state;
+  @BuiltValueField(wireName: 'primary_skill')
+  String? get primarySkill;
+
+  @BuiltValueField(wireName: 'primary_skill_level')
+  String? get primarySkillLevel;
 
   @BuiltValueField(wireName: 'min_experience')
   String? get minExperience;
-
-  @BuiltValueField(wireName: 'job_application_collection')
-  String? get jobApplicationCollection;
-
-  @BuiltValueField(wireName: 'application_list')
-  String? get applicationList;
-
-  @BuiltValueField(wireName: 'number_of_vacancies')
-  String? get numberOfVacancies;
-
-  @BuiltValueField(wireName: 'working_hours')
-  String? get workingHours;
 
   @BuiltValueField(wireName: 'start_date')
   DateTime? get startDate;
@@ -80,10 +77,16 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   @BuiltValueField(wireName: 'end_date')
   DateTime? get endDate;
 
-  String? get gender;
+  @BuiltValueField(wireName: 'organisation_ref')
+  DocumentReference? get organisationRef;
 
-  @BuiltValueField(wireName: 'org_ref_id')
-  DocumentReference? get orgRefId;
+  BuiltList<String>? get facilities;
+
+  @BuiltValueField(wireName: 'is_complete')
+  bool? get isComplete;
+
+  @BuiltValueField(wireName: 'job_reference')
+  DocumentReference? get jobReference;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -92,30 +95,30 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   DocumentReference get parentReference => reference.parent.parent!;
 
   static void _initializeBuilder(JobsRecordBuilder builder) => builder
-    ..salary = ''
+    ..organisationName = ''
+    ..jobTitle = ''
     ..jobDescription = ''
     ..minQualification = ''
     ..minSalary = 0
     ..maxSalary = 0
+    ..modeOfSalary = ''
+    ..numberOfVacancies = 0
+    ..gender = ''
     ..minAge = 0
     ..maxAge = 0
     ..jobImage = ''
-    ..primarySkillLevel = ''
-    ..primarySkill = ''
-    ..organisationName = ''
-    ..jobTitle = ''
-    ..modeOfSalary = ''
     ..jobCategory = ''
+    ..workingHours = 0
+    ..jobSubCategory = ''
     ..pinCode = ''
     ..area = ''
-    ..district = ''
     ..state = ''
+    ..district = ''
+    ..primarySkill = ''
+    ..primarySkillLevel = ''
     ..minExperience = ''
-    ..jobApplicationCollection = ''
-    ..applicationList = ''
-    ..numberOfVacancies = ''
-    ..workingHours = ''
-    ..gender = '';
+    ..facilities = ListBuilder()
+    ..isComplete = false;
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
       parent != null
@@ -143,65 +146,66 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
 }
 
 Map<String, dynamic> createJobsRecordData({
-  String? salary,
+  String? organisationName,
+  String? jobTitle,
   String? jobDescription,
   String? minQualification,
   int? minSalary,
   int? maxSalary,
+  String? modeOfSalary,
+  int? numberOfVacancies,
+  String? gender,
   int? minAge,
   int? maxAge,
   String? jobImage,
-  String? primarySkillLevel,
-  String? primarySkill,
-  String? organisationName,
-  String? jobTitle,
-  String? modeOfSalary,
   String? jobCategory,
+  int? workingHours,
+  String? jobSubCategory,
   String? pinCode,
   String? area,
-  String? district,
   String? state,
+  String? district,
+  String? primarySkill,
+  String? primarySkillLevel,
   String? minExperience,
-  String? jobApplicationCollection,
-  String? applicationList,
-  String? numberOfVacancies,
-  String? workingHours,
   DateTime? startDate,
   DateTime? endDate,
-  String? gender,
-  DocumentReference? orgRefId,
+  DocumentReference? organisationRef,
+  bool? isComplete,
+  DocumentReference? jobReference,
 }) {
   final firestoreData = serializers.toFirestore(
     JobsRecord.serializer,
     JobsRecord(
       (j) => j
-        ..salary = salary
+        ..organisationName = organisationName
+        ..jobTitle = jobTitle
         ..jobDescription = jobDescription
         ..minQualification = minQualification
         ..minSalary = minSalary
         ..maxSalary = maxSalary
+        ..modeOfSalary = modeOfSalary
+        ..numberOfVacancies = numberOfVacancies
+        ..gender = gender
         ..minAge = minAge
         ..maxAge = maxAge
         ..jobImage = jobImage
-        ..primarySkillLevel = primarySkillLevel
-        ..primarySkill = primarySkill
-        ..organisationName = organisationName
-        ..jobTitle = jobTitle
-        ..modeOfSalary = modeOfSalary
         ..jobCategory = jobCategory
+        ..workingHours = workingHours
+        ..jobSubCategory = jobSubCategory
         ..pinCode = pinCode
         ..area = area
-        ..district = district
         ..state = state
+        ..district = district
+        ..primarySkill = primarySkill
+        ..primarySkillLevel = primarySkillLevel
         ..minExperience = minExperience
-        ..jobApplicationCollection = jobApplicationCollection
-        ..applicationList = applicationList
-        ..numberOfVacancies = numberOfVacancies
-        ..workingHours = workingHours
         ..startDate = startDate
         ..endDate = endDate
-        ..gender = gender
-        ..orgRefId = orgRefId,
+        ..organisationRef = organisationRef
+        ..facilities = null
+        ..isComplete = isComplete
+        ..jobReference = jobReference,
     ),
   );
 

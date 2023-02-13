@@ -10,28 +10,30 @@ abstract class WorkersRecord
     implements Built<WorkersRecord, WorkersRecordBuilder> {
   static Serializer<WorkersRecord> get serializer => _$workersRecordSerializer;
 
-  @BuiltValueField(wireName: 'User_Ref')
-  DocumentReference? get userRef;
-
   @BuiltValueField(wireName: 'full_name')
   String? get fullName;
 
   String? get phone;
 
-  String? get dob;
+  DateTime? get dob;
+
+  String? get gender;
+
+  String? get photo;
 
   String? get email;
 
-  String? get photo;
+  @BuiltValueField(wireName: 'created_date')
+  DateTime? get createdDate;
 
   @BuiltValueField(wireName: 'pin_code')
   String? get pinCode;
 
   String? get area;
 
-  String? get district;
-
   String? get state;
+
+  String? get district;
 
   String? get aadhar;
 
@@ -53,22 +55,23 @@ abstract class WorkersRecord
   @BuiltValueField(wireName: 'highest_qualification')
   String? get highestQualification;
 
-  String? get gender;
+  @BuiltValueField(wireName: 'date_available_from')
+  DateTime? get dateAvailableFrom;
 
   @BuiltValueField(wireName: 'captain_scout_ref')
-  String? get captainScoutRef;
-
-  @BuiltValueField(wireName: 'organisation_id')
-  String? get organisationId;
+  DocumentReference? get captainScoutRef;
 
   @BuiltValueField(wireName: 'job_worker_id')
-  String? get jobWorkerId;
+  DocumentReference? get jobWorkerId;
 
-  @BuiltValueField(wireName: 'date_available_from')
-  String? get dateAvailableFrom;
+  @BuiltValueField(wireName: 'user_ref')
+  DocumentReference? get userRef;
 
-  @BuiltValueField(wireName: 'created_date')
-  DateTime? get createdDate;
+  @BuiltValueField(wireName: 'organisation_id')
+  DocumentReference? get organisationId;
+
+  @BuiltValueField(wireName: 'is_working')
+  bool? get isWorking;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -77,13 +80,13 @@ abstract class WorkersRecord
   static void _initializeBuilder(WorkersRecordBuilder builder) => builder
     ..fullName = ''
     ..phone = ''
-    ..dob = ''
-    ..email = ''
+    ..gender = ''
     ..photo = ''
+    ..email = ''
     ..pinCode = ''
     ..area = ''
-    ..district = ''
     ..state = ''
+    ..district = ''
     ..aadhar = ''
     ..panNumber = ''
     ..accountName = ''
@@ -91,11 +94,7 @@ abstract class WorkersRecord
     ..bankName = ''
     ..ifscCode = ''
     ..highestQualification = ''
-    ..gender = ''
-    ..captainScoutRef = ''
-    ..organisationId = ''
-    ..jobWorkerId = ''
-    ..dateAvailableFrom = '';
+    ..isWorking = false;
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Workers');
@@ -119,16 +118,17 @@ abstract class WorkersRecord
 }
 
 Map<String, dynamic> createWorkersRecordData({
-  DocumentReference? userRef,
   String? fullName,
   String? phone,
-  String? dob,
-  String? email,
+  DateTime? dob,
+  String? gender,
   String? photo,
+  String? email,
+  DateTime? createdDate,
   String? pinCode,
   String? area,
-  String? district,
   String? state,
+  String? district,
   String? aadhar,
   String? panNumber,
   String? accountName,
@@ -136,27 +136,28 @@ Map<String, dynamic> createWorkersRecordData({
   String? bankName,
   String? ifscCode,
   String? highestQualification,
-  String? gender,
-  String? captainScoutRef,
-  String? organisationId,
-  String? jobWorkerId,
-  String? dateAvailableFrom,
-  DateTime? createdDate,
+  DateTime? dateAvailableFrom,
+  DocumentReference? captainScoutRef,
+  DocumentReference? jobWorkerId,
+  DocumentReference? userRef,
+  DocumentReference? organisationId,
+  bool? isWorking,
 }) {
   final firestoreData = serializers.toFirestore(
     WorkersRecord.serializer,
     WorkersRecord(
       (w) => w
-        ..userRef = userRef
         ..fullName = fullName
         ..phone = phone
         ..dob = dob
-        ..email = email
+        ..gender = gender
         ..photo = photo
+        ..email = email
+        ..createdDate = createdDate
         ..pinCode = pinCode
         ..area = area
-        ..district = district
         ..state = state
+        ..district = district
         ..aadhar = aadhar
         ..panNumber = panNumber
         ..accountName = accountName
@@ -164,12 +165,12 @@ Map<String, dynamic> createWorkersRecordData({
         ..bankName = bankName
         ..ifscCode = ifscCode
         ..highestQualification = highestQualification
-        ..gender = gender
-        ..captainScoutRef = captainScoutRef
-        ..organisationId = organisationId
-        ..jobWorkerId = jobWorkerId
         ..dateAvailableFrom = dateAvailableFrom
-        ..createdDate = createdDate,
+        ..captainScoutRef = captainScoutRef
+        ..jobWorkerId = jobWorkerId
+        ..userRef = userRef
+        ..organisationId = organisationId
+        ..isWorking = isWorking,
     ),
   );
 
