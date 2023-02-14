@@ -11,59 +11,63 @@ abstract class OrganisationsRecord
   static Serializer<OrganisationsRecord> get serializer =>
       _$organisationsRecordSerializer;
 
-  @BuiltValueField(wireName: 'organisation_name')
-  String? get organisationName;
-
-  @BuiltValueField(wireName: 'organisation_logo')
-  String? get organisationLogo;
-
-  @BuiltValueField(wireName: 'phone_number')
-  String? get phoneNumber;
-
-  String? get email;
-
-  @BuiltValueField(wireName: 'created_date')
-  DateTime? get createdDate;
-
-  @BuiltValueField(wireName: 'pin_code')
-  String? get pinCode;
-
-  String? get area;
+  String? get address;
 
   String? get state;
 
-  String? get district;
-
-  String? get address;
+  String? get country;
 
   @BuiltValueField(wireName: 'contact_name')
   String? get contactName;
 
-  @BuiltValueField(wireName: 'organisation_ref')
-  DocumentReference? get organisationRef;
+  String? get email;
 
-  @BuiltValueField(wireName: 'organisation_captains')
-  BuiltList<DocumentReference>? get organisationCaptains;
+  String? get area;
 
-  String? get industry;
+  @BuiltValueField(wireName: 'phone_number')
+  String? get phoneNumber;
+
+  @BuiltValueField(wireName: 'organisation_registration_id')
+  int? get organisationRegistrationId;
+
+  @BuiltValueField(wireName: 'organisation_name')
+  String? get organisationName;
+
+  @BuiltValueField(wireName: 'created_on')
+  String? get createdOn;
+
+  @BuiltValueField(wireName: 'pin_code')
+  String? get pinCode;
+
+  @BuiltValueField(wireName: 'organisation_logo')
+  String? get organisationLogo;
+
+  String? get district;
+
+  @BuiltValueField(wireName: 'org_sector')
+  String? get orgSector;
+
+  DocumentReference? get ref;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
 
   static void _initializeBuilder(OrganisationsRecordBuilder builder) => builder
-    ..organisationName = ''
-    ..organisationLogo = ''
-    ..phoneNumber = ''
-    ..email = ''
-    ..pinCode = ''
-    ..area = ''
-    ..state = ''
-    ..district = ''
     ..address = ''
+    ..state = ''
+    ..country = ''
     ..contactName = ''
-    ..organisationCaptains = ListBuilder()
-    ..industry = '';
+    ..email = ''
+    ..area = ''
+    ..phoneNumber = ''
+    ..organisationRegistrationId = 0
+    ..organisationName = ''
+    ..createdOn = ''
+    ..pinCode = ''
+    ..organisationLogo = ''
+    ..district = ''
+    ..orgSector = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Organisations');
@@ -88,38 +92,41 @@ abstract class OrganisationsRecord
 }
 
 Map<String, dynamic> createOrganisationsRecordData({
-  String? organisationName,
-  String? organisationLogo,
-  String? phoneNumber,
-  String? email,
-  DateTime? createdDate,
-  String? pinCode,
-  String? area,
-  String? state,
-  String? district,
   String? address,
+  String? state,
+  String? country,
   String? contactName,
-  DocumentReference? organisationRef,
-  String? industry,
+  String? email,
+  String? area,
+  String? phoneNumber,
+  int? organisationRegistrationId,
+  String? organisationName,
+  String? createdOn,
+  String? pinCode,
+  String? organisationLogo,
+  String? district,
+  String? orgSector,
+  DocumentReference? ref,
 }) {
   final firestoreData = serializers.toFirestore(
     OrganisationsRecord.serializer,
     OrganisationsRecord(
       (o) => o
-        ..organisationName = organisationName
-        ..organisationLogo = organisationLogo
-        ..phoneNumber = phoneNumber
-        ..email = email
-        ..createdDate = createdDate
-        ..pinCode = pinCode
-        ..area = area
-        ..state = state
-        ..district = district
         ..address = address
+        ..state = state
+        ..country = country
         ..contactName = contactName
-        ..organisationRef = organisationRef
-        ..organisationCaptains = null
-        ..industry = industry,
+        ..email = email
+        ..area = area
+        ..phoneNumber = phoneNumber
+        ..organisationRegistrationId = organisationRegistrationId
+        ..organisationName = organisationName
+        ..createdOn = createdOn
+        ..pinCode = pinCode
+        ..organisationLogo = organisationLogo
+        ..district = district
+        ..orgSector = orgSector
+        ..ref = ref,
     ),
   );
 

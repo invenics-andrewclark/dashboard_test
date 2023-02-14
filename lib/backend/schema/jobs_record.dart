@@ -9,11 +9,7 @@ part 'jobs_record.g.dart';
 abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   static Serializer<JobsRecord> get serializer => _$jobsRecordSerializer;
 
-  @BuiltValueField(wireName: 'organisation_name')
-  String? get organisationName;
-
-  @BuiltValueField(wireName: 'job_title')
-  String? get jobTitle;
+  String? get salary;
 
   @BuiltValueField(wireName: 'job_description')
   String? get jobDescription;
@@ -21,55 +17,50 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   @BuiltValueField(wireName: 'min_qualification')
   String? get minQualification;
 
-  @BuiltValueField(wireName: 'min_salary')
-  int? get minSalary;
+  @BuiltValueField(wireName: 'job_image')
+  String? get jobImage;
 
-  @BuiltValueField(wireName: 'max_salary')
-  int? get maxSalary;
+  @BuiltValueField(wireName: 'primary_skill_level')
+  String? get primarySkillLevel;
+
+  @BuiltValueField(wireName: 'primary_skill')
+  String? get primarySkill;
+
+  @BuiltValueField(wireName: 'organisation_name')
+  String? get organisationName;
+
+  @BuiltValueField(wireName: 'job_title')
+  String? get jobTitle;
 
   @BuiltValueField(wireName: 'mode_of_salary')
   String? get modeOfSalary;
 
-  @BuiltValueField(wireName: 'number_of_vacancies')
-  int? get numberOfVacancies;
-
-  String? get gender;
-
-  @BuiltValueField(wireName: 'min_age')
-  int? get minAge;
-
-  @BuiltValueField(wireName: 'max_age')
-  int? get maxAge;
-
-  @BuiltValueField(wireName: 'job_image')
-  String? get jobImage;
-
   @BuiltValueField(wireName: 'job_category')
   String? get jobCategory;
-
-  @BuiltValueField(wireName: 'working_hours')
-  int? get workingHours;
-
-  @BuiltValueField(wireName: 'job_sub_category')
-  String? get jobSubCategory;
 
   @BuiltValueField(wireName: 'pin_code')
   String? get pinCode;
 
   String? get area;
 
-  String? get state;
-
   String? get district;
 
-  @BuiltValueField(wireName: 'primary_skill')
-  String? get primarySkill;
-
-  @BuiltValueField(wireName: 'primary_skill_level')
-  String? get primarySkillLevel;
+  String? get state;
 
   @BuiltValueField(wireName: 'min_experience')
   String? get minExperience;
+
+  @BuiltValueField(wireName: 'job_application_collection')
+  String? get jobApplicationCollection;
+
+  @BuiltValueField(wireName: 'application_list')
+  String? get applicationList;
+
+  @BuiltValueField(wireName: 'number_of_vacancies')
+  String? get numberOfVacancies;
+
+  @BuiltValueField(wireName: 'working_hours')
+  String? get workingHours;
 
   @BuiltValueField(wireName: 'start_date')
   DateTime? get startDate;
@@ -77,16 +68,30 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   @BuiltValueField(wireName: 'end_date')
   DateTime? get endDate;
 
-  @BuiltValueField(wireName: 'organisation_ref')
-  DocumentReference? get organisationRef;
+  String? get gender;
 
-  BuiltList<String>? get facilities;
+  @BuiltValueField(wireName: 'org_ref_id')
+  DocumentReference? get orgRefId;
 
-  @BuiltValueField(wireName: 'is_complete')
-  bool? get isComplete;
+  @BuiltValueField(wireName: 'min_salary')
+  String? get minSalary;
 
-  @BuiltValueField(wireName: 'job_reference')
-  DocumentReference? get jobReference;
+  @BuiltValueField(wireName: 'max_salary')
+  String? get maxSalary;
+
+  @BuiltValueField(wireName: 'min_age')
+  String? get minAge;
+
+  @BuiltValueField(wireName: 'max_age')
+  String? get maxAge;
+
+  String? get food;
+
+  String? get lodging;
+
+  String? get transportation;
+
+  String? get medical;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -95,30 +100,34 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   DocumentReference get parentReference => reference.parent.parent!;
 
   static void _initializeBuilder(JobsRecordBuilder builder) => builder
-    ..organisationName = ''
-    ..jobTitle = ''
+    ..salary = ''
     ..jobDescription = ''
     ..minQualification = ''
-    ..minSalary = 0
-    ..maxSalary = 0
-    ..modeOfSalary = ''
-    ..numberOfVacancies = 0
-    ..gender = ''
-    ..minAge = 0
-    ..maxAge = 0
     ..jobImage = ''
+    ..primarySkillLevel = ''
+    ..primarySkill = ''
+    ..organisationName = ''
+    ..jobTitle = ''
+    ..modeOfSalary = ''
     ..jobCategory = ''
-    ..workingHours = 0
-    ..jobSubCategory = ''
     ..pinCode = ''
     ..area = ''
-    ..state = ''
     ..district = ''
-    ..primarySkill = ''
-    ..primarySkillLevel = ''
+    ..state = ''
     ..minExperience = ''
-    ..facilities = ListBuilder()
-    ..isComplete = false;
+    ..jobApplicationCollection = ''
+    ..applicationList = ''
+    ..numberOfVacancies = ''
+    ..workingHours = ''
+    ..gender = ''
+    ..minSalary = ''
+    ..maxSalary = ''
+    ..minAge = ''
+    ..maxAge = ''
+    ..food = ''
+    ..lodging = ''
+    ..transportation = ''
+    ..medical = '';
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
       parent != null
@@ -146,66 +155,73 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
 }
 
 Map<String, dynamic> createJobsRecordData({
-  String? organisationName,
-  String? jobTitle,
+  String? salary,
   String? jobDescription,
   String? minQualification,
-  int? minSalary,
-  int? maxSalary,
-  String? modeOfSalary,
-  int? numberOfVacancies,
-  String? gender,
-  int? minAge,
-  int? maxAge,
   String? jobImage,
+  String? primarySkillLevel,
+  String? primarySkill,
+  String? organisationName,
+  String? jobTitle,
+  String? modeOfSalary,
   String? jobCategory,
-  int? workingHours,
-  String? jobSubCategory,
   String? pinCode,
   String? area,
-  String? state,
   String? district,
-  String? primarySkill,
-  String? primarySkillLevel,
+  String? state,
   String? minExperience,
+  String? jobApplicationCollection,
+  String? applicationList,
+  String? numberOfVacancies,
+  String? workingHours,
   DateTime? startDate,
   DateTime? endDate,
-  DocumentReference? organisationRef,
-  bool? isComplete,
-  DocumentReference? jobReference,
+  String? gender,
+  DocumentReference? orgRefId,
+  String? minSalary,
+  String? maxSalary,
+  String? minAge,
+  String? maxAge,
+  String? food,
+  String? lodging,
+  String? transportation,
+  String? medical,
 }) {
   final firestoreData = serializers.toFirestore(
     JobsRecord.serializer,
     JobsRecord(
       (j) => j
-        ..organisationName = organisationName
-        ..jobTitle = jobTitle
+        ..salary = salary
         ..jobDescription = jobDescription
         ..minQualification = minQualification
-        ..minSalary = minSalary
-        ..maxSalary = maxSalary
-        ..modeOfSalary = modeOfSalary
-        ..numberOfVacancies = numberOfVacancies
-        ..gender = gender
-        ..minAge = minAge
-        ..maxAge = maxAge
         ..jobImage = jobImage
+        ..primarySkillLevel = primarySkillLevel
+        ..primarySkill = primarySkill
+        ..organisationName = organisationName
+        ..jobTitle = jobTitle
+        ..modeOfSalary = modeOfSalary
         ..jobCategory = jobCategory
-        ..workingHours = workingHours
-        ..jobSubCategory = jobSubCategory
         ..pinCode = pinCode
         ..area = area
-        ..state = state
         ..district = district
-        ..primarySkill = primarySkill
-        ..primarySkillLevel = primarySkillLevel
+        ..state = state
         ..minExperience = minExperience
+        ..jobApplicationCollection = jobApplicationCollection
+        ..applicationList = applicationList
+        ..numberOfVacancies = numberOfVacancies
+        ..workingHours = workingHours
         ..startDate = startDate
         ..endDate = endDate
-        ..organisationRef = organisationRef
-        ..facilities = null
-        ..isComplete = isComplete
-        ..jobReference = jobReference,
+        ..gender = gender
+        ..orgRefId = orgRefId
+        ..minSalary = minSalary
+        ..maxSalary = maxSalary
+        ..minAge = minAge
+        ..maxAge = maxAge
+        ..food = food
+        ..lodging = lodging
+        ..transportation = transportation
+        ..medical = medical,
     ),
   );
 

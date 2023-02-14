@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>629173650503-kc1gre7mvld20dnrl8mhl9dg3toljhph.apps.googleusercontent.com</string>
+	<string>802856385303-0vhi2gvdabq8ibbfjkp15ievqb8nmer1.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.629173650503-kc1gre7mvld20dnrl8mhl9dg3toljhph</string>
+	<string>com.googleusercontent.apps.802856385303-0vhi2gvdabq8ibbfjkp15ievqb8nmer1</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>802856385303-5sp0b6i8hab09po2ci6832kk6vsftpfo.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDL_mFa03imSqNe_nwfEp5aeNreO-a2okQ</string>
+	<string>AIzaSyAqiWgkQDDl8Kjhxi6ALoz7oGyk7K1EdAQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>629173650503</string>
+	<string>802856385303</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mycompany.entprojecttracker</string>
+	<string>com.mycompany.jansaktidashboard</string>
 	<key>PROJECT_ID</key>
-	<string>jansakti-1aea3</string>
+	<string>jansakti-dev</string>
 	<key>STORAGE_BUCKET</key>
-	<string>jansakti-1aea3.appspot.com</string>
+	<string>jansakti-dev.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:629173650503:ios:1ca1eefc82a1eadc961d62</string>
+	<string>1:802856385303:ios:96207df87e4e7b3a219552</string>
 </dict>
 </plist>

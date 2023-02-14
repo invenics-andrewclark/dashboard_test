@@ -1,4 +1,4 @@
-package com.mycompany.entprojecttracker
+package com.mycompany.jansaktidashboard
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -11,10 +11,10 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class LocationAPICall {
   static Future<ApiCallResponse> call({
-    String? pinCode = '700123',
+    String? pinCode = '686576',
   }) {
     return ApiManager.instance.makeApiCall(
-      callName: 'locationAPI',
+      callName: 'Location API',
       apiUrl: 'https://api.postalpincode.in/pincode/${pinCode}',
       callType: ApiCallType.GET,
       headers: {},
