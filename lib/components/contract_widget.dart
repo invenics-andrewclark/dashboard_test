@@ -21,6 +21,7 @@ class ContractWidget extends StatefulWidget {
     this.startdate,
     this.enddate,
     this.orgRef,
+    this.jobRef,
   }) : super(key: key);
 
   final DocumentReference? jobdetailsref;
@@ -28,6 +29,7 @@ class ContractWidget extends StatefulWidget {
   final DateTime? startdate;
   final DateTime? enddate;
   final DocumentReference? orgRef;
+  final JobsRecord? jobRef;
 
   @override
   _ContractWidgetState createState() => _ContractWidgetState();
@@ -411,7 +413,26 @@ class _ContractWidgetState extends State<ContractWidget> {
                       await JobWorkerRecord.createDoc(widget.orgRef!)
                           .set(jobWorkerCreateData);
 
-                      context.pushNamed('JobDetails');
+                      context.pushNamed(
+                        'JobDetails',
+                        queryParams: {
+                          'jobdetails': serializeParam(
+                            widget.jobRef,
+                            ParamType.Document,
+                          ),
+                          'jobreference': serializeParam(
+                            widget.jobdetailsref,
+                            ParamType.DocumentReference,
+                          ),
+                          'orgRef': serializeParam(
+                            widget.orgRef,
+                            ParamType.DocumentReference,
+                          ),
+                        }.withoutNulls,
+                        extra: <String, dynamic>{
+                          'jobdetails': widget.jobRef,
+                        },
+                      );
                     },
                     text: 'Accept',
                     options: FFButtonOptions(
