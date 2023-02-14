@@ -22,14 +22,14 @@ abstract class JobWorkerRecord
   @BuiltValueField(wireName: 'job_reference')
   DocumentReference? get jobReference;
 
-  @BuiltValueField(wireName: 'start_date')
-  String? get startDate;
-
-  @BuiltValueField(wireName: 'end_date')
-  String? get endDate;
-
   @BuiltValueField(wireName: 'worker_id')
   DocumentReference? get workerId;
+
+  @BuiltValueField(wireName: 'start_date')
+  DateTime? get startDate;
+
+  @BuiltValueField(wireName: 'end_date')
+  DateTime? get endDate;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -40,9 +40,7 @@ abstract class JobWorkerRecord
   static void _initializeBuilder(JobWorkerRecordBuilder builder) => builder
     ..contractSigned = false
     ..salary = ''
-    ..modeOfSalary = ''
-    ..startDate = ''
-    ..endDate = '';
+    ..modeOfSalary = '';
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
       parent != null
@@ -75,9 +73,9 @@ Map<String, dynamic> createJobWorkerRecordData({
   String? salary,
   String? modeOfSalary,
   DocumentReference? jobReference,
-  String? startDate,
-  String? endDate,
   DocumentReference? workerId,
+  DateTime? startDate,
+  DateTime? endDate,
 }) {
   final firestoreData = serializers.toFirestore(
     JobWorkerRecord.serializer,
@@ -87,9 +85,9 @@ Map<String, dynamic> createJobWorkerRecordData({
         ..salary = salary
         ..modeOfSalary = modeOfSalary
         ..jobReference = jobReference
+        ..workerId = workerId
         ..startDate = startDate
-        ..endDate = endDate
-        ..workerId = workerId,
+        ..endDate = endDate,
     ),
   );
 

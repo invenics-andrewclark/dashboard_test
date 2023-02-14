@@ -426,10 +426,8 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                             modeOfSalary: _model.dropDownValue,
                             jobReference: containerJobsRecord!.reference,
                             contractSigned: false,
-                            startDate:
-                                dateTimeFormat('d/M/y', _model.datePicked1),
-                            endDate:
-                                dateTimeFormat('d/M/y', _model.datePicked2),
+                            startDate: _model.datePicked1,
+                            endDate: _model.datePicked2,
                             workerId: widget.workersdetails,
                           );
                           await JobWorkerRecord.createDoc(

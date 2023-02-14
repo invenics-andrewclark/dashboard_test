@@ -50,20 +50,6 @@ class _$JobWorkerRecordSerializer
             specifiedType: const FullType(
                 DocumentReference, const [const FullType.nullable(Object)])));
     }
-    value = object.startDate;
-    if (value != null) {
-      result
-        ..add('start_date')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.endDate;
-    if (value != null) {
-      result
-        ..add('end_date')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.workerId;
     if (value != null) {
       result
@@ -71,6 +57,20 @@ class _$JobWorkerRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
                 DocumentReference, const [const FullType.nullable(Object)])));
+    }
+    value = object.startDate;
+    if (value != null) {
+      result
+        ..add('start_date')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(DateTime)));
+    }
+    value = object.endDate;
+    if (value != null) {
+      result
+        ..add('end_date')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(DateTime)));
     }
     value = object.ffRef;
     if (value != null) {
@@ -113,19 +113,19 @@ class _$JobWorkerRecordSerializer
                 const FullType.nullable(Object)
               ])) as DocumentReference<Object?>?;
           break;
-        case 'start_date':
-          result.startDate = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'end_date':
-          result.endDate = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'worker_id':
           result.workerId = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
                 const FullType.nullable(Object)
               ])) as DocumentReference<Object?>?;
+          break;
+        case 'start_date':
+          result.startDate = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime?;
+          break;
+        case 'end_date':
+          result.endDate = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime?;
           break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
@@ -150,11 +150,11 @@ class _$JobWorkerRecord extends JobWorkerRecord {
   @override
   final DocumentReference<Object?>? jobReference;
   @override
-  final String? startDate;
-  @override
-  final String? endDate;
-  @override
   final DocumentReference<Object?>? workerId;
+  @override
+  final DateTime? startDate;
+  @override
+  final DateTime? endDate;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -166,9 +166,9 @@ class _$JobWorkerRecord extends JobWorkerRecord {
       this.salary,
       this.modeOfSalary,
       this.jobReference,
+      this.workerId,
       this.startDate,
       this.endDate,
-      this.workerId,
       this.ffRef})
       : super._();
 
@@ -188,9 +188,9 @@ class _$JobWorkerRecord extends JobWorkerRecord {
         salary == other.salary &&
         modeOfSalary == other.modeOfSalary &&
         jobReference == other.jobReference &&
+        workerId == other.workerId &&
         startDate == other.startDate &&
         endDate == other.endDate &&
-        workerId == other.workerId &&
         ffRef == other.ffRef;
   }
 
@@ -206,9 +206,9 @@ class _$JobWorkerRecord extends JobWorkerRecord {
                                 salary.hashCode),
                             modeOfSalary.hashCode),
                         jobReference.hashCode),
-                    startDate.hashCode),
-                endDate.hashCode),
-            workerId.hashCode),
+                    workerId.hashCode),
+                startDate.hashCode),
+            endDate.hashCode),
         ffRef.hashCode));
   }
 
@@ -219,9 +219,9 @@ class _$JobWorkerRecord extends JobWorkerRecord {
           ..add('salary', salary)
           ..add('modeOfSalary', modeOfSalary)
           ..add('jobReference', jobReference)
+          ..add('workerId', workerId)
           ..add('startDate', startDate)
           ..add('endDate', endDate)
-          ..add('workerId', workerId)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -249,18 +249,18 @@ class JobWorkerRecordBuilder
   set jobReference(DocumentReference<Object?>? jobReference) =>
       _$this._jobReference = jobReference;
 
-  String? _startDate;
-  String? get startDate => _$this._startDate;
-  set startDate(String? startDate) => _$this._startDate = startDate;
-
-  String? _endDate;
-  String? get endDate => _$this._endDate;
-  set endDate(String? endDate) => _$this._endDate = endDate;
-
   DocumentReference<Object?>? _workerId;
   DocumentReference<Object?>? get workerId => _$this._workerId;
   set workerId(DocumentReference<Object?>? workerId) =>
       _$this._workerId = workerId;
+
+  DateTime? _startDate;
+  DateTime? get startDate => _$this._startDate;
+  set startDate(DateTime? startDate) => _$this._startDate = startDate;
+
+  DateTime? _endDate;
+  DateTime? get endDate => _$this._endDate;
+  set endDate(DateTime? endDate) => _$this._endDate = endDate;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -277,9 +277,9 @@ class JobWorkerRecordBuilder
       _salary = $v.salary;
       _modeOfSalary = $v.modeOfSalary;
       _jobReference = $v.jobReference;
+      _workerId = $v.workerId;
       _startDate = $v.startDate;
       _endDate = $v.endDate;
-      _workerId = $v.workerId;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -307,9 +307,9 @@ class JobWorkerRecordBuilder
             salary: salary,
             modeOfSalary: modeOfSalary,
             jobReference: jobReference,
+            workerId: workerId,
             startDate: startDate,
             endDate: endDate,
-            workerId: workerId,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

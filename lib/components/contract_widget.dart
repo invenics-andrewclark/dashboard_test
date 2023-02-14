@@ -101,7 +101,7 @@ class _ContractWidgetState extends State<ContractWidget> {
                       final _datePicked1Date = await showDatePicker(
                         context: context,
                         initialDate: getCurrentTimestamp,
-                        firstDate: DateTime(1900),
+                        firstDate: getCurrentTimestamp,
                         lastDate: DateTime(2050),
                       );
 
@@ -124,7 +124,7 @@ class _ContractWidgetState extends State<ContractWidget> {
                           });
                         },
                         currentTime: getCurrentTimestamp,
-                        minTime: DateTime(0, 0, 0),
+                        minTime: getCurrentTimestamp,
                       );
                     }
                   },
@@ -193,7 +193,7 @@ class _ContractWidgetState extends State<ContractWidget> {
                       final _datePicked2Date = await showDatePicker(
                         context: context,
                         initialDate: getCurrentTimestamp,
-                        firstDate: DateTime(1900),
+                        firstDate: getCurrentTimestamp,
                         lastDate: DateTime(2050),
                       );
 
@@ -216,7 +216,7 @@ class _ContractWidgetState extends State<ContractWidget> {
                           });
                         },
                         currentTime: getCurrentTimestamp,
-                        minTime: DateTime(0, 0, 0),
+                        minTime: getCurrentTimestamp,
                       );
                     }
                   },
@@ -393,23 +393,19 @@ class _ContractWidgetState extends State<ContractWidget> {
                         salary: _model.textController.text,
                         modeOfSalary: _model.dropDownValue,
                         jobReference: widget.jobdetailsref,
-                        startDate:
-                            (dateTimeFormat('d/M/y', _model.datePicked1) ==
-                                            null ||
-                                        dateTimeFormat(
-                                                'd/M/y', _model.datePicked1) ==
-                                            ''
-                                    ? widget.startdate
-                                    : _model.datePicked1)
-                                ?.toString(),
-                        endDate: (dateTimeFormat('d/M/y', _model.datePicked2) ==
-                                        null ||
-                                    dateTimeFormat(
-                                            'd/M/y', _model.datePicked2) ==
-                                        ''
-                                ? widget.enddate
-                                : _model.datePicked2)
-                            ?.toString(),
+                        startDate: dateTimeFormat(
+                                        'd/M/y', _model.datePicked1) ==
+                                    null ||
+                                dateTimeFormat('d/M/y', _model.datePicked1) ==
+                                    ''
+                            ? widget.startdate
+                            : _model.datePicked1,
+                        endDate: dateTimeFormat('d/M/y', _model.datePicked2) ==
+                                    null ||
+                                dateTimeFormat('d/M/y', _model.datePicked2) ==
+                                    ''
+                            ? widget.enddate
+                            : _model.datePicked2,
                         workerId: widget.workerjobref,
                       );
                       await JobWorkerRecord.createDoc(widget.orgRef!)
