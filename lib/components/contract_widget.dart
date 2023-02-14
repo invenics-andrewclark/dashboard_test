@@ -167,7 +167,9 @@ class _ContractWidgetState extends State<ContractWidget> {
                                   ),
                             ),
                           ),
-                        if (dateTimeFormat('d/M/y', widget.startdate) == '')
+                        if (dateTimeFormat('d/M/y', _model.datePicked1) !=
+                                null &&
+                            dateTimeFormat('d/M/y', _model.datePicked1) != '')
                           Padding(
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
@@ -226,7 +228,7 @@ class _ContractWidgetState extends State<ContractWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          'Endt Date:',
+                          'End Date:',
                           style:
                               FlutterFlowTheme.of(context).bodyText1.override(
                                     fontFamily: 'Poppins',
