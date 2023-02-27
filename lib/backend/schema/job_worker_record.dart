@@ -11,25 +11,45 @@ abstract class JobWorkerRecord
   static Serializer<JobWorkerRecord> get serializer =>
       _$jobWorkerRecordSerializer;
 
-  @BuiltValueField(wireName: 'contract_signed')
-  bool? get contractSigned;
+  @BuiltValueField(wireName: 'applied_date')
+  DateTime? get appliedDate;
 
-  String? get salary;
+  @BuiltValueField(wireName: 'application_status')
+  String? get applicationStatus;
 
-  @BuiltValueField(wireName: 'mode_of_salary')
-  String? get modeOfSalary;
-
-  @BuiltValueField(wireName: 'job_reference')
-  DocumentReference? get jobReference;
+  String? get comments;
 
   @BuiltValueField(wireName: 'worker_id')
   DocumentReference? get workerId;
 
-  @BuiltValueField(wireName: 'start_date')
-  DateTime? get startDate;
+  @BuiltValueField(wireName: 'worker_name')
+  String? get workerName;
 
-  @BuiltValueField(wireName: 'end_date')
-  DateTime? get endDate;
+  String? get gender;
+
+  @BuiltValueField(wireName: 'experience_level')
+  String? get experienceLevel;
+
+  @BuiltValueField(wireName: 'worker_image')
+  String? get workerImage;
+
+  @BuiltValueField(wireName: 'organisation_name')
+  String? get organisationName;
+
+  @BuiltValueField(wireName: 'job_name')
+  String? get jobName;
+
+  @BuiltValueField(wireName: 'org_name')
+  String? get orgName;
+
+  @BuiltValueField(wireName: 'key_skill')
+  String? get keySkill;
+
+  @BuiltValueField(wireName: 'org_reference')
+  DocumentReference? get orgReference;
+
+  @BuiltValueField(wireName: 'job_reference')
+  DocumentReference? get jobReference;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -38,9 +58,16 @@ abstract class JobWorkerRecord
   DocumentReference get parentReference => reference.parent.parent!;
 
   static void _initializeBuilder(JobWorkerRecordBuilder builder) => builder
-    ..contractSigned = false
-    ..salary = ''
-    ..modeOfSalary = '';
+    ..applicationStatus = ''
+    ..comments = ''
+    ..workerName = ''
+    ..gender = ''
+    ..experienceLevel = ''
+    ..workerImage = ''
+    ..organisationName = ''
+    ..jobName = ''
+    ..orgName = ''
+    ..keySkill = '';
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
       parent != null
@@ -69,25 +96,39 @@ abstract class JobWorkerRecord
 }
 
 Map<String, dynamic> createJobWorkerRecordData({
-  bool? contractSigned,
-  String? salary,
-  String? modeOfSalary,
-  DocumentReference? jobReference,
+  DateTime? appliedDate,
+  String? applicationStatus,
+  String? comments,
   DocumentReference? workerId,
-  DateTime? startDate,
-  DateTime? endDate,
+  String? workerName,
+  String? gender,
+  String? experienceLevel,
+  String? workerImage,
+  String? organisationName,
+  String? jobName,
+  String? orgName,
+  String? keySkill,
+  DocumentReference? orgReference,
+  DocumentReference? jobReference,
 }) {
   final firestoreData = serializers.toFirestore(
     JobWorkerRecord.serializer,
     JobWorkerRecord(
       (j) => j
-        ..contractSigned = contractSigned
-        ..salary = salary
-        ..modeOfSalary = modeOfSalary
-        ..jobReference = jobReference
+        ..appliedDate = appliedDate
+        ..applicationStatus = applicationStatus
+        ..comments = comments
         ..workerId = workerId
-        ..startDate = startDate
-        ..endDate = endDate,
+        ..workerName = workerName
+        ..gender = gender
+        ..experienceLevel = experienceLevel
+        ..workerImage = workerImage
+        ..organisationName = organisationName
+        ..jobName = jobName
+        ..orgName = orgName
+        ..keySkill = keySkill
+        ..orgReference = orgReference
+        ..jobReference = jobReference,
     ),
   );
 

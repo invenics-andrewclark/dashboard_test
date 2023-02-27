@@ -1,31 +1,42 @@
 // Export pages
-export 'signin/signin_widget.dart' show SigninWidget;
-export 'add_organiation/add_organiation_widget.dart' show AddOrganiationWidget;
-export 'dashboard/dashboard_widget.dart' show DashboardWidget;
-export 'signup/signup_widget.dart' show SignupWidget;
+export 'login/login_widget.dart' show LoginWidget;
+export 'forgot_password/forgot_password_widget.dart' show ForgotPasswordWidget;
+export 'main_activity_tracker/main_activity_tracker_widget.dart'
+    show MainActivityTrackerWidget;
+export 'captain_workers/captain_workers_widget.dart' show CaptainWorkersWidget;
+export 'create_job/create_job_widget.dart' show CreateJobWidget;
 export 'job_details/job_details_widget.dart' show JobDetailsWidget;
-export 'organisationn_details/organisationn_details_widget.dart'
-    show OrganisationnDetailsWidget;
-export 'all_jobs/all_jobs_widget.dart' show AllJobsWidget;
-export 'addjob_copy/addjob_copy_widget.dart' show AddjobCopyWidget;
-export 'organisations/organisations_widget.dart' show OrganisationsWidget;
-export 'new_add_scout/new_add_scout_widget.dart' show NewAddScoutWidget;
-export 'edit_scout_details/edit_scout_details_widget.dart'
-    show EditScoutDetailsWidget;
-export 'scout_details/scout_details_widget.dart' show ScoutDetailsWidget;
-export 'captain_details/captain_details_widget.dart' show CaptainDetailsWidget;
-export 'worker_details_page/worker_details_page_widget.dart'
-    show WorkerDetailsPageWidget;
-export 'edit_organization/edit_organization_widget.dart'
-    show EditOrganizationWidget;
-export 'edit_worker_details/edit_worker_details_widget.dart'
-    show EditWorkerDetailsWidget;
-export 'authentication/authentication_widget.dart' show AuthenticationWidget;
-export 'new_add_worker/new_add_worker_widget.dart' show NewAddWorkerWidget;
-export 'edit_captain_details/edit_captain_details_widget.dart'
-    show EditCaptainDetailsWidget;
-export 'edit_add_skills/edit_add_skills_widget.dart' show EditAddSkillsWidget;
-export 'add_skills/add_skills_widget.dart' show AddSkillsWidget;
-export 'new_add_captain/new_add_captain_widget.dart' show NewAddCaptainWidget;
-export 'd_a_s_h_b_o_a_r_d_copy/d_a_s_h_b_o_a_r_d_copy_widget.dart'
-    show DASHBOARDCopyWidget;
+export 'captain_o_t_p/captain_o_t_p_widget.dart' show CaptainOTPWidget;
+export 'add_captain/add_captain_widget.dart' show AddCaptainWidget;
+export 'my_profile/my_profile_widget.dart' show MyProfileWidget;
+export 'main_captain/main_captain_widget.dart' show MainCaptainWidget;
+export 'main_scout/main_scout_widget.dart' show MainScoutWidget;
+export 'captain_profile/captain_profile_widget.dart' show CaptainProfileWidget;
+export 'main_worker/main_worker_widget.dart' show MainWorkerWidget;
+export 'main_organisations_page/main_organisations_page_widget.dart'
+    show MainOrganisationsPageWidget;
+export 'scout_workers/scout_workers_widget.dart' show ScoutWorkersWidget;
+export 'worker_jobs/worker_jobs_widget.dart' show WorkerJobsWidget;
+export 'organisation_jobs/organisation_jobs_widget.dart'
+    show OrganisationJobsWidget;
+export 'scout_profile/scout_profile_widget.dart' show ScoutProfileWidget;
+export 'edit_scout_profile/edit_scout_profile_widget.dart'
+    show EditScoutProfileWidget;
+export 'worker_profile/worker_profile_widget.dart' show WorkerProfileWidget;
+export 'edit_worker_profile/edit_worker_profile_widget.dart'
+    show EditWorkerProfileWidget;
+export 'edit_organisation/edit_organisation_widget.dart'
+    show EditOrganisationWidget;
+export 'add_organisation/add_organisation_widget.dart'
+    show AddOrganisationWidget;
+export 'organisation_profile/organisation_profile_widget.dart'
+    show OrganisationProfileWidget;
+export 'scout_o_t_p/scout_o_t_p_widget.dart' show ScoutOTPWidget;
+export 'add_scout/add_scout_widget.dart' show AddScoutWidget;
+export 'add_worker/add_worker_widget.dart' show AddWorkerWidget;
+export 'worker_o_t_p/worker_o_t_p_widget.dart' show WorkerOTPWidget;
+export 'edit_captain_profile/edit_captain_profile_widget.dart'
+    show EditCaptainProfileWidget;
+export 'create_job_contract/create_job_contract_widget.dart'
+    show CreateJobContractWidget;
+export 'add_skills_exp/add_skills_exp_widget.dart' show AddSkillsExpWidget;

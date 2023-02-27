@@ -14,9 +14,6 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   @BuiltValueField(wireName: 'job_description')
   String? get jobDescription;
 
-  @BuiltValueField(wireName: 'min_qualification')
-  String? get minQualification;
-
   @BuiltValueField(wireName: 'job_image')
   String? get jobImage;
 
@@ -70,9 +67,6 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
 
   String? get gender;
 
-  @BuiltValueField(wireName: 'org_ref_id')
-  DocumentReference? get orgRefId;
-
   @BuiltValueField(wireName: 'min_salary')
   String? get minSalary;
 
@@ -93,6 +87,20 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
 
   String? get medical;
 
+  @BuiltValueField(wireName: 'job_sub_categ')
+  String? get jobSubCateg;
+
+  @BuiltValueField(wireName: 'org_ref_id')
+  DocumentReference? get orgRefId;
+
+  @BuiltValueField(wireName: 'min_qualification')
+  String? get minQualification;
+
+  @BuiltValueField(wireName: 'job_ref')
+  DocumentReference? get jobRef;
+
+  String? get applications;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -102,7 +110,6 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   static void _initializeBuilder(JobsRecordBuilder builder) => builder
     ..salary = ''
     ..jobDescription = ''
-    ..minQualification = ''
     ..jobImage = ''
     ..primarySkillLevel = ''
     ..primarySkill = ''
@@ -127,7 +134,10 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
     ..food = ''
     ..lodging = ''
     ..transportation = ''
-    ..medical = '';
+    ..medical = ''
+    ..jobSubCateg = ''
+    ..minQualification = ''
+    ..applications = '';
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
       parent != null
@@ -157,7 +167,6 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
 Map<String, dynamic> createJobsRecordData({
   String? salary,
   String? jobDescription,
-  String? minQualification,
   String? jobImage,
   String? primarySkillLevel,
   String? primarySkill,
@@ -177,7 +186,6 @@ Map<String, dynamic> createJobsRecordData({
   DateTime? startDate,
   DateTime? endDate,
   String? gender,
-  DocumentReference? orgRefId,
   String? minSalary,
   String? maxSalary,
   String? minAge,
@@ -186,6 +194,11 @@ Map<String, dynamic> createJobsRecordData({
   String? lodging,
   String? transportation,
   String? medical,
+  String? jobSubCateg,
+  DocumentReference? orgRefId,
+  String? minQualification,
+  DocumentReference? jobRef,
+  String? applications,
 }) {
   final firestoreData = serializers.toFirestore(
     JobsRecord.serializer,
@@ -193,7 +206,6 @@ Map<String, dynamic> createJobsRecordData({
       (j) => j
         ..salary = salary
         ..jobDescription = jobDescription
-        ..minQualification = minQualification
         ..jobImage = jobImage
         ..primarySkillLevel = primarySkillLevel
         ..primarySkill = primarySkill
@@ -213,7 +225,6 @@ Map<String, dynamic> createJobsRecordData({
         ..startDate = startDate
         ..endDate = endDate
         ..gender = gender
-        ..orgRefId = orgRefId
         ..minSalary = minSalary
         ..maxSalary = maxSalary
         ..minAge = minAge
@@ -221,7 +232,12 @@ Map<String, dynamic> createJobsRecordData({
         ..food = food
         ..lodging = lodging
         ..transportation = transportation
-        ..medical = medical,
+        ..medical = medical
+        ..jobSubCateg = jobSubCateg
+        ..orgRefId = orgRefId
+        ..minQualification = minQualification
+        ..jobRef = jobRef
+        ..applications = applications,
     ),
   );
 

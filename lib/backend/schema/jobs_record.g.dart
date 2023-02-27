@@ -33,13 +33,6 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.minQualification;
-    if (value != null) {
-      result
-        ..add('min_qualification')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.jobImage;
     if (value != null) {
       result
@@ -173,14 +166,6 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.orgRefId;
-    if (value != null) {
-      result
-        ..add('org_ref_id')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                DocumentReference, const [const FullType.nullable(Object)])));
-    }
     value = object.minSalary;
     if (value != null) {
       result
@@ -237,6 +222,36 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.jobSubCateg;
+    if (value != null) {
+      result
+        ..add('job_sub_categ')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.orgRefId;
+    if (value != null) {
+      result
+        ..add('org_ref_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
+    }
+    value = object.minQualification;
+    if (value != null) {
+      result
+        ..add('min_qualification')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.jobRef;
+    if (value != null) {
+      result
+        ..add('job_ref')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -265,10 +280,6 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
           break;
         case 'job_description':
           result.jobDescription = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'min_qualification':
-          result.minQualification = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'job_image':
@@ -347,12 +358,6 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
           result.gender = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'org_ref_id':
-          result.orgRefId = serializers.deserialize(value,
-              specifiedType: const FullType(DocumentReference, const [
-                const FullType.nullable(Object)
-              ])) as DocumentReference<Object?>?;
-          break;
         case 'min_salary':
           result.minSalary = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -385,6 +390,26 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
           result.medical = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'job_sub_categ':
+          result.jobSubCateg = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'org_ref_id':
+          result.orgRefId = serializers.deserialize(value,
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
+          break;
+        case 'min_qualification':
+          result.minQualification = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'job_ref':
+          result.jobRef = serializers.deserialize(value,
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -403,8 +428,6 @@ class _$JobsRecord extends JobsRecord {
   final String? salary;
   @override
   final String? jobDescription;
-  @override
-  final String? minQualification;
   @override
   final String? jobImage;
   @override
@@ -444,8 +467,6 @@ class _$JobsRecord extends JobsRecord {
   @override
   final String? gender;
   @override
-  final DocumentReference<Object?>? orgRefId;
-  @override
   final String? minSalary;
   @override
   final String? maxSalary;
@@ -462,6 +483,14 @@ class _$JobsRecord extends JobsRecord {
   @override
   final String? medical;
   @override
+  final String? jobSubCateg;
+  @override
+  final DocumentReference<Object?>? orgRefId;
+  @override
+  final String? minQualification;
+  @override
+  final DocumentReference<Object?>? jobRef;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$JobsRecord([void Function(JobsRecordBuilder)? updates]) =>
@@ -470,7 +499,6 @@ class _$JobsRecord extends JobsRecord {
   _$JobsRecord._(
       {this.salary,
       this.jobDescription,
-      this.minQualification,
       this.jobImage,
       this.primarySkillLevel,
       this.primarySkill,
@@ -490,7 +518,6 @@ class _$JobsRecord extends JobsRecord {
       this.startDate,
       this.endDate,
       this.gender,
-      this.orgRefId,
       this.minSalary,
       this.maxSalary,
       this.minAge,
@@ -499,6 +526,10 @@ class _$JobsRecord extends JobsRecord {
       this.lodging,
       this.transportation,
       this.medical,
+      this.jobSubCateg,
+      this.orgRefId,
+      this.minQualification,
+      this.jobRef,
       this.ffRef})
       : super._();
 
@@ -515,7 +546,6 @@ class _$JobsRecord extends JobsRecord {
     return other is JobsRecord &&
         salary == other.salary &&
         jobDescription == other.jobDescription &&
-        minQualification == other.minQualification &&
         jobImage == other.jobImage &&
         primarySkillLevel == other.primarySkillLevel &&
         primarySkill == other.primarySkill &&
@@ -535,7 +565,6 @@ class _$JobsRecord extends JobsRecord {
         startDate == other.startDate &&
         endDate == other.endDate &&
         gender == other.gender &&
-        orgRefId == other.orgRefId &&
         minSalary == other.minSalary &&
         maxSalary == other.maxSalary &&
         minAge == other.minAge &&
@@ -544,6 +573,10 @@ class _$JobsRecord extends JobsRecord {
         lodging == other.lodging &&
         transportation == other.transportation &&
         medical == other.medical &&
+        jobSubCateg == other.jobSubCateg &&
+        orgRefId == other.orgRefId &&
+        minQualification == other.minQualification &&
+        jobRef == other.jobRef &&
         ffRef == other.ffRef;
   }
 
@@ -567,25 +600,25 @@ class _$JobsRecord extends JobsRecord {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, salary.hashCode), jobDescription.hashCode), minQualification.hashCode), jobImage.hashCode), primarySkillLevel.hashCode), primarySkill.hashCode), organisationName.hashCode), jobTitle.hashCode), modeOfSalary.hashCode), jobCategory.hashCode), pinCode.hashCode), area.hashCode), district.hashCode),
-                                                                                state.hashCode),
-                                                                            minExperience.hashCode),
-                                                                        jobApplicationCollection.hashCode),
-                                                                    applicationList.hashCode),
-                                                                numberOfVacancies.hashCode),
-                                                            workingHours.hashCode),
-                                                        startDate.hashCode),
-                                                    endDate.hashCode),
-                                                gender.hashCode),
-                                            orgRefId.hashCode),
-                                        minSalary.hashCode),
-                                    maxSalary.hashCode),
-                                minAge.hashCode),
-                            maxAge.hashCode),
-                        food.hashCode),
-                    lodging.hashCode),
-                transportation.hashCode),
-            medical.hashCode),
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, salary.hashCode), jobDescription.hashCode), jobImage.hashCode), primarySkillLevel.hashCode), primarySkill.hashCode), organisationName.hashCode), jobTitle.hashCode), modeOfSalary.hashCode), jobCategory.hashCode), pinCode.hashCode), area.hashCode), district.hashCode), state.hashCode), minExperience.hashCode), jobApplicationCollection.hashCode),
+                                                                                applicationList.hashCode),
+                                                                            numberOfVacancies.hashCode),
+                                                                        workingHours.hashCode),
+                                                                    startDate.hashCode),
+                                                                endDate.hashCode),
+                                                            gender.hashCode),
+                                                        minSalary.hashCode),
+                                                    maxSalary.hashCode),
+                                                minAge.hashCode),
+                                            maxAge.hashCode),
+                                        food.hashCode),
+                                    lodging.hashCode),
+                                transportation.hashCode),
+                            medical.hashCode),
+                        jobSubCateg.hashCode),
+                    orgRefId.hashCode),
+                minQualification.hashCode),
+            jobRef.hashCode),
         ffRef.hashCode));
   }
 
@@ -594,7 +627,6 @@ class _$JobsRecord extends JobsRecord {
     return (newBuiltValueToStringHelper(r'JobsRecord')
           ..add('salary', salary)
           ..add('jobDescription', jobDescription)
-          ..add('minQualification', minQualification)
           ..add('jobImage', jobImage)
           ..add('primarySkillLevel', primarySkillLevel)
           ..add('primarySkill', primarySkill)
@@ -614,7 +646,6 @@ class _$JobsRecord extends JobsRecord {
           ..add('startDate', startDate)
           ..add('endDate', endDate)
           ..add('gender', gender)
-          ..add('orgRefId', orgRefId)
           ..add('minSalary', minSalary)
           ..add('maxSalary', maxSalary)
           ..add('minAge', minAge)
@@ -623,6 +654,10 @@ class _$JobsRecord extends JobsRecord {
           ..add('lodging', lodging)
           ..add('transportation', transportation)
           ..add('medical', medical)
+          ..add('jobSubCateg', jobSubCateg)
+          ..add('orgRefId', orgRefId)
+          ..add('minQualification', minQualification)
+          ..add('jobRef', jobRef)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -639,11 +674,6 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
   String? get jobDescription => _$this._jobDescription;
   set jobDescription(String? jobDescription) =>
       _$this._jobDescription = jobDescription;
-
-  String? _minQualification;
-  String? get minQualification => _$this._minQualification;
-  set minQualification(String? minQualification) =>
-      _$this._minQualification = minQualification;
 
   String? _jobImage;
   String? get jobImage => _$this._jobImage;
@@ -727,11 +757,6 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
   String? get gender => _$this._gender;
   set gender(String? gender) => _$this._gender = gender;
 
-  DocumentReference<Object?>? _orgRefId;
-  DocumentReference<Object?>? get orgRefId => _$this._orgRefId;
-  set orgRefId(DocumentReference<Object?>? orgRefId) =>
-      _$this._orgRefId = orgRefId;
-
   String? _minSalary;
   String? get minSalary => _$this._minSalary;
   set minSalary(String? minSalary) => _$this._minSalary = minSalary;
@@ -765,6 +790,24 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
   String? get medical => _$this._medical;
   set medical(String? medical) => _$this._medical = medical;
 
+  String? _jobSubCateg;
+  String? get jobSubCateg => _$this._jobSubCateg;
+  set jobSubCateg(String? jobSubCateg) => _$this._jobSubCateg = jobSubCateg;
+
+  DocumentReference<Object?>? _orgRefId;
+  DocumentReference<Object?>? get orgRefId => _$this._orgRefId;
+  set orgRefId(DocumentReference<Object?>? orgRefId) =>
+      _$this._orgRefId = orgRefId;
+
+  String? _minQualification;
+  String? get minQualification => _$this._minQualification;
+  set minQualification(String? minQualification) =>
+      _$this._minQualification = minQualification;
+
+  DocumentReference<Object?>? _jobRef;
+  DocumentReference<Object?>? get jobRef => _$this._jobRef;
+  set jobRef(DocumentReference<Object?>? jobRef) => _$this._jobRef = jobRef;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -778,7 +821,6 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
     if ($v != null) {
       _salary = $v.salary;
       _jobDescription = $v.jobDescription;
-      _minQualification = $v.minQualification;
       _jobImage = $v.jobImage;
       _primarySkillLevel = $v.primarySkillLevel;
       _primarySkill = $v.primarySkill;
@@ -798,7 +840,6 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
       _startDate = $v.startDate;
       _endDate = $v.endDate;
       _gender = $v.gender;
-      _orgRefId = $v.orgRefId;
       _minSalary = $v.minSalary;
       _maxSalary = $v.maxSalary;
       _minAge = $v.minAge;
@@ -807,6 +848,10 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
       _lodging = $v.lodging;
       _transportation = $v.transportation;
       _medical = $v.medical;
+      _jobSubCateg = $v.jobSubCateg;
+      _orgRefId = $v.orgRefId;
+      _minQualification = $v.minQualification;
+      _jobRef = $v.jobRef;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -832,7 +877,6 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
         new _$JobsRecord._(
             salary: salary,
             jobDescription: jobDescription,
-            minQualification: minQualification,
             jobImage: jobImage,
             primarySkillLevel: primarySkillLevel,
             primarySkill: primarySkill,
@@ -852,7 +896,6 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
             startDate: startDate,
             endDate: endDate,
             gender: gender,
-            orgRefId: orgRefId,
             minSalary: minSalary,
             maxSalary: maxSalary,
             minAge: minAge,
@@ -861,6 +904,10 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
             lodging: lodging,
             transportation: transportation,
             medical: medical,
+            jobSubCateg: jobSubCateg,
+            orgRefId: orgRefId,
+            minQualification: minQualification,
+            jobRef: jobRef,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

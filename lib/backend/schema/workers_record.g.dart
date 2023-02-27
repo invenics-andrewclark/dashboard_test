@@ -20,14 +20,6 @@ class _$WorkersRecordSerializer implements StructuredSerializer<WorkersRecord> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
-    value = object.userRef;
-    if (value != null) {
-      result
-        ..add('User_Ref')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                DocumentReference, const [const FullType.nullable(Object)])));
-    }
     value = object.fullName;
     if (value != null) {
       result
@@ -42,10 +34,17 @@ class _$WorkersRecordSerializer implements StructuredSerializer<WorkersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.dob;
+    value = object.gender;
     if (value != null) {
       result
-        ..add('dob')
+        ..add('gender')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.photo;
+    if (value != null) {
+      result
+        ..add('photo')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -56,12 +55,12 @@ class _$WorkersRecordSerializer implements StructuredSerializer<WorkersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.photo;
+    value = object.createdDate;
     if (value != null) {
       result
-        ..add('photo')
+        ..add('created_date')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(DateTime)));
     }
     value = object.pinCode;
     if (value != null) {
@@ -77,17 +76,17 @@ class _$WorkersRecordSerializer implements StructuredSerializer<WorkersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.district;
-    if (value != null) {
-      result
-        ..add('district')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.state;
     if (value != null) {
       result
         ..add('state')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.district;
+    if (value != null) {
+      result
+        ..add('district')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -140,10 +139,48 @@ class _$WorkersRecordSerializer implements StructuredSerializer<WorkersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.gender;
+    value = object.dateAvailableFrom;
     if (value != null) {
       result
-        ..add('gender')
+        ..add('date_available_from')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(DateTime)));
+    }
+    value = object.jobWorkerId;
+    if (value != null) {
+      result
+        ..add('job_worker_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
+    }
+    value = object.userRef;
+    if (value != null) {
+      result
+        ..add('user_ref')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
+    }
+    value = object.organisationId;
+    if (value != null) {
+      result
+        ..add('organisation_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
+    }
+    value = object.isWorking;
+    if (value != null) {
+      result
+        ..add('is_working')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.dob;
+    if (value != null) {
+      result
+        ..add('dob')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -152,35 +189,8 @@ class _$WorkersRecordSerializer implements StructuredSerializer<WorkersRecord> {
       result
         ..add('captain_scout_ref')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.organisationId;
-    if (value != null) {
-      result
-        ..add('organisation_id')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.jobWorkerId;
-    if (value != null) {
-      result
-        ..add('job_worker_id')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.dateAvailableFrom;
-    if (value != null) {
-      result
-        ..add('date_available_from')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.createdDate;
-    if (value != null) {
-      result
-        ..add('created_date')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(DateTime)));
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
     }
     value = object.ffRef;
     if (value != null) {
@@ -205,12 +215,6 @@ class _$WorkersRecordSerializer implements StructuredSerializer<WorkersRecord> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'User_Ref':
-          result.userRef = serializers.deserialize(value,
-              specifiedType: const FullType(DocumentReference, const [
-                const FullType.nullable(Object)
-              ])) as DocumentReference<Object?>?;
-          break;
         case 'full_name':
           result.fullName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -219,17 +223,21 @@ class _$WorkersRecordSerializer implements StructuredSerializer<WorkersRecord> {
           result.phone = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'dob':
-          result.dob = serializers.deserialize(value,
+        case 'gender':
+          result.gender = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'photo':
+          result.photo = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'email':
           result.email = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'photo':
-          result.photo = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+        case 'created_date':
+          result.createdDate = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime?;
           break;
         case 'pin_code':
           result.pinCode = serializers.deserialize(value,
@@ -239,12 +247,12 @@ class _$WorkersRecordSerializer implements StructuredSerializer<WorkersRecord> {
           result.area = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'district':
-          result.district = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'state':
           result.state = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'district':
+          result.district = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'aadhar':
@@ -275,29 +283,41 @@ class _$WorkersRecordSerializer implements StructuredSerializer<WorkersRecord> {
           result.highestQualification = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'gender':
-          result.gender = serializers.deserialize(value,
+        case 'date_available_from':
+          result.dateAvailableFrom = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime?;
+          break;
+        case 'job_worker_id':
+          result.jobWorkerId = serializers.deserialize(value,
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
+          break;
+        case 'user_ref':
+          result.userRef = serializers.deserialize(value,
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
+          break;
+        case 'organisation_id':
+          result.organisationId = serializers.deserialize(value,
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
+          break;
+        case 'is_working':
+          result.isWorking = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'dob':
+          result.dob = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'captain_scout_ref':
           result.captainScoutRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'organisation_id':
-          result.organisationId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'job_worker_id':
-          result.jobWorkerId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'date_available_from':
-          result.dateAvailableFrom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'created_date':
-          result.createdDate = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime?;
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
           break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
@@ -314,25 +334,25 @@ class _$WorkersRecordSerializer implements StructuredSerializer<WorkersRecord> {
 
 class _$WorkersRecord extends WorkersRecord {
   @override
-  final DocumentReference<Object?>? userRef;
-  @override
   final String? fullName;
   @override
   final String? phone;
   @override
-  final String? dob;
+  final String? gender;
+  @override
+  final String? photo;
   @override
   final String? email;
   @override
-  final String? photo;
+  final DateTime? createdDate;
   @override
   final String? pinCode;
   @override
   final String? area;
   @override
-  final String? district;
-  @override
   final String? state;
+  @override
+  final String? district;
   @override
   final String? aadhar;
   @override
@@ -348,17 +368,19 @@ class _$WorkersRecord extends WorkersRecord {
   @override
   final String? highestQualification;
   @override
-  final String? gender;
+  final DateTime? dateAvailableFrom;
   @override
-  final String? captainScoutRef;
+  final DocumentReference<Object?>? jobWorkerId;
   @override
-  final String? organisationId;
+  final DocumentReference<Object?>? userRef;
   @override
-  final String? jobWorkerId;
+  final DocumentReference<Object?>? organisationId;
   @override
-  final String? dateAvailableFrom;
+  final bool? isWorking;
   @override
-  final DateTime? createdDate;
+  final String? dob;
+  @override
+  final DocumentReference<Object?>? captainScoutRef;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -366,16 +388,16 @@ class _$WorkersRecord extends WorkersRecord {
       (new WorkersRecordBuilder()..update(updates))._build();
 
   _$WorkersRecord._(
-      {this.userRef,
-      this.fullName,
+      {this.fullName,
       this.phone,
-      this.dob,
-      this.email,
+      this.gender,
       this.photo,
+      this.email,
+      this.createdDate,
       this.pinCode,
       this.area,
-      this.district,
       this.state,
+      this.district,
       this.aadhar,
       this.panNumber,
       this.accountName,
@@ -383,12 +405,13 @@ class _$WorkersRecord extends WorkersRecord {
       this.bankName,
       this.ifscCode,
       this.highestQualification,
-      this.gender,
-      this.captainScoutRef,
-      this.organisationId,
-      this.jobWorkerId,
       this.dateAvailableFrom,
-      this.createdDate,
+      this.jobWorkerId,
+      this.userRef,
+      this.organisationId,
+      this.isWorking,
+      this.dob,
+      this.captainScoutRef,
       this.ffRef})
       : super._();
 
@@ -403,16 +426,16 @@ class _$WorkersRecord extends WorkersRecord {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WorkersRecord &&
-        userRef == other.userRef &&
         fullName == other.fullName &&
         phone == other.phone &&
-        dob == other.dob &&
-        email == other.email &&
+        gender == other.gender &&
         photo == other.photo &&
+        email == other.email &&
+        createdDate == other.createdDate &&
         pinCode == other.pinCode &&
         area == other.area &&
-        district == other.district &&
         state == other.state &&
+        district == other.district &&
         aadhar == other.aadhar &&
         panNumber == other.panNumber &&
         accountName == other.accountName &&
@@ -420,12 +443,13 @@ class _$WorkersRecord extends WorkersRecord {
         bankName == other.bankName &&
         ifscCode == other.ifscCode &&
         highestQualification == other.highestQualification &&
-        gender == other.gender &&
-        captainScoutRef == other.captainScoutRef &&
-        organisationId == other.organisationId &&
-        jobWorkerId == other.jobWorkerId &&
         dateAvailableFrom == other.dateAvailableFrom &&
-        createdDate == other.createdDate &&
+        jobWorkerId == other.jobWorkerId &&
+        userRef == other.userRef &&
+        organisationId == other.organisationId &&
+        isWorking == other.isWorking &&
+        dob == other.dob &&
+        captainScoutRef == other.captainScoutRef &&
         ffRef == other.ffRef;
   }
 
@@ -449,41 +473,41 @@ class _$WorkersRecord extends WorkersRecord {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc(0, userRef.hashCode), fullName.hashCode), phone.hashCode), dob.hashCode), email.hashCode),
-                                                                                photo.hashCode),
-                                                                            pinCode.hashCode),
-                                                                        area.hashCode),
+                                                                            $jc($jc($jc($jc($jc($jc($jc(0, fullName.hashCode), phone.hashCode), gender.hashCode), photo.hashCode), email.hashCode), createdDate.hashCode),
+                                                                                pinCode.hashCode),
+                                                                            area.hashCode),
+                                                                        state.hashCode),
                                                                     district.hashCode),
-                                                                state.hashCode),
-                                                            aadhar.hashCode),
-                                                        panNumber.hashCode),
-                                                    accountName.hashCode),
-                                                accountNumber.hashCode),
-                                            bankName.hashCode),
-                                        ifscCode.hashCode),
-                                    highestQualification.hashCode),
-                                gender.hashCode),
-                            captainScoutRef.hashCode),
+                                                                aadhar.hashCode),
+                                                            panNumber.hashCode),
+                                                        accountName.hashCode),
+                                                    accountNumber.hashCode),
+                                                bankName.hashCode),
+                                            ifscCode.hashCode),
+                                        highestQualification.hashCode),
+                                    dateAvailableFrom.hashCode),
+                                jobWorkerId.hashCode),
+                            userRef.hashCode),
                         organisationId.hashCode),
-                    jobWorkerId.hashCode),
-                dateAvailableFrom.hashCode),
-            createdDate.hashCode),
+                    isWorking.hashCode),
+                dob.hashCode),
+            captainScoutRef.hashCode),
         ffRef.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'WorkersRecord')
-          ..add('userRef', userRef)
           ..add('fullName', fullName)
           ..add('phone', phone)
-          ..add('dob', dob)
-          ..add('email', email)
+          ..add('gender', gender)
           ..add('photo', photo)
+          ..add('email', email)
+          ..add('createdDate', createdDate)
           ..add('pinCode', pinCode)
           ..add('area', area)
-          ..add('district', district)
           ..add('state', state)
+          ..add('district', district)
           ..add('aadhar', aadhar)
           ..add('panNumber', panNumber)
           ..add('accountName', accountName)
@@ -491,12 +515,13 @@ class _$WorkersRecord extends WorkersRecord {
           ..add('bankName', bankName)
           ..add('ifscCode', ifscCode)
           ..add('highestQualification', highestQualification)
-          ..add('gender', gender)
-          ..add('captainScoutRef', captainScoutRef)
-          ..add('organisationId', organisationId)
-          ..add('jobWorkerId', jobWorkerId)
           ..add('dateAvailableFrom', dateAvailableFrom)
-          ..add('createdDate', createdDate)
+          ..add('jobWorkerId', jobWorkerId)
+          ..add('userRef', userRef)
+          ..add('organisationId', organisationId)
+          ..add('isWorking', isWorking)
+          ..add('dob', dob)
+          ..add('captainScoutRef', captainScoutRef)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -506,10 +531,6 @@ class WorkersRecordBuilder
     implements Builder<WorkersRecord, WorkersRecordBuilder> {
   _$WorkersRecord? _$v;
 
-  DocumentReference<Object?>? _userRef;
-  DocumentReference<Object?>? get userRef => _$this._userRef;
-  set userRef(DocumentReference<Object?>? userRef) => _$this._userRef = userRef;
-
   String? _fullName;
   String? get fullName => _$this._fullName;
   set fullName(String? fullName) => _$this._fullName = fullName;
@@ -518,17 +539,21 @@ class WorkersRecordBuilder
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
-  String? _dob;
-  String? get dob => _$this._dob;
-  set dob(String? dob) => _$this._dob = dob;
+  String? _gender;
+  String? get gender => _$this._gender;
+  set gender(String? gender) => _$this._gender = gender;
+
+  String? _photo;
+  String? get photo => _$this._photo;
+  set photo(String? photo) => _$this._photo = photo;
 
   String? _email;
   String? get email => _$this._email;
   set email(String? email) => _$this._email = email;
 
-  String? _photo;
-  String? get photo => _$this._photo;
-  set photo(String? photo) => _$this._photo = photo;
+  DateTime? _createdDate;
+  DateTime? get createdDate => _$this._createdDate;
+  set createdDate(DateTime? createdDate) => _$this._createdDate = createdDate;
 
   String? _pinCode;
   String? get pinCode => _$this._pinCode;
@@ -538,13 +563,13 @@ class WorkersRecordBuilder
   String? get area => _$this._area;
   set area(String? area) => _$this._area = area;
 
-  String? _district;
-  String? get district => _$this._district;
-  set district(String? district) => _$this._district = district;
-
   String? _state;
   String? get state => _$this._state;
   set state(String? state) => _$this._state = state;
+
+  String? _district;
+  String? get district => _$this._district;
+  set district(String? district) => _$this._district = district;
 
   String? _aadhar;
   String? get aadhar => _$this._aadhar;
@@ -576,32 +601,37 @@ class WorkersRecordBuilder
   set highestQualification(String? highestQualification) =>
       _$this._highestQualification = highestQualification;
 
-  String? _gender;
-  String? get gender => _$this._gender;
-  set gender(String? gender) => _$this._gender = gender;
-
-  String? _captainScoutRef;
-  String? get captainScoutRef => _$this._captainScoutRef;
-  set captainScoutRef(String? captainScoutRef) =>
-      _$this._captainScoutRef = captainScoutRef;
-
-  String? _organisationId;
-  String? get organisationId => _$this._organisationId;
-  set organisationId(String? organisationId) =>
-      _$this._organisationId = organisationId;
-
-  String? _jobWorkerId;
-  String? get jobWorkerId => _$this._jobWorkerId;
-  set jobWorkerId(String? jobWorkerId) => _$this._jobWorkerId = jobWorkerId;
-
-  String? _dateAvailableFrom;
-  String? get dateAvailableFrom => _$this._dateAvailableFrom;
-  set dateAvailableFrom(String? dateAvailableFrom) =>
+  DateTime? _dateAvailableFrom;
+  DateTime? get dateAvailableFrom => _$this._dateAvailableFrom;
+  set dateAvailableFrom(DateTime? dateAvailableFrom) =>
       _$this._dateAvailableFrom = dateAvailableFrom;
 
-  DateTime? _createdDate;
-  DateTime? get createdDate => _$this._createdDate;
-  set createdDate(DateTime? createdDate) => _$this._createdDate = createdDate;
+  DocumentReference<Object?>? _jobWorkerId;
+  DocumentReference<Object?>? get jobWorkerId => _$this._jobWorkerId;
+  set jobWorkerId(DocumentReference<Object?>? jobWorkerId) =>
+      _$this._jobWorkerId = jobWorkerId;
+
+  DocumentReference<Object?>? _userRef;
+  DocumentReference<Object?>? get userRef => _$this._userRef;
+  set userRef(DocumentReference<Object?>? userRef) => _$this._userRef = userRef;
+
+  DocumentReference<Object?>? _organisationId;
+  DocumentReference<Object?>? get organisationId => _$this._organisationId;
+  set organisationId(DocumentReference<Object?>? organisationId) =>
+      _$this._organisationId = organisationId;
+
+  bool? _isWorking;
+  bool? get isWorking => _$this._isWorking;
+  set isWorking(bool? isWorking) => _$this._isWorking = isWorking;
+
+  String? _dob;
+  String? get dob => _$this._dob;
+  set dob(String? dob) => _$this._dob = dob;
+
+  DocumentReference<Object?>? _captainScoutRef;
+  DocumentReference<Object?>? get captainScoutRef => _$this._captainScoutRef;
+  set captainScoutRef(DocumentReference<Object?>? captainScoutRef) =>
+      _$this._captainScoutRef = captainScoutRef;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -614,16 +644,16 @@ class WorkersRecordBuilder
   WorkersRecordBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _userRef = $v.userRef;
       _fullName = $v.fullName;
       _phone = $v.phone;
-      _dob = $v.dob;
-      _email = $v.email;
+      _gender = $v.gender;
       _photo = $v.photo;
+      _email = $v.email;
+      _createdDate = $v.createdDate;
       _pinCode = $v.pinCode;
       _area = $v.area;
-      _district = $v.district;
       _state = $v.state;
+      _district = $v.district;
       _aadhar = $v.aadhar;
       _panNumber = $v.panNumber;
       _accountName = $v.accountName;
@@ -631,12 +661,13 @@ class WorkersRecordBuilder
       _bankName = $v.bankName;
       _ifscCode = $v.ifscCode;
       _highestQualification = $v.highestQualification;
-      _gender = $v.gender;
-      _captainScoutRef = $v.captainScoutRef;
-      _organisationId = $v.organisationId;
-      _jobWorkerId = $v.jobWorkerId;
       _dateAvailableFrom = $v.dateAvailableFrom;
-      _createdDate = $v.createdDate;
+      _jobWorkerId = $v.jobWorkerId;
+      _userRef = $v.userRef;
+      _organisationId = $v.organisationId;
+      _isWorking = $v.isWorking;
+      _dob = $v.dob;
+      _captainScoutRef = $v.captainScoutRef;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -660,16 +691,16 @@ class WorkersRecordBuilder
   _$WorkersRecord _build() {
     final _$result = _$v ??
         new _$WorkersRecord._(
-            userRef: userRef,
             fullName: fullName,
             phone: phone,
-            dob: dob,
-            email: email,
+            gender: gender,
             photo: photo,
+            email: email,
+            createdDate: createdDate,
             pinCode: pinCode,
             area: area,
-            district: district,
             state: state,
+            district: district,
             aadhar: aadhar,
             panNumber: panNumber,
             accountName: accountName,
@@ -677,12 +708,13 @@ class WorkersRecordBuilder
             bankName: bankName,
             ifscCode: ifscCode,
             highestQualification: highestQualification,
-            gender: gender,
-            captainScoutRef: captainScoutRef,
-            organisationId: organisationId,
-            jobWorkerId: jobWorkerId,
             dateAvailableFrom: dateAvailableFrom,
-            createdDate: createdDate,
+            jobWorkerId: jobWorkerId,
+            userRef: userRef,
+            organisationId: organisationId,
+            isWorking: isWorking,
+            dob: dob,
+            captainScoutRef: captainScoutRef,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

@@ -21,14 +21,6 @@ class _$CaptainsRecordSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
-    value = object.userRef;
-    if (value != null) {
-      result
-        ..add('User_Ref')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                DocumentReference, const [const FullType.nullable(Object)])));
-    }
     value = object.fullName;
     if (value != null) {
       result
@@ -43,13 +35,6 @@ class _$CaptainsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.dob;
-    if (value != null) {
-      result
-        ..add('dob')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.gender;
     if (value != null) {
       result
@@ -57,17 +42,17 @@ class _$CaptainsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.email;
-    if (value != null) {
-      result
-        ..add('email')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.photo;
     if (value != null) {
       result
         ..add('photo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.email;
+    if (value != null) {
+      result
+        ..add('email')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -92,17 +77,17 @@ class _$CaptainsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.district;
-    if (value != null) {
-      result
-        ..add('district')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.state;
     if (value != null) {
       result
         ..add('state')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.district;
+    if (value != null) {
+      result
+        ..add('district')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -169,6 +154,39 @@ class _$CaptainsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.organisationId;
+    if (value != null) {
+      result
+        ..add('organisation_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
+    }
+    value = object.jobId;
+    if (value != null) {
+      result
+        ..add('job_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltList, const [
+              const FullType(
+                  DocumentReference, const [const FullType.nullable(Object)])
+            ])));
+    }
+    value = object.userRef;
+    if (value != null) {
+      result
+        ..add('User_Ref')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
+    }
+    value = object.dob;
+    if (value != null) {
+      result
+        ..add('dob')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -192,12 +210,6 @@ class _$CaptainsRecordSerializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'User_Ref':
-          result.userRef = serializers.deserialize(value,
-              specifiedType: const FullType(DocumentReference, const [
-                const FullType.nullable(Object)
-              ])) as DocumentReference<Object?>?;
-          break;
         case 'full_name':
           result.fullName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -206,20 +218,16 @@ class _$CaptainsRecordSerializer
           result.phone = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'dob':
-          result.dob = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'gender':
           result.gender = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'email':
-          result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'photo':
           result.photo = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'email':
+          result.email = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'created_date':
@@ -234,12 +242,12 @@ class _$CaptainsRecordSerializer
           result.area = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'district':
-          result.district = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'state':
           result.state = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'district':
+          result.district = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'aadhar':
@@ -278,6 +286,29 @@ class _$CaptainsRecordSerializer
           result.tag = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'organisation_id':
+          result.organisationId = serializers.deserialize(value,
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
+          break;
+        case 'job_id':
+          result.jobId.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(
+                    DocumentReference, const [const FullType.nullable(Object)])
+              ]))! as BuiltList<Object?>);
+          break;
+        case 'User_Ref':
+          result.userRef = serializers.deserialize(value,
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
+          break;
+        case 'dob':
+          result.dob = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -293,19 +324,15 @@ class _$CaptainsRecordSerializer
 
 class _$CaptainsRecord extends CaptainsRecord {
   @override
-  final DocumentReference<Object?>? userRef;
-  @override
   final String? fullName;
   @override
   final String? phone;
   @override
-  final String? dob;
-  @override
   final String? gender;
   @override
-  final String? email;
-  @override
   final String? photo;
+  @override
+  final String? email;
   @override
   final DateTime? createdDate;
   @override
@@ -313,9 +340,9 @@ class _$CaptainsRecord extends CaptainsRecord {
   @override
   final String? area;
   @override
-  final String? district;
-  @override
   final String? state;
+  @override
+  final String? district;
   @override
   final String? aadhar;
   @override
@@ -335,24 +362,30 @@ class _$CaptainsRecord extends CaptainsRecord {
   @override
   final String? tag;
   @override
+  final DocumentReference<Object?>? organisationId;
+  @override
+  final BuiltList<DocumentReference<Object?>>? jobId;
+  @override
+  final DocumentReference<Object?>? userRef;
+  @override
+  final String? dob;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$CaptainsRecord([void Function(CaptainsRecordBuilder)? updates]) =>
       (new CaptainsRecordBuilder()..update(updates))._build();
 
   _$CaptainsRecord._(
-      {this.userRef,
-      this.fullName,
+      {this.fullName,
       this.phone,
-      this.dob,
       this.gender,
-      this.email,
       this.photo,
+      this.email,
       this.createdDate,
       this.pinCode,
       this.area,
-      this.district,
       this.state,
+      this.district,
       this.aadhar,
       this.panNumber,
       this.accountName,
@@ -362,6 +395,10 @@ class _$CaptainsRecord extends CaptainsRecord {
       this.referralCode,
       this.recruitmentArea,
       this.tag,
+      this.organisationId,
+      this.jobId,
+      this.userRef,
+      this.dob,
       this.ffRef})
       : super._();
 
@@ -377,18 +414,16 @@ class _$CaptainsRecord extends CaptainsRecord {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CaptainsRecord &&
-        userRef == other.userRef &&
         fullName == other.fullName &&
         phone == other.phone &&
-        dob == other.dob &&
         gender == other.gender &&
-        email == other.email &&
         photo == other.photo &&
+        email == other.email &&
         createdDate == other.createdDate &&
         pinCode == other.pinCode &&
         area == other.area &&
-        district == other.district &&
         state == other.state &&
+        district == other.district &&
         aadhar == other.aadhar &&
         panNumber == other.panNumber &&
         accountName == other.accountName &&
@@ -398,6 +433,10 @@ class _$CaptainsRecord extends CaptainsRecord {
         referralCode == other.referralCode &&
         recruitmentArea == other.recruitmentArea &&
         tag == other.tag &&
+        organisationId == other.organisationId &&
+        jobId == other.jobId &&
+        userRef == other.userRef &&
+        dob == other.dob &&
         ffRef == other.ffRef;
   }
 
@@ -421,43 +460,41 @@ class _$CaptainsRecord extends CaptainsRecord {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc(0, userRef.hashCode), fullName.hashCode), phone.hashCode),
-                                                                                dob.hashCode),
-                                                                            gender.hashCode),
-                                                                        email.hashCode),
-                                                                    photo.hashCode),
-                                                                createdDate.hashCode),
-                                                            pinCode.hashCode),
-                                                        area.hashCode),
-                                                    district.hashCode),
-                                                state.hashCode),
-                                            aadhar.hashCode),
-                                        panNumber.hashCode),
-                                    accountName.hashCode),
-                                accountNumber.hashCode),
-                            bankName.hashCode),
-                        ifscCode.hashCode),
-                    referralCode.hashCode),
-                recruitmentArea.hashCode),
-            tag.hashCode),
+                                                                            $jc($jc($jc($jc($jc($jc(0, fullName.hashCode), phone.hashCode), gender.hashCode), photo.hashCode), email.hashCode),
+                                                                                createdDate.hashCode),
+                                                                            pinCode.hashCode),
+                                                                        area.hashCode),
+                                                                    state.hashCode),
+                                                                district.hashCode),
+                                                            aadhar.hashCode),
+                                                        panNumber.hashCode),
+                                                    accountName.hashCode),
+                                                accountNumber.hashCode),
+                                            bankName.hashCode),
+                                        ifscCode.hashCode),
+                                    referralCode.hashCode),
+                                recruitmentArea.hashCode),
+                            tag.hashCode),
+                        organisationId.hashCode),
+                    jobId.hashCode),
+                userRef.hashCode),
+            dob.hashCode),
         ffRef.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CaptainsRecord')
-          ..add('userRef', userRef)
           ..add('fullName', fullName)
           ..add('phone', phone)
-          ..add('dob', dob)
           ..add('gender', gender)
-          ..add('email', email)
           ..add('photo', photo)
+          ..add('email', email)
           ..add('createdDate', createdDate)
           ..add('pinCode', pinCode)
           ..add('area', area)
-          ..add('district', district)
           ..add('state', state)
+          ..add('district', district)
           ..add('aadhar', aadhar)
           ..add('panNumber', panNumber)
           ..add('accountName', accountName)
@@ -467,6 +504,10 @@ class _$CaptainsRecord extends CaptainsRecord {
           ..add('referralCode', referralCode)
           ..add('recruitmentArea', recruitmentArea)
           ..add('tag', tag)
+          ..add('organisationId', organisationId)
+          ..add('jobId', jobId)
+          ..add('userRef', userRef)
+          ..add('dob', dob)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -476,10 +517,6 @@ class CaptainsRecordBuilder
     implements Builder<CaptainsRecord, CaptainsRecordBuilder> {
   _$CaptainsRecord? _$v;
 
-  DocumentReference<Object?>? _userRef;
-  DocumentReference<Object?>? get userRef => _$this._userRef;
-  set userRef(DocumentReference<Object?>? userRef) => _$this._userRef = userRef;
-
   String? _fullName;
   String? get fullName => _$this._fullName;
   set fullName(String? fullName) => _$this._fullName = fullName;
@@ -488,21 +525,17 @@ class CaptainsRecordBuilder
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
-  String? _dob;
-  String? get dob => _$this._dob;
-  set dob(String? dob) => _$this._dob = dob;
-
   String? _gender;
   String? get gender => _$this._gender;
   set gender(String? gender) => _$this._gender = gender;
 
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
-
   String? _photo;
   String? get photo => _$this._photo;
   set photo(String? photo) => _$this._photo = photo;
+
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
   DateTime? _createdDate;
   DateTime? get createdDate => _$this._createdDate;
@@ -516,13 +549,13 @@ class CaptainsRecordBuilder
   String? get area => _$this._area;
   set area(String? area) => _$this._area = area;
 
-  String? _district;
-  String? get district => _$this._district;
-  set district(String? district) => _$this._district = district;
-
   String? _state;
   String? get state => _$this._state;
   set state(String? state) => _$this._state = state;
+
+  String? _district;
+  String? get district => _$this._district;
+  set district(String? district) => _$this._district = district;
 
   String? _aadhar;
   String? get aadhar => _$this._aadhar;
@@ -562,6 +595,25 @@ class CaptainsRecordBuilder
   String? get tag => _$this._tag;
   set tag(String? tag) => _$this._tag = tag;
 
+  DocumentReference<Object?>? _organisationId;
+  DocumentReference<Object?>? get organisationId => _$this._organisationId;
+  set organisationId(DocumentReference<Object?>? organisationId) =>
+      _$this._organisationId = organisationId;
+
+  ListBuilder<DocumentReference<Object?>>? _jobId;
+  ListBuilder<DocumentReference<Object?>> get jobId =>
+      _$this._jobId ??= new ListBuilder<DocumentReference<Object?>>();
+  set jobId(ListBuilder<DocumentReference<Object?>>? jobId) =>
+      _$this._jobId = jobId;
+
+  DocumentReference<Object?>? _userRef;
+  DocumentReference<Object?>? get userRef => _$this._userRef;
+  set userRef(DocumentReference<Object?>? userRef) => _$this._userRef = userRef;
+
+  String? _dob;
+  String? get dob => _$this._dob;
+  set dob(String? dob) => _$this._dob = dob;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -573,18 +625,16 @@ class CaptainsRecordBuilder
   CaptainsRecordBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _userRef = $v.userRef;
       _fullName = $v.fullName;
       _phone = $v.phone;
-      _dob = $v.dob;
       _gender = $v.gender;
-      _email = $v.email;
       _photo = $v.photo;
+      _email = $v.email;
       _createdDate = $v.createdDate;
       _pinCode = $v.pinCode;
       _area = $v.area;
-      _district = $v.district;
       _state = $v.state;
+      _district = $v.district;
       _aadhar = $v.aadhar;
       _panNumber = $v.panNumber;
       _accountName = $v.accountName;
@@ -594,6 +644,10 @@ class CaptainsRecordBuilder
       _referralCode = $v.referralCode;
       _recruitmentArea = $v.recruitmentArea;
       _tag = $v.tag;
+      _organisationId = $v.organisationId;
+      _jobId = $v.jobId?.toBuilder();
+      _userRef = $v.userRef;
+      _dob = $v.dob;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -615,30 +669,45 @@ class CaptainsRecordBuilder
   CaptainsRecord build() => _build();
 
   _$CaptainsRecord _build() {
-    final _$result = _$v ??
-        new _$CaptainsRecord._(
-            userRef: userRef,
-            fullName: fullName,
-            phone: phone,
-            dob: dob,
-            gender: gender,
-            email: email,
-            photo: photo,
-            createdDate: createdDate,
-            pinCode: pinCode,
-            area: area,
-            district: district,
-            state: state,
-            aadhar: aadhar,
-            panNumber: panNumber,
-            accountName: accountName,
-            accountNumber: accountNumber,
-            bankName: bankName,
-            ifscCode: ifscCode,
-            referralCode: referralCode,
-            recruitmentArea: recruitmentArea,
-            tag: tag,
-            ffRef: ffRef);
+    _$CaptainsRecord _$result;
+    try {
+      _$result = _$v ??
+          new _$CaptainsRecord._(
+              fullName: fullName,
+              phone: phone,
+              gender: gender,
+              photo: photo,
+              email: email,
+              createdDate: createdDate,
+              pinCode: pinCode,
+              area: area,
+              state: state,
+              district: district,
+              aadhar: aadhar,
+              panNumber: panNumber,
+              accountName: accountName,
+              accountNumber: accountNumber,
+              bankName: bankName,
+              ifscCode: ifscCode,
+              referralCode: referralCode,
+              recruitmentArea: recruitmentArea,
+              tag: tag,
+              organisationId: organisationId,
+              jobId: _jobId?.build(),
+              userRef: userRef,
+              dob: dob,
+              ffRef: ffRef);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'jobId';
+        _jobId?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'CaptainsRecord', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

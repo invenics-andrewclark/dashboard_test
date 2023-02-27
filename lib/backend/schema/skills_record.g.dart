@@ -27,19 +27,26 @@ class _$SkillsRecordSerializer implements StructuredSerializer<SkillsRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.experience;
+    value = object.experienceLevel;
     if (value != null) {
       result
-        ..add('experience')
+        ..add('experience_level')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.isPrimary;
+    value = object.experienceYears;
     if (value != null) {
       result
-        ..add('is_primary')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
+        ..add('experience_years')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.primarySkill;
+    if (value != null) {
+      result
+        ..add('primary_skill')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.ffRef;
     if (value != null) {
@@ -68,13 +75,17 @@ class _$SkillsRecordSerializer implements StructuredSerializer<SkillsRecord> {
           result.skillName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'experience':
-          result.experience = serializers.deserialize(value,
+        case 'experience_level':
+          result.experienceLevel = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'is_primary':
-          result.isPrimary = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
+        case 'experience_years':
+          result.experienceYears = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'primary_skill':
+          result.primarySkill = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
@@ -93,9 +104,11 @@ class _$SkillsRecord extends SkillsRecord {
   @override
   final String? skillName;
   @override
-  final String? experience;
+  final String? experienceLevel;
   @override
-  final bool? isPrimary;
+  final String? experienceYears;
+  @override
+  final String? primarySkill;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -103,7 +116,11 @@ class _$SkillsRecord extends SkillsRecord {
       (new SkillsRecordBuilder()..update(updates))._build();
 
   _$SkillsRecord._(
-      {this.skillName, this.experience, this.isPrimary, this.ffRef})
+      {this.skillName,
+      this.experienceLevel,
+      this.experienceYears,
+      this.primarySkill,
+      this.ffRef})
       : super._();
 
   @override
@@ -118,16 +135,19 @@ class _$SkillsRecord extends SkillsRecord {
     if (identical(other, this)) return true;
     return other is SkillsRecord &&
         skillName == other.skillName &&
-        experience == other.experience &&
-        isPrimary == other.isPrimary &&
+        experienceLevel == other.experienceLevel &&
+        experienceYears == other.experienceYears &&
+        primarySkill == other.primarySkill &&
         ffRef == other.ffRef;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc($jc($jc(0, skillName.hashCode), experience.hashCode),
-            isPrimary.hashCode),
+        $jc(
+            $jc($jc($jc(0, skillName.hashCode), experienceLevel.hashCode),
+                experienceYears.hashCode),
+            primarySkill.hashCode),
         ffRef.hashCode));
   }
 
@@ -135,8 +155,9 @@ class _$SkillsRecord extends SkillsRecord {
   String toString() {
     return (newBuiltValueToStringHelper(r'SkillsRecord')
           ..add('skillName', skillName)
-          ..add('experience', experience)
-          ..add('isPrimary', isPrimary)
+          ..add('experienceLevel', experienceLevel)
+          ..add('experienceYears', experienceYears)
+          ..add('primarySkill', primarySkill)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -150,13 +171,19 @@ class SkillsRecordBuilder
   String? get skillName => _$this._skillName;
   set skillName(String? skillName) => _$this._skillName = skillName;
 
-  String? _experience;
-  String? get experience => _$this._experience;
-  set experience(String? experience) => _$this._experience = experience;
+  String? _experienceLevel;
+  String? get experienceLevel => _$this._experienceLevel;
+  set experienceLevel(String? experienceLevel) =>
+      _$this._experienceLevel = experienceLevel;
 
-  bool? _isPrimary;
-  bool? get isPrimary => _$this._isPrimary;
-  set isPrimary(bool? isPrimary) => _$this._isPrimary = isPrimary;
+  String? _experienceYears;
+  String? get experienceYears => _$this._experienceYears;
+  set experienceYears(String? experienceYears) =>
+      _$this._experienceYears = experienceYears;
+
+  String? _primarySkill;
+  String? get primarySkill => _$this._primarySkill;
+  set primarySkill(String? primarySkill) => _$this._primarySkill = primarySkill;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -170,8 +197,9 @@ class SkillsRecordBuilder
     final $v = _$v;
     if ($v != null) {
       _skillName = $v.skillName;
-      _experience = $v.experience;
-      _isPrimary = $v.isPrimary;
+      _experienceLevel = $v.experienceLevel;
+      _experienceYears = $v.experienceYears;
+      _primarySkill = $v.primarySkill;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -196,8 +224,9 @@ class SkillsRecordBuilder
     final _$result = _$v ??
         new _$SkillsRecord._(
             skillName: skillName,
-            experience: experience,
-            isPrimary: isPrimary,
+            experienceLevel: experienceLevel,
+            experienceYears: experienceYears,
+            primarySkill: primarySkill,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

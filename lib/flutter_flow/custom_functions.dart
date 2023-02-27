@@ -11,64 +11,24 @@ import '../backend/backend.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../auth/auth_util.dart';
 
-String makeUpperCase(String stringInput) {
-  // Add your function code here!
-  return stringInput
-      .toUpperCase(); //this part of code will make to text to uppercase!
-}
-
-int getCount(List<int>? collection) {
-  // Add your function code here!
-  int total = 0;
-  for (int? i in collection!) {
-    total += i!;
-  }
-  return total;
-}
-
-DateTime? futureDate(
-  DateTime? startDate,
-  int? minutes,
-  int? seconds,
-  int? hours,
-  int? days,
+double progressBarValue(
+  int? totalNumber,
+  int? completedNumber,
 ) {
-  // create a new variable for the result
-  DateTime result;
-
-  // set initial value from startDate input parameter.
-  //If startDate is null then use current Timestamp as StartDate
-  result = startDate ?? (DateTime.now());
-
-  // null saftey checks for all input parameters
-  int addMinutes = 0 + (minutes ?? 0);
-  int addSeconds = 0 + (seconds ?? 0);
-  int addHours = 0 + (hours ?? 0);
-  int addDays = 0 + (days ?? 0);
-
-//calculate future date by adding all input durations to the StartDate stored in result variable
-
-  result = result.add(Duration(
-      seconds: addSeconds,
-      minutes: addMinutes,
-      hours: addHours,
-      days: addDays));
-
-//return final result with the future date
-
-  return result;
-}
-
-int rand() {
-  var t;
-  var rng = math.Random();
-  for (var i = 10000; i < 100000; i++) {
-    t = rng.nextInt(100000);
+  // Sum the number of tasks complete and convert to a 0 - 1.0 scale
+  if (totalNumber == null || completedNumber == null || totalNumber == 0) {
+    return 0.0;
   }
-  return t;
+  final value = completedNumber.toDouble() / totalNumber;
+  if (value == 1.0) {
+    return 1.0;
+  }
+  return value;
 }
 
 String? ddmmyyFormat(String? datePick) {
+  // to select date and shoe in ddmmyy format
+  // Add your function code here!
   DateFormat inputFormat = DateFormat("yMd");
   DateFormat outputFormat = DateFormat("dd-MM-yyyy");
   DateFormat fullOutputFormat = DateFormat("dd-MM-yyyy");

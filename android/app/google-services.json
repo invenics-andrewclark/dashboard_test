@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "802856385303-iqv862diqh02pajamlorat8bqi79vdtn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "d180d52d6ac11acb8516c51499936c3b7eee0a86"
+          }
+        },
+        {
           "client_id": "802856385303-ngta9ubb4jev0sf0m1dm2psrsrbh8cm0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -154,6 +162,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "802856385303-48lhmoq32ur0j1noh76tn7hphao2ffkl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.invenics.jansakticaptainapp",
+            "certificate_hash": "09f12f8abc7c0ddc36fc1d98f2486a352d510b9d"
+          }
+        },
+        {
           "client_id": "802856385303-tjucmgbok305mfq4mmq04oj835h0pb4d.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -265,6 +281,42 @@
             "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
           }
         },
+        {
+          "client_id": "802856385303-gk29jfuvk8a2gn19ta6nrtmgb9efjogm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsxUrAWHo5Ow_FvzUtoWZQmiHX6uwDPg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "802856385303-gk29jfuvk8a2gn19ta6nrtmgb9efjogm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "802856385303-0vhi2gvdabq8ibbfjkp15ievqb8nmer1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.jansaktidashboard"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802856385303:android:ad89c96200aefc33219552",
+        "android_client_info": {
+          "package_name": "com.mycompany.entprojecttracker"
+        }
+      },
+      "oauth_client": [
         {
           "client_id": "802856385303-gk29jfuvk8a2gn19ta6nrtmgb9efjogm.apps.googleusercontent.com",
           "client_type": 3
