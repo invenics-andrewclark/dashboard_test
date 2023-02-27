@@ -99,7 +99,7 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   @BuiltValueField(wireName: 'job_ref')
   DocumentReference? get jobRef;
 
-  String? get applications;
+  ApplicationsStruct get applications;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -137,7 +137,7 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
     ..medical = ''
     ..jobSubCateg = ''
     ..minQualification = ''
-    ..applications = '';
+    ..applications = ApplicationsStructBuilder();
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
       parent != null
@@ -198,7 +198,7 @@ Map<String, dynamic> createJobsRecordData({
   DocumentReference? orgRefId,
   String? minQualification,
   DocumentReference? jobRef,
-  String? applications,
+  ApplicationsStruct? applications,
 }) {
   final firestoreData = serializers.toFirestore(
     JobsRecord.serializer,
@@ -237,9 +237,12 @@ Map<String, dynamic> createJobsRecordData({
         ..orgRefId = orgRefId
         ..minQualification = minQualification
         ..jobRef = jobRef
-        ..applications = applications,
+        ..applications = ApplicationsStructBuilder(),
     ),
   );
+
+  // Handle nested data for "applications" field.
+  addApplicationsStructData(firestoreData, applications, 'applications');
 
   return firestoreData;
 }

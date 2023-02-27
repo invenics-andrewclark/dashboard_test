@@ -29,6 +29,7 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   SkillsRecord,
   ExperienceRecord,
   JobsRecord,
+  ApplicationsStruct,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())
