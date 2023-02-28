@@ -1,10 +1,10 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_drop_down.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -41,14 +41,14 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
           delay: 0.ms,
           duration: 300.ms,
           begin: 0.9,
-          end: 1,
+          end: 1.0,
         ),
         FadeEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
       ],
     ),
@@ -82,11 +82,11 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
     context.watch<FFAppState>();
 
     return ClipRRect(
-      borderRadius: BorderRadius.circular(0),
+      borderRadius: BorderRadius.circular(0.0),
       child: BackdropFilter(
         filter: ImageFilter.blur(
-          sigmaX: 5,
-          sigmaY: 6,
+          sigmaX: 5.0,
+          sigmaY: 6.0,
         ),
         child: Container(
           width: double.infinity,
@@ -94,23 +94,23 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).overlay,
           ),
-          alignment: AlignmentDirectional(0, 0),
+          alignment: AlignmentDirectional(0.0, 0.0),
           child: Container(
             width: double.infinity,
-            height: 600,
+            height: 600.0,
             constraints: BoxConstraints(
-              maxWidth: 570,
+              maxWidth: 570.0,
             ),
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
               boxShadow: [
                 BoxShadow(
-                  blurRadius: 4,
+                  blurRadius: 4.0,
                   color: Color(0x33000000),
-                  offset: Offset(0, 2),
+                  offset: Offset(0.0, 2.0),
                 )
               ],
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(12.0),
             ),
             child: Form(
               key: _model.formKey,
@@ -128,8 +128,8 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 1, 0, 12),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 1.0, 0.0, 12.0),
                               child: InkWell(
                                 onTap: () async {
                                   context.pop();
@@ -141,26 +141,26 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                         .primaryBackground,
                                     boxShadow: [
                                       BoxShadow(
-                                        blurRadius: 3,
+                                        blurRadius: 3.0,
                                         color: Color(0x2B000000),
-                                        offset: Offset(0, 1),
+                                        offset: Offset(0.0, 1.0),
                                       )
                                     ],
                                     borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(0),
-                                      bottomRight: Radius.circular(0),
-                                      topLeft: Radius.circular(12),
-                                      topRight: Radius.circular(12),
+                                      bottomLeft: Radius.circular(0.0),
+                                      bottomRight: Radius.circular(0.0),
+                                      topLeft: Radius.circular(12.0),
+                                      topRight: Radius.circular(12.0),
                                     ),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
-                                      width: 2,
+                                      width: 2.0,
                                     ),
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        4, 4, 4, 4),
+                                        4.0, 4.0, 4.0, 4.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -169,7 +169,7 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  12, 12, 12, 12),
+                                                  12.0, 12.0, 12.0, 12.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -179,7 +179,8 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 12, 0, 0),
+                                                    .fromSTEB(
+                                                        0.0, 12.0, 0.0, 0.0),
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
@@ -200,8 +201,8 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 12.0, 16.0, 0.0),
                               child: FlutterFlowDropDown<String>(
                                 options: [
                                   FFLocalizations.of(context).getText(
@@ -217,7 +218,7 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                 onChanged: (val) => setState(
                                     () => _model.selectSkillValue = val),
                                 width: double.infinity,
-                                height: 60,
+                                height: 60.0,
                                 textStyle:
                                     FlutterFlowTheme.of(context).bodyText1,
                                 hintText: FFLocalizations.of(context).getText(
@@ -227,23 +228,23 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
-                                  size: 15,
+                                  size: 15.0,
                                 ),
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                elevation: 2,
+                                elevation: 2.0,
                                 borderColor: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                borderWidth: 2,
-                                borderRadius: 8,
+                                borderWidth: 2.0,
+                                borderRadius: 8.0,
                                 margin: EdgeInsetsDirectional.fromSTEB(
-                                    24, 4, 12, 4),
+                                    24.0, 4.0, 12.0, 4.0),
                                 hidesUnderline: true,
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 12.0, 16.0, 0.0),
                               child: FlutterFlowDropDown<String>(
                                 options: [
                                   FFLocalizations.of(context).getText(
@@ -259,7 +260,7 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                 onChanged: (val) => setState(
                                     () => _model.selectSkillLevelValue = val),
                                 width: double.infinity,
-                                height: 60,
+                                height: 60.0,
                                 textStyle:
                                     FlutterFlowTheme.of(context).bodyText1,
                                 hintText: FFLocalizations.of(context).getText(
@@ -269,39 +270,39 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryText,
-                                  size: 15,
+                                  size: 15.0,
                                 ),
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                elevation: 2,
+                                elevation: 2.0,
                                 borderColor: FlutterFlowTheme.of(context)
                                     .primaryBackground,
-                                borderWidth: 2,
-                                borderRadius: 8,
+                                borderWidth: 2.0,
+                                borderRadius: 8.0,
                                 margin: EdgeInsetsDirectional.fromSTEB(
-                                    24, 4, 12, 4),
+                                    24.0, 4.0, 12.0, 4.0),
                                 hidesUnderline: true,
                               ),
                             ),
                             if (_model.selectSkillValue == 'In Progress')
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 12, 16, 0),
+                                    16.0, 12.0, 16.0, 0.0),
                                 child: Container(
                                   width:
                                       MediaQuery.of(context).size.width * 0.44,
-                                  height: 50,
+                                  height: 50.0,
                                   constraints: BoxConstraints(
-                                    maxWidth: 550,
+                                    maxWidth: 550.0,
                                   ),
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
-                                      width: 2,
+                                      width: 2.0,
                                     ),
                                   ),
                                   child: TextFormField(
@@ -319,7 +320,7 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1,
+                                          width: 1.0,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -329,7 +330,7 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1,
+                                          width: 1.0,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -339,7 +340,7 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                       errorBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1,
+                                          width: 1.0,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -349,7 +350,7 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                       focusedErrorBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 1,
+                                          width: 1.0,
                                         ),
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
@@ -358,7 +359,7 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                       ),
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              20, 0, 0, 0),
+                                              20.0, 0.0, 0.0, 0.0),
                                     ),
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,
@@ -370,8 +371,8 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                     'containerOnPageLoadAnimation']!),
                               ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(16, 24, 16, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 24.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -395,8 +396,8 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                     ],
                                     onChanged: (val) => setState(
                                         () => _model.dropDownValue = val),
-                                    width: 180,
-                                    height: 50,
+                                    width: 180.0,
+                                    height: 50.0,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
@@ -414,12 +415,12 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                       'mj6cikeq' /* Please select... */,
                                     ),
                                     fillColor: Colors.white,
-                                    elevation: 2,
+                                    elevation: 2.0,
                                     borderColor: Colors.transparent,
-                                    borderWidth: 0,
-                                    borderRadius: 0,
+                                    borderWidth: 0.0,
+                                    borderRadius: 0.0,
                                     margin: EdgeInsetsDirectional.fromSTEB(
-                                        12, 4, 12, 4),
+                                        12.0, 4.0, 12.0, 4.0),
                                     hidesUnderline: true,
                                   ),
                                 ],
@@ -430,7 +431,7 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                         Container(
                           width: double.infinity,
                           constraints: BoxConstraints(
-                            maxWidth: 570,
+                            maxWidth: 570.0,
                           ),
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
@@ -438,7 +439,8 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 16),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 24.0, 0.0, 16.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               final skillsCreateData = createSkillsRecordData(
@@ -456,8 +458,12 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                               'l4wdgx6w' /* Create Skill */,
                             ),
                             options: FFButtonOptions(
-                              width: 270,
-                              height: 50,
+                              width: 270.0,
+                              height: 50.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primaryColor,
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
@@ -470,12 +476,12 @@ class _ModalAddSkillWidgetState extends State<ModalAddSkillWidget>
                                             FlutterFlowTheme.of(context)
                                                 .subtitle2Family),
                                   ),
-                              elevation: 3,
+                              elevation: 3.0,
                               borderSide: BorderSide(
                                 color: Colors.transparent,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(50),
+                              borderRadius: BorderRadius.circular(50.0),
                             ),
                           ),
                         ),

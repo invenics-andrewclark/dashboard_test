@@ -170,17 +170,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'addCaptain',
-              path: 'addCaptain',
-              builder: (context, params) => AddCaptainWidget(),
-            ),
-            FFRoute(
               name: 'myProfile',
               path: 'myProfile',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'myProfile')
                   : MyProfileWidget(),
+            ),
+            FFRoute(
+              name: 'addCaptain',
+              path: 'addCaptain',
+              builder: (context, params) => AddCaptainWidget(),
             ),
             FFRoute(
               name: 'mainCaptain',
@@ -208,20 +208,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'mainWorker',
-              path: 'mainWorker',
-              requireAuth: true,
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'mainWorker')
-                  : MainWorkerWidget(),
-            ),
-            FFRoute(
               name: 'mainOrganisationsPage',
               path: 'mainOrganisationsPage',
               requireAuth: true,
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'mainOrganisationsPage')
                   : MainOrganisationsPageWidget(),
+            ),
+            FFRoute(
+              name: 'mainWorker',
+              path: 'mainWorker',
+              requireAuth: true,
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'mainWorker')
+                  : MainWorkerWidget(),
             ),
             FFRoute(
               name: 'scoutWorkers',
@@ -237,18 +237,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'workerJobs',
-              path: 'workerJobs',
-              requireAuth: true,
-              builder: (context, params) => WorkerJobsWidget(
-                workerRef: params.getParam(
-                    'workerRef', ParamType.DocumentReference, false, ['users']),
-                workerName: params.getParam('workerName', ParamType.String),
-                workerArea: params.getParam('workerArea', ParamType.String),
-                workerPhoto: params.getParam('workerPhoto', ParamType.String),
-              ),
-            ),
-            FFRoute(
               name: 'organisationJobs',
               path: 'organisationJobs',
               requireAuth: true,
@@ -259,6 +247,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     params.getParam('organisationName', ParamType.String),
                 organisationLogo:
                     params.getParam('organisationLogo', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'workerJobs',
+              path: 'workerJobs',
+              requireAuth: true,
+              builder: (context, params) => WorkerJobsWidget(
+                workerRef: params.getParam(
+                    'workerRef', ParamType.DocumentReference, false, ['users']),
+                workerName: params.getParam('workerName', ParamType.String),
+                workerArea: params.getParam('workerArea', ParamType.String),
+                workerPhoto: params.getParam('workerPhoto', ParamType.String),
               ),
             ),
             FFRoute(
@@ -291,15 +291,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'editWorkerProfile',
-              path: 'editWorkerProfile',
-              requireAuth: true,
-              builder: (context, params) => EditWorkerProfileWidget(
-                workerUserRef: params.getParam('workerUserRef',
-                    ParamType.DocumentReference, false, ['users']),
-              ),
-            ),
-            FFRoute(
               name: 'editOrganisation',
               path: 'editOrganisation',
               requireAuth: true,
@@ -309,19 +300,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
+              name: 'editWorkerProfile',
+              path: 'editWorkerProfile',
+              requireAuth: true,
+              builder: (context, params) => EditWorkerProfileWidget(
+                workerUserRef: params.getParam('workerUserRef',
+                    ParamType.DocumentReference, false, ['users']),
+              ),
+            ),
+            FFRoute(
               name: 'addOrganisation',
               path: 'addOrganisation',
               requireAuth: true,
               builder: (context, params) => AddOrganisationWidget(),
-            ),
-            FFRoute(
-              name: 'organisationProfile',
-              path: 'organisationProfile',
-              requireAuth: true,
-              builder: (context, params) => OrganisationProfileWidget(
-                orgRef: params.getParam('orgRef', ParamType.DocumentReference,
-                    false, ['Organisations']),
-              ),
             ),
             FFRoute(
               name: 'scoutOTP',
@@ -357,6 +348,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 captainBankName:
                     params.getParam('captainBankName', ParamType.String),
                 captainPhoto: params.getParam('captainPhoto', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'organisationProfile',
+              path: 'organisationProfile',
+              requireAuth: true,
+              builder: (context, params) => OrganisationProfileWidget(
+                orgRef: params.getParam('orgRef', ParamType.DocumentReference,
+                    false, ['Organisations']),
+                orgPhoto: params.getParam('orgPhoto', ParamType.String),
               ),
             ),
             FFRoute(
@@ -410,6 +411,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
+              name: 'addSkillsExp',
+              path: 'addSkillsExp',
+              requireAuth: true,
+              builder: (context, params) => AddSkillsExpWidget(
+                workerRef: params.getParam(
+                    'workerRef', ParamType.DocumentReference, false, ['users']),
+                workerDoc: params.getParam('workerDoc',
+                    ParamType.DocumentReference, false, ['Workers']),
+              ),
+            ),
+            FFRoute(
               name: 'createJobContract',
               path: 'createJobContract',
               builder: (context, params) => CreateJobContractWidget(
@@ -423,23 +435,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 workerPhoto: params.getParam('workerPhoto', ParamType.String),
                 organisationRef: params.getParam('organisationRef',
                     ParamType.DocumentReference, false, ['Organisations']),
-                workerRef: params.getParam(
-                    'workerRef', ParamType.DocumentReference, false, ['users']),
+                workerRef: params.getParam('workerRef',
+                    ParamType.DocumentReference, false, ['Workers']),
                 jobRef: params.getParam('jobRef', ParamType.DocumentReference,
                     false, ['Organisations', 'Jobs']),
                 orgRef: params.getParam('orgRef', ParamType.DocumentReference,
                     false, ['Organisations']),
-              ),
-            ),
-            FFRoute(
-              name: 'addSkillsExp',
-              path: 'addSkillsExp',
-              requireAuth: true,
-              builder: (context, params) => AddSkillsExpWidget(
-                workerRef: params.getParam(
-                    'workerRef', ParamType.DocumentReference, false, ['users']),
-                workerDoc: params.getParam('workerDoc',
-                    ParamType.DocumentReference, false, ['Workers']),
               ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),

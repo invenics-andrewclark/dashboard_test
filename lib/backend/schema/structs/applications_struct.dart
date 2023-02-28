@@ -11,9 +11,6 @@ abstract class ApplicationsStruct
   static Serializer<ApplicationsStruct> get serializer =>
       _$applicationsStructSerializer;
 
-  @BuiltValueField(wireName: 'worker_id')
-  String? get workerId;
-
   @BuiltValueField(wireName: 'application_status')
   String? get applicationStatus;
 
@@ -22,14 +19,33 @@ abstract class ApplicationsStruct
 
   String? get comments;
 
+  @BuiltValueField(wireName: 'worker_name')
+  String? get workerName;
+
+  String? get gender;
+
+  String? get location;
+
+  @BuiltValueField(wireName: 'key_skill')
+  String? get keySkill;
+
+  String? get experience;
+
+  @BuiltValueField(wireName: 'worker_id')
+  DocumentReference? get workerId;
+
   /// Utility class for Firestore updates
   FirestoreUtilData get firestoreUtilData;
 
   static void _initializeBuilder(ApplicationsStructBuilder builder) => builder
-    ..workerId = ''
     ..applicationStatus = ''
     ..appliedOn = ''
     ..comments = ''
+    ..workerName = ''
+    ..gender = ''
+    ..location = ''
+    ..keySkill = ''
+    ..experience = ''
     ..firestoreUtilData = FirestoreUtilData();
 
   ApplicationsStruct._();
@@ -39,10 +55,15 @@ abstract class ApplicationsStruct
 }
 
 ApplicationsStruct createApplicationsStruct({
-  String? workerId,
   String? applicationStatus,
   String? appliedOn,
   String? comments,
+  String? workerName,
+  String? gender,
+  String? location,
+  String? keySkill,
+  String? experience,
+  DocumentReference? workerId,
   Map<String, dynamic> fieldValues = const {},
   bool clearUnsetFields = true,
   bool create = false,
@@ -50,10 +71,15 @@ ApplicationsStruct createApplicationsStruct({
 }) =>
     ApplicationsStruct(
       (a) => a
-        ..workerId = workerId
         ..applicationStatus = applicationStatus
         ..appliedOn = appliedOn
         ..comments = comments
+        ..workerName = workerName
+        ..gender = gender
+        ..location = location
+        ..keySkill = keySkill
+        ..experience = experience
+        ..workerId = workerId
         ..firestoreUtilData = FirestoreUtilData(
           clearUnsetFields: clearUnsetFields,
           create: create,

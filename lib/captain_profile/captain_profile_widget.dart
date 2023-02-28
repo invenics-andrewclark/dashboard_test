@@ -1,9 +1,9 @@
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -40,15 +40,15 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -59,15 +59,15 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -110,8 +110,8 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
         if (!snapshot.hasData) {
           return Center(
             child: SizedBox(
-              width: 50,
-              height: 50,
+              width: 50.0,
+              height: 50.0,
               child: CircularProgressIndicator(
                 color: FlutterFlowTheme.of(context).primaryColor,
               ),
@@ -135,13 +135,13 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
             automaticallyImplyLeading: false,
             leading: FlutterFlowIconButton(
               borderColor: Colors.transparent,
-              borderRadius: 30,
-              borderWidth: 1,
-              buttonSize: 60,
+              borderRadius: 30.0,
+              borderWidth: 1.0,
+              buttonSize: 60.0,
               icon: Icon(
                 Icons.arrow_back_rounded,
                 color: FlutterFlowTheme.of(context).primaryText,
-                size: 30,
+                size: 30.0,
               ),
               onPressed: () async {
                 context.pushNamed('captainWorkers');
@@ -155,15 +155,15 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
             ),
             actions: [],
             centerTitle: false,
-            elevation: 0,
+            elevation: 0.0,
           ),
           body: SafeArea(
             child: Align(
-              alignment: AlignmentDirectional(0, 0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Container(
                 width: double.infinity,
                 constraints: BoxConstraints(
-                  maxWidth: 570,
+                  maxWidth: 570.0,
                 ),
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -177,58 +177,90 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 16, 0, 16),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 16.0, 0.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Container(
-                                  width: 100,
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                    color:
-                                        FlutterFlowTheme.of(context).lineColor,
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        2, 2, 2, 2),
-                                    child: Container(
-                                      width: 90,
-                                      height: 90,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: CachedNetworkImage(
-                                        imageUrl: captainProfileCaptainsRecord!
-                                            .photo!,
-                                        fit: BoxFit.fitWidth,
+                                if (captainProfileCaptainsRecord!.photo ==
+                                        null ||
+                                    captainProfileCaptainsRecord!.photo == '')
+                                  Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .lineColor,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          2.0, 2.0, 2.0, 2.0),
+                                      child: Container(
+                                        width: 90.0,
+                                        height: 90.0,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Image.asset(
+                                          'assets/images/MicrosoftTeams-image_(6).png',
+                                          fit: BoxFit.fitWidth,
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
+                                if (captainProfileCaptainsRecord!.photo !=
+                                        null &&
+                                    captainProfileCaptainsRecord!.photo != '')
+                                  Container(
+                                    width: 100.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .lineColor,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          2.0, 2.0, 2.0, 2.0),
+                                      child: Container(
+                                        width: 90.0,
+                                        height: 90.0,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: CachedNetworkImage(
+                                          imageUrl:
+                                              captainProfileCaptainsRecord!
+                                                  .photo!,
+                                          fit: BoxFit.fitWidth,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                               ],
                             ),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(16, 0, 16, 12),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 12.0),
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(12.0),
                                 border: Border.all(
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                               ),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    12, 12, 12, 12),
+                                    12.0, 12.0, 12.0, 12.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -242,7 +274,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 12, 0),
+                                                    0.0, 0.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -255,20 +287,21 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           ),
                                         ),
                                         Container(
-                                          height: 32,
+                                          height: 32.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryColor,
                                             borderRadius:
-                                                BorderRadius.circular(32),
+                                                BorderRadius.circular(32.0),
                                           ),
-                                          alignment: AlignmentDirectional(0, 0),
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
                                         ),
                                       ],
                                     ),
                                     Divider(
-                                      height: 24,
-                                      thickness: 1,
+                                      height: 24.0,
+                                      thickness: 1.0,
                                       color: FlutterFlowTheme.of(context)
                                           .lineColor,
                                     ),
@@ -281,7 +314,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -297,7 +330,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               captainProfileCaptainsRecord!
                                                   .fullName!,
@@ -318,7 +351,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -334,7 +367,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               captainProfileCaptainsRecord!
                                                   .phone!,
@@ -355,7 +388,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -371,7 +404,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               captainProfileCaptainsRecord!
                                                   .email!,
@@ -392,7 +425,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -408,7 +441,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               captainProfileCaptainsRecord!
                                                   .dob!,
@@ -429,7 +462,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -445,7 +478,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               captainProfileCaptainsRecord!
                                                   .area!,
@@ -466,7 +499,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -482,7 +515,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               captainProfileCaptainsRecord!
                                                   .state!,
@@ -503,7 +536,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -519,7 +552,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               captainProfileCaptainsRecord!
                                                   .district!,
@@ -540,7 +573,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -556,7 +589,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               captainProfileCaptainsRecord!
                                                   .recruitmentArea!,
@@ -575,22 +608,22 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                 'containerOnPageLoadAnimation1']!),
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(16, 0, 16, 12),
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 12.0),
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(12.0),
                                 border: Border.all(
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                               ),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    12, 12, 12, 12),
+                                    12.0, 12.0, 12.0, 12.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -604,7 +637,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 12, 0),
+                                                    0.0, 0.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -617,20 +650,21 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           ),
                                         ),
                                         Container(
-                                          height: 32,
+                                          height: 32.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryColor,
                                             borderRadius:
-                                                BorderRadius.circular(32),
+                                                BorderRadius.circular(32.0),
                                           ),
-                                          alignment: AlignmentDirectional(0, 0),
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
                                         ),
                                       ],
                                     ),
                                     Divider(
-                                      height: 24,
-                                      thickness: 1,
+                                      height: 24.0,
+                                      thickness: 1.0,
                                       color: FlutterFlowTheme.of(context)
                                           .lineColor,
                                     ),
@@ -643,7 +677,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -659,7 +693,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               captainProfileCaptainsRecord!
                                                   .aadhar!,
@@ -680,7 +714,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -696,7 +730,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               captainProfileCaptainsRecord!
                                                   .panNumber!,
@@ -717,7 +751,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -733,7 +767,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               captainProfileCaptainsRecord!
                                                   .ifscCode!,
@@ -754,7 +788,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -770,7 +804,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               captainProfileCaptainsRecord!
                                                   .accountNumber!,
@@ -791,7 +825,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -807,7 +841,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               captainProfileCaptainsRecord!
                                                   .accountName!,
@@ -828,7 +862,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -844,7 +878,7 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               captainProfileCaptainsRecord!
                                                   .bankName!,
@@ -863,10 +897,10 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                 'containerOnPageLoadAnimation2']!),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0, 0.05),
+                            alignment: AlignmentDirectional(0.0, 0.05),
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 24.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   context.pushNamed(
@@ -883,8 +917,12 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                   '4cj4t3x4' /* Edit Details */,
                                 ),
                                 options: FFButtonOptions(
-                                  width: 200,
-                                  height: 50,
+                                  width: 200.0,
+                                  height: 50.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
                                   color:
                                       FlutterFlowTheme.of(context).primaryColor,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -898,12 +936,12 @@ class _CaptainProfileWidgetState extends State<CaptainProfileWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .subtitle2Family),
                                       ),
-                                  elevation: 2,
+                                  elevation: 2.0,
                                   borderSide: BorderSide(
                                     color: Colors.transparent,
-                                    width: 1,
+                                    width: 1.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(30),
+                                  borderRadius: BorderRadius.circular(30.0),
                                 ),
                               ),
                             ),

@@ -1,14 +1,14 @@
-import '../auth/auth_util.dart';
-import '../backend/api_requests/api_calls.dart';
-import '../backend/backend.dart';
-import '../backend/firebase_storage/storage.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_drop_down.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/upload_media.dart';
+import '/auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
+import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_media.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -43,14 +43,14 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
           delay: 0.ms,
           duration: 300.ms,
           begin: 0.9,
-          end: 1,
+          end: 1.0,
         ),
         FadeEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
       ],
     ),
@@ -63,14 +63,14 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
           delay: 0.ms,
           duration: 300.ms,
           begin: 0.9,
-          end: 1,
+          end: 1.0,
         ),
         FadeEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
       ],
     ),
@@ -83,14 +83,14 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
           delay: 0.ms,
           duration: 300.ms,
           begin: 0.9,
-          end: 1,
+          end: 1.0,
         ),
         FadeEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
       ],
     ),
@@ -137,15 +137,15 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
         ),
         actions: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 12, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
             child: FlutterFlowIconButton(
               borderColor: Colors.transparent,
-              borderRadius: 30,
-              buttonSize: 48,
+              borderRadius: 30.0,
+              buttonSize: 48.0,
               icon: Icon(
                 Icons.close_rounded,
                 color: FlutterFlowTheme.of(context).secondaryText,
-                size: 30,
+                size: 30.0,
               ),
               onPressed: () async {
                 context.pop();
@@ -154,7 +154,7 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
           ),
         ],
         centerTitle: false,
-        elevation: 0,
+        elevation: 0.0,
       ),
       body: SafeArea(
         child: GestureDetector(
@@ -175,7 +175,7 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                         Container(
                           width: double.infinity,
                           constraints: BoxConstraints(
-                            maxWidth: 570,
+                            maxWidth: 570.0,
                           ),
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
@@ -187,7 +187,7 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 4, 0, 0),
+                                      0.0, 4.0, 0.0, 0.0),
                                   child: InkWell(
                                     onTap: () async {
                                       final selectedMedia =
@@ -257,8 +257,8 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                       }
                                     },
                                     child: Container(
-                                      width: 120,
-                                      height: 120,
+                                      width: 120.0,
+                                      height: 120.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
@@ -270,23 +270,23 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                         ),
                                         boxShadow: [
                                           BoxShadow(
-                                            blurRadius: 6,
+                                            blurRadius: 6.0,
                                             color: Color(0x3A000000),
-                                            offset: Offset(0, 2),
+                                            offset: Offset(0.0, 2.0),
                                           )
                                         ],
                                         shape: BoxShape.circle,
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            4, 4, 4, 4),
+                                            4.0, 4.0, 4.0, 4.0),
                                         child: ClipRRect(
                                           borderRadius:
-                                              BorderRadius.circular(120),
+                                              BorderRadius.circular(120.0),
                                           child: Image.network(
                                             _model.uploadedFileUrl,
-                                            width: 100,
-                                            height: 100,
+                                            width: 100.0,
+                                            height: 100.0,
                                             fit: BoxFit.cover,
                                           ),
                                         ),
@@ -296,7 +296,7 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 24, 20, 0),
+                                      20.0, 24.0, 20.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
@@ -304,7 +304,7 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 12, 0),
+                                                  0.0, 0.0, 12.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'tw3lv075' /* Organisation Details */,
@@ -319,7 +319,7 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16, 16, 16, 0),
+                                      16.0, 16.0, 16.0, 0.0),
                                   child: TextFormField(
                                     controller:
                                         _model.organisationNameController,
@@ -335,34 +335,38 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       errorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              20, 32, 20, 12),
+                                              20.0, 32.0, 20.0, 12.0),
                                     ),
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,
@@ -374,7 +378,7 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16, 12, 16, 0),
+                                      16.0, 12.0, 16.0, 0.0),
                                   child: FlutterFlowDropDown<String>(
                                     options: [
                                       FFLocalizations.of(context).getText(
@@ -390,7 +394,7 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                     onChanged: (val) => setState(
                                         () => _model.selectIndustryValue = val),
                                     width: double.infinity,
-                                    height: 60,
+                                    height: 60.0,
                                     textStyle:
                                         FlutterFlowTheme.of(context).bodyText1,
                                     hintText:
@@ -401,23 +405,23 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                       Icons.keyboard_arrow_down_rounded,
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
-                                      size: 15,
+                                      size: 15.0,
                                     ),
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    elevation: 2,
+                                    elevation: 2.0,
                                     borderColor: FlutterFlowTheme.of(context)
                                         .primaryBackground,
-                                    borderWidth: 2,
-                                    borderRadius: 8,
+                                    borderWidth: 2.0,
+                                    borderRadius: 8.0,
                                     margin: EdgeInsetsDirectional.fromSTEB(
-                                        24, 4, 12, 4),
+                                        24.0, 4.0, 12.0, 4.0),
                                     hidesUnderline: true,
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16, 16, 16, 0),
+                                      16.0, 16.0, 16.0, 0.0),
                                   child: TextFormField(
                                     controller: _model.mainContactController,
                                     obscureText: false,
@@ -432,34 +436,38 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       errorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              20, 32, 20, 12),
+                                              20.0, 32.0, 20.0, 12.0),
                                     ),
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,
@@ -471,7 +479,7 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16, 16, 16, 0),
+                                      16.0, 16.0, 16.0, 0.0),
                                   child: TextFormField(
                                     controller:
                                         _model.organisationPhoneController,
@@ -487,34 +495,38 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       errorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              20, 32, 20, 12),
+                                              20.0, 32.0, 20.0, 12.0),
                                     ),
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,
@@ -526,7 +538,7 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16, 16, 16, 0),
+                                      16.0, 16.0, 16.0, 0.0),
                                   child: TextFormField(
                                     controller:
                                         _model.organisationEmailController,
@@ -542,34 +554,38 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       errorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              20, 32, 20, 12),
+                                              20.0, 32.0, 20.0, 12.0),
                                     ),
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,
@@ -581,7 +597,7 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16, 16, 16, 0),
+                                      16.0, 16.0, 16.0, 0.0),
                                   child: TextFormField(
                                     controller:
                                         _model.organisationAddressController,
@@ -597,34 +613,38 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       errorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              20, 32, 20, 12),
+                                              20.0, 32.0, 20.0, 12.0),
                                     ),
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,
@@ -636,7 +656,7 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16, 16, 16, 0),
+                                      16.0, 16.0, 16.0, 0.0),
                                   child: TextFormField(
                                     controller:
                                         _model.organisationPinCodeController,
@@ -666,34 +686,38 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       errorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
-                                          width: 2,
+                                          width: 2.0,
                                         ),
-                                        borderRadius: BorderRadius.circular(8),
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
                                       contentPadding:
                                           EdgeInsetsDirectional.fromSTEB(
-                                              20, 32, 20, 12),
+                                              20.0, 32.0, 20.0, 12.0),
                                     ),
                                     style:
                                         FlutterFlowTheme.of(context).bodyText1,
@@ -705,27 +729,27 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      16, 16, 16, 0),
+                                      16.0, 16.0, 16.0, 0.0),
                                   child: Container(
                                     width:
-                                        MediaQuery.of(context).size.width * 0.5,
-                                    height: 60,
+                                        MediaQuery.of(context).size.width * 1.0,
+                                    height: 60.0,
                                     constraints: BoxConstraints(
-                                      maxWidth: 540,
+                                      maxWidth: 540.0,
                                     ),
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.0),
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
-                                        width: 2,
+                                        width: 2.0,
                                       ),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 12, 0),
+                                          20.0, 0.0, 12.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -748,27 +772,27 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 16, 0, 0),
+                                      16.0, 16.0, 16.0, 0.0),
                                   child: Container(
                                     width:
-                                        MediaQuery.of(context).size.width * 0.5,
-                                    height: 60,
+                                        MediaQuery.of(context).size.width * 1.0,
+                                    height: 60.0,
                                     constraints: BoxConstraints(
-                                      maxWidth: 540,
+                                      maxWidth: 540.0,
                                     ),
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.0),
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
-                                        width: 2,
+                                        width: 2.0,
                                       ),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 12, 0),
+                                          20.0, 0.0, 12.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -794,27 +818,27 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 16, 0, 0),
+                                      16.0, 16.0, 16.0, 0.0),
                                   child: Container(
                                     width:
-                                        MediaQuery.of(context).size.width * 0.5,
-                                    height: 60,
+                                        MediaQuery.of(context).size.width * 1.0,
+                                    height: 60.0,
                                     constraints: BoxConstraints(
-                                      maxWidth: 540,
+                                      maxWidth: 540.0,
                                     ),
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.0),
                                       border: Border.all(
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
-                                        width: 2,
+                                        width: 2.0,
                                       ),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 12, 0),
+                                          20.0, 0.0, 12.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -843,7 +867,8 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 16),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 24.0, 0.0, 16.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               final organisationsCreateData =
@@ -881,8 +906,12 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                               'd6cxgac0' /* Create Profile */,
                             ),
                             options: FFButtonOptions(
-                              width: 270,
-                              height: 50,
+                              width: 270.0,
+                              height: 50.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primaryColor,
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
@@ -895,12 +924,12 @@ class _AddOrganisationWidgetState extends State<AddOrganisationWidget>
                                             FlutterFlowTheme.of(context)
                                                 .subtitle2Family),
                                   ),
-                              elevation: 3,
+                              elevation: 3.0,
                               borderSide: BorderSide(
                                 color: Colors.transparent,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(50),
+                              borderRadius: BorderRadius.circular(50.0),
                             ),
                           ),
                         ),

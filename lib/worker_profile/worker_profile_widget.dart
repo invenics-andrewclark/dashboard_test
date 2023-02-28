@@ -1,10 +1,10 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -43,15 +43,15 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -62,15 +62,15 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -110,13 +110,13 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
-          borderRadius: 30,
-          borderWidth: 1,
-          buttonSize: 60,
+          borderRadius: 30.0,
+          borderWidth: 1.0,
+          buttonSize: 60.0,
           icon: Icon(
             Icons.arrow_back_rounded,
             color: FlutterFlowTheme.of(context).primaryText,
-            size: 30,
+            size: 30.0,
           ),
           onPressed: () async {
             context.pop();
@@ -130,15 +130,15 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
         ),
         actions: [],
         centerTitle: false,
-        elevation: 0,
+        elevation: 0.0,
       ),
       body: SafeArea(
         child: Align(
-          alignment: AlignmentDirectional(0, 0),
+          alignment: AlignmentDirectional(0.0, 0.0),
           child: Container(
             width: double.infinity,
             constraints: BoxConstraints(
-              maxWidth: 570,
+              maxWidth: 570.0,
             ),
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -152,25 +152,52 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 16),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 16.0, 0.0, 16.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).lineColor,
                                 shape: BoxShape.circle,
                               ),
                               child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    2.0, 2.0, 2.0, 2.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => Container(
-                                    width: 90,
-                                    height: 90,
+                                    width: 90.0,
+                                    height: 90.0,
+                                    clipBehavior: Clip.antiAlias,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Image.asset(
+                                      'assets/images/MicrosoftTeams-image_(5).png',
+                                      fit: BoxFit.fitWidth,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              width: 100.0,
+                              height: 100.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context).lineColor,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    2.0, 2.0, 2.0, 2.0),
+                                child: AuthUserStreamWidget(
+                                  builder: (context) => Container(
+                                    width: 90.0,
+                                    height: 90.0,
                                     clipBehavior: Clip.antiAlias,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
@@ -187,7 +214,8 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 12),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 12.0),
                         child: StreamBuilder<List<WorkersRecord>>(
                           stream: queryWorkersRecord(
                             queryBuilder: (workersRecord) =>
@@ -200,8 +228,8 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 50,
-                                  height: 50,
+                                  width: 50.0,
+                                  height: 50.0,
                                   child: CircularProgressIndicator(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryColor,
@@ -224,15 +252,15 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(12.0),
                                 border: Border.all(
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                               ),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    12, 12, 12, 12),
+                                    12.0, 12.0, 12.0, 12.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -246,7 +274,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 12, 0),
+                                                    0.0, 0.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -259,20 +287,21 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           ),
                                         ),
                                         Container(
-                                          height: 32,
+                                          height: 32.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryColor,
                                             borderRadius:
-                                                BorderRadius.circular(32),
+                                                BorderRadius.circular(32.0),
                                           ),
-                                          alignment: AlignmentDirectional(0, 0),
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
                                         ),
                                       ],
                                     ),
                                     Divider(
-                                      height: 24,
-                                      thickness: 1,
+                                      height: 24.0,
+                                      thickness: 1.0,
                                       color: FlutterFlowTheme.of(context)
                                           .lineColor,
                                     ),
@@ -285,7 +314,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -301,7 +330,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               containerWorkersRecord!.fullName!,
                                               style:
@@ -321,7 +350,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -337,7 +366,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               containerWorkersRecord!.phone!,
                                               style:
@@ -357,7 +386,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -373,7 +402,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               containerWorkersRecord!.email!,
                                               style:
@@ -393,7 +422,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -409,7 +438,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               containerWorkersRecord!.dob!,
                                               style:
@@ -429,7 +458,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -445,7 +474,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               containerWorkersRecord!.area!,
                                               style:
@@ -465,7 +494,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -481,7 +510,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               containerWorkersRecord!.state!,
                                               style:
@@ -501,7 +530,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -517,7 +546,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               containerWorkersRecord!.district!,
                                               style:
@@ -537,7 +566,8 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 12),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 12.0),
                         child: StreamBuilder<List<WorkersRecord>>(
                           stream: queryWorkersRecord(
                             queryBuilder: (workersRecord) =>
@@ -550,8 +580,8 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                             if (!snapshot.hasData) {
                               return Center(
                                 child: SizedBox(
-                                  width: 50,
-                                  height: 50,
+                                  width: 50.0,
+                                  height: 50.0,
                                   child: CircularProgressIndicator(
                                     color: FlutterFlowTheme.of(context)
                                         .primaryColor,
@@ -574,15 +604,15 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                borderRadius: BorderRadius.circular(12),
+                                borderRadius: BorderRadius.circular(12.0),
                                 border: Border.all(
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
                               ),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    12, 12, 12, 12),
+                                    12.0, 12.0, 12.0, 12.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -596,7 +626,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 12, 0),
+                                                    0.0, 0.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -609,20 +639,21 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           ),
                                         ),
                                         Container(
-                                          height: 32,
+                                          height: 32.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryColor,
                                             borderRadius:
-                                                BorderRadius.circular(32),
+                                                BorderRadius.circular(32.0),
                                           ),
-                                          alignment: AlignmentDirectional(0, 0),
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
                                         ),
                                       ],
                                     ),
                                     Divider(
-                                      height: 24,
-                                      thickness: 1,
+                                      height: 24.0,
+                                      thickness: 1.0,
                                       color: FlutterFlowTheme.of(context)
                                           .lineColor,
                                     ),
@@ -635,7 +666,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -651,7 +682,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               containerWorkersRecord!.aadhar!,
                                               style:
@@ -671,7 +702,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -687,7 +718,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               containerWorkersRecord!
                                                   .panNumber!,
@@ -708,7 +739,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -724,7 +755,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               containerWorkersRecord!.ifscCode!,
                                               style:
@@ -744,7 +775,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -760,7 +791,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               containerWorkersRecord!
                                                   .accountNumber!,
@@ -781,7 +812,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -797,7 +828,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               containerWorkersRecord!
                                                   .accountName!,
@@ -818,7 +849,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -834,7 +865,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 12, 0),
+                                                    0.0, 12.0, 12.0, 0.0),
                                             child: Text(
                                               containerWorkersRecord!.bankName!,
                                               style:
@@ -856,13 +887,14 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(30, 30, 30, 0),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(30.0, 30.0, 30.0, 0.0),
                     child: Container(
                       width: double.infinity,
-                      height: 420,
+                      height: 420.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: StreamBuilder<List<ExperienceRecord>>(
                         stream: queryExperienceRecord(
@@ -873,8 +905,8 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                           if (!snapshot.hasData) {
                             return Center(
                               child: SizedBox(
-                                width: 50,
-                                height: 50,
+                                width: 50.0,
+                                height: 50.0,
                                 child: CircularProgressIndicator(
                                   color:
                                       FlutterFlowTheme.of(context).primaryColor,
@@ -893,14 +925,15 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                               final listViewExperienceRecord =
                                   listViewExperienceRecordList[listViewIndex];
                               return Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 16),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 16.0),
                                 child: Container(
-                                  width: MediaQuery.of(context).size.width,
+                                  width:
+                                      MediaQuery.of(context).size.width * 1.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
                                           .lineColor,
@@ -911,7 +944,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 30, 25, 0),
+                                            20.0, 30.0, 25.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -940,7 +973,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 10, 25, 0),
+                                            20.0, 10.0, 25.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -955,7 +988,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                                   .override(
                                                     fontFamily: 'Montserrat',
                                                     color: Color(0xFF404040),
-                                                    fontSize: 16,
+                                                    fontSize: 16.0,
                                                     letterSpacing: 0.01,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: GoogleFonts
@@ -971,7 +1004,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 10, 25, 0),
+                                            20.0, 10.0, 25.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -987,7 +1020,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                                       .override(
                                                         fontFamily:
                                                             'Montserrat',
-                                                        fontSize: 16,
+                                                        fontSize: 16.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                         useGoogleFonts: GoogleFonts
@@ -1000,7 +1033,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(2, 0, 2, 0),
+                                                  .fromSTEB(2.0, 0.0, 2.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1012,7 +1045,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                                         .override(
                                                           fontFamily:
                                                               'Montserrat',
-                                                          fontSize: 16,
+                                                          fontSize: 16.0,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                           useGoogleFonts: GoogleFonts
@@ -1033,7 +1066,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                                       .override(
                                                         fontFamily:
                                                             'Montserrat',
-                                                        fontSize: 16,
+                                                        fontSize: 16.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                         useGoogleFonts: GoogleFonts
@@ -1049,7 +1082,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            16, 10, 16, 0),
+                                            16.0, 10.0, 16.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
@@ -1057,7 +1090,8 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                           children: [
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(4, 16, 0, 0),
+                                                  .fromSTEB(
+                                                      4.0, 16.0, 0.0, 0.0),
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
@@ -1072,7 +1106,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .secondaryText,
-                                                      fontSize: 16,
+                                                      fontSize: 16.0,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       useGoogleFonts: GoogleFonts
@@ -1086,15 +1120,17 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                             ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
+                                                  .fromSTEB(
+                                                      10.0, 0.0, 0.0, 0.0),
                                               child: Container(
-                                                width: 200,
+                                                width: 200.0,
                                                 decoration: BoxDecoration(
                                                   color: Color(0x00FFFFFF),
                                                 ),
                                                 child: Padding(
                                                   padding: EdgeInsetsDirectional
-                                                      .fromSTEB(10, 10, 0, 5),
+                                                      .fromSTEB(
+                                                          10.0, 10.0, 0.0, 5.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1106,10 +1142,13 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 4, 7),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    4.0,
+                                                                    7.0),
                                                         child: Container(
-                                                          width: 120,
-                                                          height: 35,
+                                                          width: 120.0,
+                                                          height: 35.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -1118,7 +1157,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        25),
+                                                                        25.0),
                                                           ),
                                                           child: Row(
                                                             mainAxisSize:
@@ -1132,10 +1171,10 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          13,
-                                                                          2,
-                                                                          0,
-                                                                          2),
+                                                                          13.0,
+                                                                          2.0,
+                                                                          0.0,
+                                                                          2.0),
                                                                   child: Text(
                                                                     listViewExperienceRecord
                                                                         .primarySkill!,
@@ -1146,7 +1185,7 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                                                           fontFamily:
                                                                               FlutterFlowTheme.of(context).bodyText1Family,
                                                                           fontSize:
-                                                                              14,
+                                                                              14.0,
                                                                           fontWeight:
                                                                               FontWeight.w300,
                                                                           useGoogleFonts:
@@ -1178,7 +1217,8 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(30, 30, 30, 0),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(30.0, 30.0, 30.0, 0.0),
                     child: StreamBuilder<List<SkillsRecord>>(
                       stream: querySkillsRecord(
                         parent: widget.workerRef,
@@ -1189,8 +1229,8 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                         if (!snapshot.hasData) {
                           return Center(
                             child: SizedBox(
-                              width: 50,
-                              height: 50,
+                              width: 50.0,
+                              height: 50.0,
                               child: CircularProgressIndicator(
                                 color:
                                     FlutterFlowTheme.of(context).primaryColor,
@@ -1209,86 +1249,80 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                 ? containerSkillsRecordList.first
                                 : null;
                         return Container(
-                          width: double.infinity,
-                          height: 420,
+                          width: 400.0,
+                          height: 200.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(10.0),
+                            border: Border.all(
+                              color: FlutterFlowTheme.of(context).lineColor,
+                            ),
                           ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 10, 25, 10),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      containerSkillsRecord!.skillName!,
-                                      style: FlutterFlowTheme.of(context)
-                                          .subtitle2
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .subtitle2Family,
-                                            letterSpacing: 0.01,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .subtitle2Family),
-                                          ),
-                                    ),
-                                    Text(
-                                      containerSkillsRecord!.experienceLevel!,
-                                      style: FlutterFlowTheme.of(context)
-                                          .subtitle2
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .subtitle2Family,
-                                            letterSpacing: 0.01,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .subtitle2Family),
-                                          ),
-                                    ),
-                                    Text(
-                                      containerSkillsRecord!.experienceYears!,
-                                      style: FlutterFlowTheme.of(context)
-                                          .subtitle2
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .subtitle2Family,
-                                            letterSpacing: 0.01,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .subtitle2Family),
-                                          ),
-                                    ),
-                                  ],
+                          child: SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20.0, 10.0, 25.0, 10.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        containerSkillsRecord!.skillName!,
+                                        style: FlutterFlowTheme.of(context)
+                                            .subtitle2
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle2Family,
+                                              letterSpacing: 0.01,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .subtitle2Family),
+                                            ),
+                                      ),
+                                      Text(
+                                        containerSkillsRecord!.experienceYears!,
+                                        style: FlutterFlowTheme.of(context)
+                                            .subtitle2
+                                            .override(
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle2Family,
+                                              letterSpacing: 0.01,
+                                              useGoogleFonts:
+                                                  GoogleFonts.asMap()
+                                                      .containsKey(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .subtitle2Family),
+                                            ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         );
                       },
                     ),
                   ),
-                  Row(
+                  Column(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0, 0.05),
+                        alignment: AlignmentDirectional(0.0, 0.05),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 24, 20, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               context.pushNamed('editWorkerProfile');
@@ -1297,34 +1331,41 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                               'skzcnhqy' /* Edit Details */,
                             ),
                             options: FFButtonOptions(
-                              width: 200,
-                              height: 50,
-                              color: FlutterFlowTheme.of(context).primaryColor,
+                              width: 200.0,
+                              height: 50.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: Colors.white,
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
                                     fontFamily: FlutterFlowTheme.of(context)
                                         .subtitle2Family,
-                                    color: Colors.white,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
                                     useGoogleFonts: GoogleFonts.asMap()
                                         .containsKey(
                                             FlutterFlowTheme.of(context)
                                                 .subtitle2Family),
                                   ),
-                              elevation: 2,
+                              elevation: 2.0,
                               borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1,
+                                color:
+                                    FlutterFlowTheme.of(context).primaryColor,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(30),
+                              borderRadius: BorderRadius.circular(30.0),
                             ),
                           ),
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0, 0.05),
+                        alignment: AlignmentDirectional(0.0, 0.05),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 24, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 0.0, 20.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               context.pushNamed(
@@ -1345,8 +1386,12 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                               'k8wfg4ok' /* Edit Skills & Experience */,
                             ),
                             options: FFButtonOptions(
-                              width: 200,
-                              height: 50,
+                              width: 200.0,
+                              height: 50.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primaryColor,
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
@@ -1359,12 +1404,12 @@ class _WorkerProfileWidgetState extends State<WorkerProfileWidget>
                                             FlutterFlowTheme.of(context)
                                                 .subtitle2Family),
                                   ),
-                              elevation: 2,
+                              elevation: 2.0,
                               borderSide: BorderSide(
                                 color: Colors.transparent,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(30),
+                              borderRadius: BorderRadius.circular(30.0),
                             ),
                           ),
                         ),

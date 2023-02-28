@@ -102,18 +102,18 @@ class _$EmploymentContractsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.workerReference;
-    if (value != null) {
-      result
-        ..add('worker_reference')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                DocumentReference, const [const FullType.nullable(Object)])));
-    }
     value = object.organisationReference;
     if (value != null) {
       result
         ..add('organisation_reference')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
+    }
+    value = object.workerReference;
+    if (value != null) {
+      result
+        ..add('worker_reference')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
                 DocumentReference, const [const FullType.nullable(Object)])));
@@ -187,14 +187,14 @@ class _$EmploymentContractsRecordSerializer
           result.workerImage = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'worker_reference':
-          result.workerReference = serializers.deserialize(value,
+        case 'organisation_reference':
+          result.organisationReference = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
                 const FullType.nullable(Object)
               ])) as DocumentReference<Object?>?;
           break;
-        case 'organisation_reference':
-          result.organisationReference = serializers.deserialize(value,
+        case 'worker_reference':
+          result.workerReference = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
                 const FullType.nullable(Object)
               ])) as DocumentReference<Object?>?;
@@ -236,9 +236,9 @@ class _$EmploymentContractsRecord extends EmploymentContractsRecord {
   @override
   final String? workerImage;
   @override
-  final DocumentReference<Object?>? workerReference;
-  @override
   final DocumentReference<Object?>? organisationReference;
+  @override
+  final DocumentReference<Object?>? workerReference;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -258,8 +258,8 @@ class _$EmploymentContractsRecord extends EmploymentContractsRecord {
       this.workerSkill,
       this.workerSkillExperience,
       this.workerImage,
-      this.workerReference,
       this.organisationReference,
+      this.workerReference,
       this.ffRef})
       : super._();
 
@@ -287,8 +287,8 @@ class _$EmploymentContractsRecord extends EmploymentContractsRecord {
         workerSkill == other.workerSkill &&
         workerSkillExperience == other.workerSkillExperience &&
         workerImage == other.workerImage &&
-        workerReference == other.workerReference &&
         organisationReference == other.organisationReference &&
+        workerReference == other.workerReference &&
         ffRef == other.ffRef;
   }
 
@@ -321,8 +321,8 @@ class _$EmploymentContractsRecord extends EmploymentContractsRecord {
                             workerSkill.hashCode),
                         workerSkillExperience.hashCode),
                     workerImage.hashCode),
-                workerReference.hashCode),
-            organisationReference.hashCode),
+                organisationReference.hashCode),
+            workerReference.hashCode),
         ffRef.hashCode));
   }
 
@@ -340,8 +340,8 @@ class _$EmploymentContractsRecord extends EmploymentContractsRecord {
           ..add('workerSkill', workerSkill)
           ..add('workerSkillExperience', workerSkillExperience)
           ..add('workerImage', workerImage)
-          ..add('workerReference', workerReference)
           ..add('organisationReference', organisationReference)
+          ..add('workerReference', workerReference)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -399,17 +399,17 @@ class EmploymentContractsRecordBuilder
   String? get workerImage => _$this._workerImage;
   set workerImage(String? workerImage) => _$this._workerImage = workerImage;
 
-  DocumentReference<Object?>? _workerReference;
-  DocumentReference<Object?>? get workerReference => _$this._workerReference;
-  set workerReference(DocumentReference<Object?>? workerReference) =>
-      _$this._workerReference = workerReference;
-
   DocumentReference<Object?>? _organisationReference;
   DocumentReference<Object?>? get organisationReference =>
       _$this._organisationReference;
   set organisationReference(
           DocumentReference<Object?>? organisationReference) =>
       _$this._organisationReference = organisationReference;
+
+  DocumentReference<Object?>? _workerReference;
+  DocumentReference<Object?>? get workerReference => _$this._workerReference;
+  set workerReference(DocumentReference<Object?>? workerReference) =>
+      _$this._workerReference = workerReference;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -433,8 +433,8 @@ class EmploymentContractsRecordBuilder
       _workerSkill = $v.workerSkill;
       _workerSkillExperience = $v.workerSkillExperience;
       _workerImage = $v.workerImage;
-      _workerReference = $v.workerReference;
       _organisationReference = $v.organisationReference;
+      _workerReference = $v.workerReference;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -469,8 +469,8 @@ class EmploymentContractsRecordBuilder
             workerSkill: workerSkill,
             workerSkillExperience: workerSkillExperience,
             workerImage: workerImage,
-            workerReference: workerReference,
             organisationReference: organisationReference,
+            workerReference: workerReference,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

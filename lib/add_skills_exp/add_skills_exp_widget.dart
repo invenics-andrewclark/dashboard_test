@@ -1,11 +1,11 @@
-import '../backend/backend.dart';
-import '../components/modal_add_exp_widget.dart';
-import '../components/modal_add_skill_widget.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '/backend/backend.dart';
+import '/components/modal_add_exp_widget.dart';
+import '/components/modal_add_skill_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -44,15 +44,15 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -63,15 +63,15 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -82,15 +82,15 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -101,15 +101,15 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -156,15 +156,15 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
         ),
         actions: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 12, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
             child: FlutterFlowIconButton(
               borderColor: Colors.transparent,
-              borderRadius: 30,
-              buttonSize: 48,
+              borderRadius: 30.0,
+              buttonSize: 48.0,
               icon: Icon(
                 Icons.close_rounded,
                 color: FlutterFlowTheme.of(context).secondaryText,
-                size: 30,
+                size: 30.0,
               ),
               onPressed: () async {
                 context.pop();
@@ -173,7 +173,7 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
           ),
         ],
         centerTitle: false,
-        elevation: 0,
+        elevation: 0.0,
       ),
       body: SafeArea(
         child: GestureDetector(
@@ -194,7 +194,7 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                         Container(
                           width: double.infinity,
                           constraints: BoxConstraints(
-                            maxWidth: 570,
+                            maxWidth: 570.0,
                           ),
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
@@ -205,10 +205,10 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.65, 0),
+                                  alignment: AlignmentDirectional(0.65, 0.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 4, 20, 0),
+                                        20.0, 4.0, 20.0, 0.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -217,7 +217,7 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0, 12, 0, 24),
+                                                  0.0, 12.0, 0.0, 24.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -240,7 +240,7 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                 context)
                                                             .viewInsets,
                                                         child: Container(
-                                                          height: 370,
+                                                          height: 370.0,
                                                           child:
                                                               ModalAddSkillWidget(
                                                             workRef: widget
@@ -258,8 +258,15 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                   'mfflaak0' /* Add Skills */,
                                                 ),
                                                 options: FFButtonOptions(
-                                                  width: 130,
-                                                  height: 40,
+                                                  width: 130.0,
+                                                  height: 40.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBackground,
@@ -267,10 +274,10 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .bodyText1,
-                                                  elevation: 1,
+                                                  elevation: 1.0,
                                                   borderSide: BorderSide(
                                                     color: Colors.transparent,
-                                                    width: 1,
+                                                    width: 1.0,
                                                   ),
                                                 ),
                                               ),
@@ -287,25 +294,25 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                     Expanded(
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            16, 0, 16, 12),
+                                            16.0, 0.0, 16.0, 12.0),
                                         child: Container(
                                           width: double.infinity,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
                                             borderRadius:
-                                                BorderRadius.circular(12),
+                                                BorderRadius.circular(12.0),
                                             border: Border.all(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .lineColor,
-                                              width: 2,
+                                              width: 2.0,
                                             ),
                                           ),
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    12, 12, 12, 12),
+                                                    12.0, 12.0, 12.0, 12.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
@@ -327,8 +334,8 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                         if (!snapshot.hasData) {
                                                           return Center(
                                                             child: SizedBox(
-                                                              width: 50,
-                                                              height: 50,
+                                                              width: 50.0,
+                                                              height: 50.0,
                                                               child:
                                                                   CircularProgressIndicator(
                                                                 color: FlutterFlowTheme.of(
@@ -359,10 +366,10 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          16,
-                                                                          0,
-                                                                          16,
-                                                                          12),
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          12.0),
                                                               child: Container(
                                                                 width: double
                                                                     .infinity,
@@ -374,22 +381,22 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              12),
+                                                                              12.0),
                                                                   border: Border
                                                                       .all(
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .lineColor,
-                                                                    width: 2,
+                                                                    width: 2.0,
                                                                   ),
                                                                 ),
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          12,
-                                                                          12,
-                                                                          12,
-                                                                          12),
+                                                                          12.0,
+                                                                          12.0,
+                                                                          12.0,
+                                                                          12.0),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -407,12 +414,12 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 12, 12, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 12.0, 0.0),
                                                                               child: Text(
                                                                                 listViewSkillsRecord.skillName!,
                                                                                 style: FlutterFlowTheme.of(context).title3.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).title3Family,
-                                                                                      fontSize: 14,
+                                                                                      fontSize: 14.0,
                                                                                       fontWeight: FontWeight.w600,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).title3Family),
                                                                                     ),
@@ -422,12 +429,12 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 12, 12, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 12.0, 0.0),
                                                                               child: Text(
                                                                                 listViewSkillsRecord.experienceLevel!,
                                                                                 style: FlutterFlowTheme.of(context).title3.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).title3Family,
-                                                                                      fontSize: 14,
+                                                                                      fontSize: 14.0,
                                                                                       fontWeight: FontWeight.w600,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).title3Family),
                                                                                     ),
@@ -437,12 +444,12 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                           Expanded(
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0, 12, 12, 0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 12.0, 0.0),
                                                                               child: Text(
                                                                                 listViewSkillsRecord.experienceYears!,
                                                                                 style: FlutterFlowTheme.of(context).title3.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).title3Family,
-                                                                                      fontSize: 14,
+                                                                                      fontSize: 14.0,
                                                                                       fontWeight: FontWeight.w600,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).title3Family),
                                                                                     ),
@@ -453,16 +460,16 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                             borderColor:
                                                                                 Colors.transparent,
                                                                             borderRadius:
-                                                                                30,
+                                                                                30.0,
                                                                             borderWidth:
-                                                                                1,
+                                                                                1.0,
                                                                             buttonSize:
-                                                                                40,
+                                                                                40.0,
                                                                             icon:
                                                                                 Icon(
                                                                               Icons.delete,
                                                                               color: FlutterFlowTheme.of(context).primaryText,
-                                                                              size: 30,
+                                                                              size: 30.0,
                                                                             ),
                                                                             onPressed:
                                                                                 () async {
@@ -495,7 +502,7 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 24, 20, 0),
+                                      20.0, 24.0, 20.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -514,7 +521,7 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                 padding: MediaQuery.of(context)
                                                     .viewInsets,
                                                 child: Container(
-                                                  height: 370,
+                                                  height: 370.0,
                                                   child: ModalAddExpWidget(
                                                     workRef: widget.workerDoc,
                                                   ),
@@ -528,17 +535,23 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                           'xd5gopfy' /* Add Experience */,
                                         ),
                                         options: FFButtonOptions(
-                                          width: 130,
-                                          height: 40,
+                                          width: 130.0,
+                                          height: 40.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           textStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyText1,
-                                          elevation: 1,
+                                          elevation: 1.0,
                                           borderSide: BorderSide(
                                             color: Colors.transparent,
-                                            width: 1,
+                                            width: 1.0,
                                           ),
                                         ),
                                       ),
@@ -547,7 +560,7 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 24, 20, 0),
+                                      20.0, 24.0, 20.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -556,7 +569,7 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  16, 0, 16, 12),
+                                                  16.0, 0.0, 16.0, 12.0),
                                           child: Container(
                                             width: double.infinity,
                                             decoration: BoxDecoration(
@@ -564,17 +577,18 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               borderRadius:
-                                                  BorderRadius.circular(12),
+                                                  BorderRadius.circular(12.0),
                                               border: Border.all(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .lineColor,
-                                                width: 2,
+                                                width: 2.0,
                                               ),
                                             ),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
-                                                  .fromSTEB(12, 12, 12, 12),
+                                                  .fromSTEB(
+                                                      12.0, 12.0, 12.0, 12.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -599,8 +613,8 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                               .hasData) {
                                                             return Center(
                                                               child: SizedBox(
-                                                                width: 50,
-                                                                height: 50,
+                                                                width: 50.0,
+                                                                height: 50.0,
                                                                 child:
                                                                     CircularProgressIndicator(
                                                                   color: FlutterFlowTheme.of(
@@ -629,13 +643,12 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                   listViewExperienceRecordList[
                                                                       listViewIndex];
                                                               return Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            16,
-                                                                            0,
-                                                                            16,
-                                                                            12),
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        16.0,
+                                                                        12.0),
                                                                 child:
                                                                     Container(
                                                                   width: double
@@ -647,24 +660,25 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                         .secondaryBackground,
                                                                     borderRadius:
                                                                         BorderRadius.circular(
-                                                                            12),
+                                                                            12.0),
                                                                     border:
                                                                         Border
                                                                             .all(
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .lineColor,
-                                                                      width: 2,
+                                                                      width:
+                                                                          2.0,
                                                                     ),
                                                                   ),
                                                                   child:
                                                                       Padding(
                                                                     padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            12,
-                                                                            12,
-                                                                            12,
-                                                                            12),
+                                                                            12.0,
+                                                                            12.0,
+                                                                            12.0,
+                                                                            12.0),
                                                                     child:
                                                                         Column(
                                                                       mainAxisSize:
@@ -682,12 +696,12 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                           children: [
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 12, 12, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 12.0, 0.0),
                                                                                 child: Text(
                                                                                   listViewExperienceRecord.companyName!,
                                                                                   style: FlutterFlowTheme.of(context).title3.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).title3Family,
-                                                                                        fontSize: 14,
+                                                                                        fontSize: 14.0,
                                                                                         fontWeight: FontWeight.w600,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).title3Family),
                                                                                       ),
@@ -696,12 +710,12 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 12, 12, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 12.0, 0.0),
                                                                                 child: Text(
                                                                                   listViewExperienceRecord.jobTitle!,
                                                                                   style: FlutterFlowTheme.of(context).title3.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).title3Family,
-                                                                                        fontSize: 14,
+                                                                                        fontSize: 14.0,
                                                                                         fontWeight: FontWeight.w600,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).title3Family),
                                                                                       ),
@@ -710,7 +724,7 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                             ),
                                                                             Expanded(
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0, 12, 12, 0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 12.0, 0.0),
                                                                                 child: Text(
                                                                                   '${dateTimeFormat(
                                                                                     'd/M/y',
@@ -723,7 +737,7 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                                   )}',
                                                                                   style: FlutterFlowTheme.of(context).title3.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).title3Family,
-                                                                                        fontSize: 14,
+                                                                                        fontSize: 14.0,
                                                                                         fontWeight: FontWeight.w600,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).title3Family),
                                                                                       ),
@@ -732,13 +746,13 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                             ),
                                                                             FlutterFlowIconButton(
                                                                               borderColor: Colors.transparent,
-                                                                              borderRadius: 30,
-                                                                              borderWidth: 1,
-                                                                              buttonSize: 40,
+                                                                              borderRadius: 30.0,
+                                                                              borderWidth: 1.0,
+                                                                              buttonSize: 40.0,
                                                                               icon: Icon(
                                                                                 Icons.delete,
                                                                                 color: FlutterFlowTheme.of(context).primaryText,
-                                                                                size: 30,
+                                                                                size: 30.0,
                                                                               ),
                                                                               onPressed: () async {
                                                                                 await widget.workerDoc!.delete();
@@ -748,10 +762,10 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0,
-                                                                              10,
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              10.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -763,20 +777,22 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                                                                 },
                                                                                 text: listViewExperienceRecord.primarySkill!,
                                                                                 options: FFButtonOptions(
-                                                                                  width: 70,
-                                                                                  height: 20,
+                                                                                  width: 70.0,
+                                                                                  height: 20.0,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                  iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: FlutterFlowTheme.of(context).primaryColor,
                                                                                   textStyle: FlutterFlowTheme.of(context).subtitle2.override(
                                                                                         fontFamily: FlutterFlowTheme.of(context).subtitle2Family,
                                                                                         color: Colors.white,
-                                                                                        fontSize: 14,
+                                                                                        fontSize: 14.0,
                                                                                         useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).subtitle2Family),
                                                                                       ),
                                                                                   borderSide: BorderSide(
                                                                                     color: Colors.transparent,
-                                                                                    width: 1,
+                                                                                    width: 1.0,
                                                                                   ),
-                                                                                  borderRadius: BorderRadius.circular(25),
+                                                                                  borderRadius: BorderRadius.circular(25.0),
                                                                                 ),
                                                                               ),
                                                                             ],
@@ -810,7 +826,8 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 16),
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 24.0, 0.0, 16.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               context.pushNamed('workerProfile');
@@ -819,8 +836,12 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                               '98odaavn' /* Submit */,
                             ),
                             options: FFButtonOptions(
-                              width: 270,
-                              height: 50,
+                              width: 270.0,
+                              height: 50.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primaryColor,
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
@@ -833,12 +854,12 @@ class _AddSkillsExpWidgetState extends State<AddSkillsExpWidget>
                                             FlutterFlowTheme.of(context)
                                                 .subtitle2Family),
                                   ),
-                              elevation: 3,
+                              elevation: 3.0,
                               borderSide: BorderSide(
                                 color: Colors.transparent,
-                                width: 1,
+                                width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(50),
+                              borderRadius: BorderRadius.circular(50.0),
                             ),
                           ),
                         ),

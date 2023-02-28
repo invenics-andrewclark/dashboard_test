@@ -1,10 +1,10 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../backend/firebase_storage/storage.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/upload_media.dart';
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_media.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -54,25 +54,25 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget> {
     context.watch<FFAppState>();
 
     return Container(
-      width: MediaQuery.of(context).size.width,
-      height: 350,
+      width: MediaQuery.of(context).size.width * 1.0,
+      height: 350.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(0),
-          bottomRight: Radius.circular(0),
-          topLeft: Radius.circular(16),
-          topRight: Radius.circular(16),
+          bottomLeft: Radius.circular(0.0),
+          bottomRight: Radius.circular(0.0),
+          topLeft: Radius.circular(16.0),
+          topRight: Radius.circular(16.0),
         ),
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(4, 4, 4, 4),
+        padding: EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
             Expanded(
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 8, 20, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(20.0, 8.0, 20.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -80,9 +80,9 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Divider(
-                        thickness: 3,
-                        indent: 150,
-                        endIndent: 150,
+                        thickness: 3.0,
+                        indent: 150.0,
+                        endIndent: 150.0,
                         color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
                       Row(
@@ -91,8 +91,8 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 4, 16, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 4.0, 16.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'rveosbw6' /* Change Photo */,
@@ -108,8 +108,8 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget> {
                         children: [
                           Expanded(
                             child: Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 8, 0, 0),
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 8.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'xkv4rj30' /* Upload a new photo below in or... */,
@@ -121,14 +121,15 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget> {
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
-                              width: 100,
-                              height: 100,
+                              width: 100.0,
+                              height: 100.0,
                               decoration: BoxDecoration(
                                 color: Color(0xFFDBE2E7),
                                 image: DecorationImage(
@@ -143,11 +144,11 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget> {
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        4, 4, 4, 4),
+                                        4.0, 4.0, 4.0, 4.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => Container(
-                                        width: 120,
-                                        height: 120,
+                                        width: 120.0,
+                                        height: 120.0,
                                         clipBehavior: Clip.antiAlias,
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
@@ -164,10 +165,10 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        4, 4, 4, 4),
+                                        4.0, 4.0, 4.0, 4.0),
                                     child: Container(
-                                      width: 120,
-                                      height: 120,
+                                      width: 120.0,
+                                      height: 120.0,
                                       clipBehavior: Clip.antiAlias,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
@@ -185,7 +186,8 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 44),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 24.0, 0.0, 44.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -264,18 +266,22 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget> {
                                 '9jqfzztm' /* Upload Image */,
                               ),
                               options: FFButtonOptions(
-                                width: 150,
-                                height: 50,
+                                width: 150.0,
+                                height: 50.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
                                 textStyle:
                                     FlutterFlowTheme.of(context).subtitle2,
-                                elevation: 0,
+                                elevation: 0.0,
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).lineColor,
-                                  width: 2,
+                                  width: 2.0,
                                 ),
-                                borderRadius: BorderRadius.circular(50),
+                                borderRadius: BorderRadius.circular(50.0),
                               ),
                             ),
                             FFButtonWidget(
@@ -292,8 +298,12 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget> {
                                 'tnhsrx4j' /* Save Changes */,
                               ),
                               options: FFButtonOptions(
-                                width: 150,
-                                height: 50,
+                                width: 150.0,
+                                height: 50.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
                                 color:
                                     FlutterFlowTheme.of(context).primaryColor,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -307,12 +317,12 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .subtitle2Family),
                                     ),
-                                elevation: 2,
+                                elevation: 2.0,
                                 borderSide: BorderSide(
                                   color: Colors.transparent,
-                                  width: 1,
+                                  width: 1.0,
                                 ),
-                                borderRadius: BorderRadius.circular(50),
+                                borderRadius: BorderRadius.circular(50.0),
                               ),
                             ),
                           ],

@@ -252,6 +252,14 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
             specifiedType: const FullType(
                 DocumentReference, const [const FullType.nullable(Object)])));
     }
+    value = object.applications;
+    if (value != null) {
+      result
+        ..add('applications')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(ApplicationsStruct)])));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -410,6 +418,12 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
                 const FullType.nullable(Object)
               ])) as DocumentReference<Object?>?;
           break;
+        case 'applications':
+          result.applications.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(ApplicationsStruct)]))!
+              as BuiltList<Object?>);
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -491,6 +505,8 @@ class _$JobsRecord extends JobsRecord {
   @override
   final DocumentReference<Object?>? jobRef;
   @override
+  final BuiltList<ApplicationsStruct>? applications;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$JobsRecord([void Function(JobsRecordBuilder)? updates]) =>
@@ -530,6 +546,7 @@ class _$JobsRecord extends JobsRecord {
       this.orgRefId,
       this.minQualification,
       this.jobRef,
+      this.applications,
       this.ffRef})
       : super._();
 
@@ -577,6 +594,7 @@ class _$JobsRecord extends JobsRecord {
         orgRefId == other.orgRefId &&
         minQualification == other.minQualification &&
         jobRef == other.jobRef &&
+        applications == other.applications &&
         ffRef == other.ffRef;
   }
 
@@ -600,25 +618,25 @@ class _$JobsRecord extends JobsRecord {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, salary.hashCode), jobDescription.hashCode), jobImage.hashCode), primarySkillLevel.hashCode), primarySkill.hashCode), organisationName.hashCode), jobTitle.hashCode), modeOfSalary.hashCode), jobCategory.hashCode), pinCode.hashCode), area.hashCode), district.hashCode), state.hashCode), minExperience.hashCode), jobApplicationCollection.hashCode),
-                                                                                applicationList.hashCode),
-                                                                            numberOfVacancies.hashCode),
-                                                                        workingHours.hashCode),
-                                                                    startDate.hashCode),
-                                                                endDate.hashCode),
-                                                            gender.hashCode),
-                                                        minSalary.hashCode),
-                                                    maxSalary.hashCode),
-                                                minAge.hashCode),
-                                            maxAge.hashCode),
-                                        food.hashCode),
-                                    lodging.hashCode),
-                                transportation.hashCode),
-                            medical.hashCode),
-                        jobSubCateg.hashCode),
-                    orgRefId.hashCode),
-                minQualification.hashCode),
-            jobRef.hashCode),
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, salary.hashCode), jobDescription.hashCode), jobImage.hashCode), primarySkillLevel.hashCode), primarySkill.hashCode), organisationName.hashCode), jobTitle.hashCode), modeOfSalary.hashCode), jobCategory.hashCode), pinCode.hashCode), area.hashCode), district.hashCode), state.hashCode), minExperience.hashCode), jobApplicationCollection.hashCode), applicationList.hashCode),
+                                                                                numberOfVacancies.hashCode),
+                                                                            workingHours.hashCode),
+                                                                        startDate.hashCode),
+                                                                    endDate.hashCode),
+                                                                gender.hashCode),
+                                                            minSalary.hashCode),
+                                                        maxSalary.hashCode),
+                                                    minAge.hashCode),
+                                                maxAge.hashCode),
+                                            food.hashCode),
+                                        lodging.hashCode),
+                                    transportation.hashCode),
+                                medical.hashCode),
+                            jobSubCateg.hashCode),
+                        orgRefId.hashCode),
+                    minQualification.hashCode),
+                jobRef.hashCode),
+            applications.hashCode),
         ffRef.hashCode));
   }
 
@@ -658,6 +676,7 @@ class _$JobsRecord extends JobsRecord {
           ..add('orgRefId', orgRefId)
           ..add('minQualification', minQualification)
           ..add('jobRef', jobRef)
+          ..add('applications', applications)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -808,6 +827,12 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
   DocumentReference<Object?>? get jobRef => _$this._jobRef;
   set jobRef(DocumentReference<Object?>? jobRef) => _$this._jobRef = jobRef;
 
+  ListBuilder<ApplicationsStruct>? _applications;
+  ListBuilder<ApplicationsStruct> get applications =>
+      _$this._applications ??= new ListBuilder<ApplicationsStruct>();
+  set applications(ListBuilder<ApplicationsStruct>? applications) =>
+      _$this._applications = applications;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -852,6 +877,7 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
       _orgRefId = $v.orgRefId;
       _minQualification = $v.minQualification;
       _jobRef = $v.jobRef;
+      _applications = $v.applications?.toBuilder();
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -873,42 +899,56 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
   JobsRecord build() => _build();
 
   _$JobsRecord _build() {
-    final _$result = _$v ??
-        new _$JobsRecord._(
-            salary: salary,
-            jobDescription: jobDescription,
-            jobImage: jobImage,
-            primarySkillLevel: primarySkillLevel,
-            primarySkill: primarySkill,
-            organisationName: organisationName,
-            jobTitle: jobTitle,
-            modeOfSalary: modeOfSalary,
-            jobCategory: jobCategory,
-            pinCode: pinCode,
-            area: area,
-            district: district,
-            state: state,
-            minExperience: minExperience,
-            jobApplicationCollection: jobApplicationCollection,
-            applicationList: applicationList,
-            numberOfVacancies: numberOfVacancies,
-            workingHours: workingHours,
-            startDate: startDate,
-            endDate: endDate,
-            gender: gender,
-            minSalary: minSalary,
-            maxSalary: maxSalary,
-            minAge: minAge,
-            maxAge: maxAge,
-            food: food,
-            lodging: lodging,
-            transportation: transportation,
-            medical: medical,
-            jobSubCateg: jobSubCateg,
-            orgRefId: orgRefId,
-            minQualification: minQualification,
-            jobRef: jobRef,
-            ffRef: ffRef);
+    _$JobsRecord _$result;
+    try {
+      _$result = _$v ??
+          new _$JobsRecord._(
+              salary: salary,
+              jobDescription: jobDescription,
+              jobImage: jobImage,
+              primarySkillLevel: primarySkillLevel,
+              primarySkill: primarySkill,
+              organisationName: organisationName,
+              jobTitle: jobTitle,
+              modeOfSalary: modeOfSalary,
+              jobCategory: jobCategory,
+              pinCode: pinCode,
+              area: area,
+              district: district,
+              state: state,
+              minExperience: minExperience,
+              jobApplicationCollection: jobApplicationCollection,
+              applicationList: applicationList,
+              numberOfVacancies: numberOfVacancies,
+              workingHours: workingHours,
+              startDate: startDate,
+              endDate: endDate,
+              gender: gender,
+              minSalary: minSalary,
+              maxSalary: maxSalary,
+              minAge: minAge,
+              maxAge: maxAge,
+              food: food,
+              lodging: lodging,
+              transportation: transportation,
+              medical: medical,
+              jobSubCateg: jobSubCateg,
+              orgRefId: orgRefId,
+              minQualification: minQualification,
+              jobRef: jobRef,
+              applications: _applications?.build(),
+              ffRef: ffRef);
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'applications';
+        _applications?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'JobsRecord', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

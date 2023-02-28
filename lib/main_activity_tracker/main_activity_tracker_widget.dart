@@ -1,13 +1,12 @@
-import '../auth/auth_util.dart';
-import '../backend/backend.dart';
-import '../components/completed_tasks_widget.dart';
-import '../components/drawer_nav_widget.dart';
-import '../components/empty_tasks_widget.dart';
-import '../components/user_card_widget.dart';
-import '../components/web_nav_widget.dart';
-import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '/auth/auth_util.dart';
+import '/backend/backend.dart';
+import '/components/completed_tasks_widget.dart';
+import '/components/drawer_nav_widget.dart';
+import '/components/empty_tasks_widget.dart';
+import '/components/web_nav_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:async';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -42,15 +41,15 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -61,15 +60,15 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -80,15 +79,15 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -99,15 +98,15 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -118,15 +117,15 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -137,15 +136,15 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -156,15 +155,15 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -175,15 +174,15 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -194,15 +193,15 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -213,15 +212,15 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -232,15 +231,15 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -251,15 +250,15 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: 0,
-          end: 1,
+          begin: 0.0,
+          end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
           duration: 600.ms,
-          begin: Offset(0, 30),
-          end: Offset(0, 0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -296,7 +295,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       drawer: Drawer(
-        elevation: 16,
+        elevation: 16.0,
         child: wrapWithModel(
           model: _model.drawerNavModel,
           updateCallback: () => setState(() {}),
@@ -319,13 +318,15 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                 updateCallback: () => setState(() {}),
                 child: WebNavWidget(
                   navBGOne: FlutterFlowTheme.of(context).primaryBackground,
-                  navColorOne: FlutterFlowTheme.of(context).alternate,
-                  navBgTwo: FlutterFlowTheme.of(context).primaryBackground,
-                  navColorTwo: FlutterFlowTheme.of(context).alternate,
-                  navBgThree: FlutterFlowTheme.of(context).primaryBackground,
-                  navColorThree: FlutterFlowTheme.of(context).alternate,
+                  navColorOne: FlutterFlowTheme.of(context).primaryColor,
+                  navBgTwo: FlutterFlowTheme.of(context).secondaryBackground,
+                  navColorTwo: FlutterFlowTheme.of(context).secondaryText,
+                  navBgThree: FlutterFlowTheme.of(context).secondaryBackground,
+                  navColorThree: FlutterFlowTheme.of(context).secondaryText,
                   navColorFour: FlutterFlowTheme.of(context).secondaryText,
                   navBGFour: FlutterFlowTheme.of(context).secondaryBackground,
+                  navBGFive: FlutterFlowTheme.of(context).secondaryBackground,
+                  navColorFive: FlutterFlowTheme.of(context).secondaryText,
                 ),
               ),
             Expanded(
@@ -338,36 +339,12 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                     desktop: false,
                   ))
                     Container(
-                      width: 70,
-                      height: 40,
+                      width: 70.0,
+                      height: 40.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
                     ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(16, 24, 16, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        if (responsiveVisibility(
-                          context: context,
-                          tablet: false,
-                          tabletLandscape: false,
-                          desktop: false,
-                        ))
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 0, 12, 0),
-                            child: wrapWithModel(
-                              model: _model.userCardModel,
-                              updateCallback: () => setState(() {}),
-                              child: UserCardWidget(),
-                            ),
-                          ),
-                      ],
-                    ),
-                  ),
                   if (responsiveVisibility(
                     context: context,
                     tabletLandscape: false,
@@ -376,7 +353,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                     Expanded(
                       child: Container(
                         width: double.infinity,
-                        height: 100,
+                        height: 100.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primaryBackground,
                         ),
@@ -407,7 +384,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                 tabs: [
                                   Tab(
                                     text: FFLocalizations.of(context).getText(
-                                      'qivbgraj' /* My Tasks */,
+                                      'qivbgraj' /* My Jobs */,
                                     ),
                                   ),
                                   Tab(
@@ -432,7 +409,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 8, 0, 0),
+                                          0.0, 8.0, 0.0, 0.0),
                                       child: StreamBuilder<List<JobsRecord>>(
                                         stream: queryJobsRecord(),
                                         builder: (context, snapshot) {
@@ -440,8 +417,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                           if (!snapshot.hasData) {
                                             return Center(
                                               child: SizedBox(
-                                                width: 50,
-                                                height: 50,
+                                                width: 50.0,
+                                                height: 50.0,
                                                 child:
                                                     CircularProgressIndicator(
                                                   color: FlutterFlowTheme.of(
@@ -461,7 +438,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                         .size
                                                         .width *
                                                     0.8,
-                                                height: 300,
+                                                height: 300.0,
                                                 child: EmptyTasksWidget(
                                                   title: 'No Jobs Assigned',
                                                   body: 'Please Start New Job',
@@ -483,7 +460,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                       listViewIndex];
                                               return Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(16, 4, 16, 8),
+                                                    .fromSTEB(
+                                                        16.0, 4.0, 16.0, 8.0),
                                                 child: InkWell(
                                                   onTap: () async {
                                                     context.pushNamed(
@@ -507,20 +485,23 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                           .secondaryBackground,
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12),
+                                                              12.0),
                                                       border: Border.all(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .lineColor,
-                                                        width: 2,
+                                                                .alternate,
+                                                        width: 2.0,
                                                       ),
                                                     ),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
-                                                              .fromSTEB(12, 12,
-                                                                  12, 12),
+                                                              .fromSTEB(
+                                                                  12.0,
+                                                                  12.0,
+                                                                  12.0,
+                                                                  12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -540,10 +521,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          12,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     listViewJobsRecord
                                                                         .jobTitle!,
@@ -554,27 +535,28 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 ),
                                                               ),
                                                               Container(
-                                                                height: 32,
+                                                                height: 32.0,
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .secondaryColor,
+                                                                      .alternate,
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              32),
+                                                                              32.0),
                                                                 ),
                                                                 alignment:
                                                                     AlignmentDirectional(
-                                                                        0, 0),
+                                                                        0.0,
+                                                                        0.0),
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          12,
-                                                                          0,
-                                                                          12,
-                                                                          0),
+                                                                          12.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -601,10 +583,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        4,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        4.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Text(
                                                               listViewJobsRecord
                                                                   .organisationName!,
@@ -614,8 +596,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                             ),
                                                           ),
                                                           Divider(
-                                                            height: 24,
-                                                            thickness: 1,
+                                                            height: 24.0,
+                                                            thickness: 1.0,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .lineColor,
@@ -654,10 +636,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            8,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            8.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   dateTimeFormat(
                                                                     'd/M/y',
@@ -676,10 +658,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            8,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            8.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -695,10 +677,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            4,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            4.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   dateTimeFormat(
                                                                     'd/M/y',
@@ -719,7 +701,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
-                                                                size: 24,
+                                                                size: 24.0,
                                                               ),
                                                             ],
                                                           ),
@@ -737,7 +719,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 12, 0, 0),
+                                          0.0, 12.0, 0.0, 0.0),
                                       child: StreamBuilder<List<JobsRecord>>(
                                         stream: queryJobsRecord(
                                           queryBuilder: (jobsRecord) =>
@@ -750,8 +732,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                           if (!snapshot.hasData) {
                                             return Center(
                                               child: SizedBox(
-                                                width: 50,
-                                                height: 50,
+                                                width: 50.0,
+                                                height: 50.0,
                                                 child:
                                                     CircularProgressIndicator(
                                                   color: FlutterFlowTheme.of(
@@ -767,7 +749,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                           if (notStartedQueriesJobsRecordList
                                               .isEmpty) {
                                             return Container(
-                                              height: 300,
+                                              height: 300.0,
                                               child: EmptyTasksWidget(
                                                 title: 'You are good to go!',
                                                 body: 'Start new job!',
@@ -789,7 +771,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                       notStartedQueriesIndex];
                                               return Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(16, 0, 16, 8),
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 8.0),
                                                 child: InkWell(
                                                   onTap: () async {
                                                     context.pushNamed(
@@ -804,20 +787,23 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                               .secondaryColor,
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12),
+                                                              12.0),
                                                       border: Border.all(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .secondaryColor,
-                                                        width: 2,
+                                                                .alternate,
+                                                        width: 2.0,
                                                       ),
                                                     ),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
-                                                              .fromSTEB(12, 12,
-                                                                  12, 12),
+                                                              .fromSTEB(
+                                                                  12.0,
+                                                                  12.0,
+                                                                  12.0,
+                                                                  12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -837,10 +823,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          12,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     notStartedQueriesJobsRecord
                                                                         .jobTitle!,
@@ -851,27 +837,28 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 ),
                                                               ),
                                                               Container(
-                                                                height: 32,
+                                                                height: 32.0,
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .secondaryColor,
+                                                                      .alternate,
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              32),
+                                                                              32.0),
                                                                 ),
                                                                 alignment:
                                                                     AlignmentDirectional(
-                                                                        0, 0),
+                                                                        0.0,
+                                                                        0.0),
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          12,
-                                                                          0,
-                                                                          12,
-                                                                          0),
+                                                                          12.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -898,10 +885,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        4,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        4.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: AutoSizeText(
                                                               notStartedQueriesJobsRecord
                                                                   .organisationName!
@@ -914,8 +901,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                             ),
                                                           ),
                                                           Divider(
-                                                            height: 24,
-                                                            thickness: 1,
+                                                            height: 24.0,
+                                                            thickness: 1.0,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .lineColor,
@@ -954,10 +941,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          8,
-                                                                          0,
-                                                                          0,
-                                                                          0),
+                                                                          8.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     dateTimeFormat(
                                                                       'd/M/y',
@@ -989,7 +976,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 12, 0, 0),
+                                          0.0, 12.0, 0.0, 0.0),
                                       child: StreamBuilder<List<JobsRecord>>(
                                         stream: queryJobsRecord(),
                                         builder: (context, snapshot) {
@@ -997,8 +984,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                           if (!snapshot.hasData) {
                                             return Center(
                                               child: SizedBox(
-                                                width: 50,
-                                                height: 50,
+                                                width: 50.0,
+                                                height: 50.0,
                                                 child:
                                                     CircularProgressIndicator(
                                                   color: FlutterFlowTheme.of(
@@ -1018,7 +1005,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                         .size
                                                         .width *
                                                     0.8,
-                                                height: 300,
+                                                height: 300.0,
                                                 child: EmptyTasksWidget(
                                                   title: 'No In Progress Jobs',
                                                   body: 'Start New Job',
@@ -1040,7 +1027,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                       listViewIndex];
                                               return Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(16, 4, 16, 8),
+                                                    .fromSTEB(
+                                                        16.0, 4.0, 16.0, 8.0),
                                                 child: InkWell(
                                                   onTap: () async {
                                                     context.pushNamed(
@@ -1052,20 +1040,23 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                       color: Color(0xFF4BEFAB),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12),
+                                                              12.0),
                                                       border: Border.all(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .primaryColor,
-                                                        width: 2,
+                                                                .alternate,
+                                                        width: 2.0,
                                                       ),
                                                     ),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
-                                                              .fromSTEB(12, 12,
-                                                                  12, 12),
+                                                              .fromSTEB(
+                                                                  12.0,
+                                                                  12.0,
+                                                                  12.0,
+                                                                  12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -1085,10 +1076,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          12,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     listViewJobsRecord
                                                                         .jobTitle!,
@@ -1099,27 +1090,28 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 ),
                                                               ),
                                                               Container(
-                                                                height: 32,
+                                                                height: 32.0,
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .primaryColor,
+                                                                      .alternate,
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              32),
+                                                                              32.0),
                                                                 ),
                                                                 alignment:
                                                                     AlignmentDirectional(
-                                                                        0, 0),
+                                                                        0.0,
+                                                                        0.0),
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          12,
-                                                                          0,
-                                                                          12,
-                                                                          0),
+                                                                          12.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -1146,10 +1138,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        4,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        4.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Text(
                                                               listViewJobsRecord
                                                                   .organisationName!,
@@ -1159,8 +1151,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                             ),
                                                           ),
                                                           Divider(
-                                                            height: 24,
-                                                            thickness: 1,
+                                                            height: 24.0,
+                                                            thickness: 1.0,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .lineColor,
@@ -1199,10 +1191,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            8,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            8.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   dateTimeFormat(
                                                                     'd/M/y',
@@ -1221,10 +1213,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            8,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            8.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   FFLocalizations.of(
                                                                           context)
@@ -1240,10 +1232,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            4,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            4.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   dateTimeFormat(
                                                                     'd/M/y',
@@ -1274,7 +1266,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 12, 0, 0),
+                                          0.0, 12.0, 0.0, 0.0),
                                       child: StreamBuilder<List<JobsRecord>>(
                                         stream: queryJobsRecord(
                                           queryBuilder: (jobsRecord) =>
@@ -1287,8 +1279,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                           if (!snapshot.hasData) {
                                             return Center(
                                               child: SizedBox(
-                                                width: 50,
-                                                height: 50,
+                                                width: 50.0,
+                                                height: 50.0,
                                                 child:
                                                     CircularProgressIndicator(
                                                   color: FlutterFlowTheme.of(
@@ -1308,7 +1300,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                         .size
                                                         .width *
                                                     0.8,
-                                                height: 300,
+                                                height: 300.0,
                                                 child: CompletedTasksWidget(
                                                   title: 'No Completed Tasks',
                                                   bodyText:
@@ -1331,7 +1323,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                       listViewIndex];
                                               return Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(16, 0, 16, 12),
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 12.0),
                                                 child: InkWell(
                                                   onTap: () async {
                                                     context.pushNamed(
@@ -1346,20 +1339,23 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                               .lineColor,
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12),
+                                                              12.0),
                                                       border: Border.all(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .alternate,
-                                                        width: 2,
+                                                        width: 2.0,
                                                       ),
                                                     ),
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
-                                                              .fromSTEB(12, 12,
-                                                                  12, 12),
+                                                              .fromSTEB(
+                                                                  12.0,
+                                                                  12.0,
+                                                                  12.0,
+                                                                  12.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -1379,10 +1375,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          0,
-                                                                          12,
-                                                                          0),
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     listViewJobsRecord
                                                                         .jobTitle!,
@@ -1393,7 +1389,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 ),
                                                               ),
                                                               Container(
-                                                                height: 32,
+                                                                height: 32.0,
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
@@ -1402,18 +1398,19 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                   borderRadius:
                                                                       BorderRadius
                                                                           .circular(
-                                                                              32),
+                                                                              32.0),
                                                                 ),
                                                                 alignment:
                                                                     AlignmentDirectional(
-                                                                        0, 0),
+                                                                        0.0,
+                                                                        0.0),
                                                                 child: Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          12,
-                                                                          0,
-                                                                          12,
-                                                                          0),
+                                                                          12.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     FFLocalizations.of(
                                                                             context)
@@ -1440,10 +1437,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        0,
-                                                                        4,
-                                                                        0,
-                                                                        0),
+                                                                        0.0,
+                                                                        4.0,
+                                                                        0.0,
+                                                                        0.0),
                                                             child: Text(
                                                               listViewJobsRecord
                                                                   .organisationName!,
@@ -1453,8 +1450,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                             ),
                                                           ),
                                                           Divider(
-                                                            height: 24,
-                                                            thickness: 1,
+                                                            height: 24.0,
+                                                            thickness: 1.0,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .lineColor,
@@ -1493,10 +1490,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            4,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            4.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                 child: Text(
                                                                   dateTimeFormat(
                                                                     'd/M/y',
@@ -1540,10 +1537,11 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                   ))
                     Expanded(
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(4, 8, 0, 0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(4.0, 8.0, 0.0, 0.0),
                         child: Container(
                           width: double.infinity,
-                          height: 80,
+                          height: 80.0,
                           decoration: BoxDecoration(
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
@@ -1561,25 +1559,25 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                               ))
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      24, 0, 0, 12),
+                                      24.0, 0.0, 0.0, 12.0),
                                   child: Container(
-                                    width: 330,
-                                    height: 100,
+                                    width: 330.0,
+                                    height: 100.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       boxShadow: [
                                         BoxShadow(
-                                          blurRadius: 4,
+                                          blurRadius: 4.0,
                                           color: Color(0x2B090F13),
-                                          offset: Offset(0, 2),
+                                          offset: Offset(0.0, 2.0),
                                         )
                                       ],
-                                      borderRadius: BorderRadius.circular(8),
+                                      borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          12, 12, 12, 12),
+                                          12.0, 12.0, 12.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -1633,8 +1631,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                0, 8, 0, 12),
+                                                            .fromSTEB(0.0, 8.0,
+                                                                0.0, 12.0),
                                                     child: ListView(
                                                       padding: EdgeInsets.zero,
                                                       shrinkWrap: true,
@@ -1644,8 +1642,11 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                         Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      4, 0, 8),
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      4.0,
+                                                                      0.0,
+                                                                      8.0),
                                                           child: InkWell(
                                                             onTap: () async {
                                                               context.pushNamed(
@@ -1662,23 +1663,22 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            12),
+                                                                            12.0),
                                                                 border:
                                                                     Border.all(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .lineColor,
-                                                                  width: 2,
+                                                                  width: 2.0,
                                                                 ),
                                                               ),
                                                               child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12,
-                                                                            12,
-                                                                            12,
-                                                                            12),
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        12.0,
+                                                                        12.0,
+                                                                        12.0),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1688,12 +1688,11 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                           .start,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              0,
-                                                                              12,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -1705,12 +1704,11 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              4,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           AutoSizeText(
                                                                         FFLocalizations.of(context)
@@ -1723,9 +1721,9 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                     ),
                                                                     Divider(
                                                                       height:
-                                                                          24,
+                                                                          24.0,
                                                                       thickness:
-                                                                          1,
+                                                                          1.0,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .lineColor,
@@ -1753,10 +1751,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              8,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              8.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -1768,10 +1766,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                         ),
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              4,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                              4.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -1787,7 +1785,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryText,
                                                                           size:
-                                                                              24,
+                                                                              24.0,
                                                                         ),
                                                                       ],
                                                                     ),
@@ -1803,10 +1801,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                           padding:
                                                               EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      16,
-                                                                      0,
-                                                                      16,
-                                                                      12),
+                                                                      16.0,
+                                                                      0.0,
+                                                                      16.0,
+                                                                      12.0),
                                                           child: InkWell(
                                                             onTap: () async {
                                                               context.pushNamed(
@@ -1823,23 +1821,22 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            12),
+                                                                            12.0),
                                                                 border:
                                                                     Border.all(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .lineColor,
-                                                                  width: 2,
+                                                                  width: 2.0,
                                                                 ),
                                                               ),
                                                               child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12,
-                                                                            12,
-                                                                            12,
-                                                                            12),
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        12.0,
+                                                                        12.0,
+                                                                        12.0),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1860,10 +1857,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0,
-                                                                                0,
-                                                                                12,
-                                                                                0),
+                                                                                0.0,
+                                                                                0.0,
+                                                                                12.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -1875,24 +1872,24 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                         ),
                                                                         Container(
                                                                           height:
-                                                                              32,
+                                                                              32.0,
                                                                           decoration:
                                                                               BoxDecoration(
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryColor,
                                                                             borderRadius:
-                                                                                BorderRadius.circular(32),
+                                                                                BorderRadius.circular(32.0),
                                                                           ),
                                                                           alignment: AlignmentDirectional(
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0),
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                12,
-                                                                                0,
-                                                                                12,
-                                                                                0),
+                                                                                12.0,
+                                                                                0.0,
+                                                                                12.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -1909,12 +1906,11 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                       ],
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              0,
-                                                                              4,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         FFLocalizations.of(context)
@@ -1927,9 +1923,9 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                     ),
                                                                     Divider(
                                                                       height:
-                                                                          24,
+                                                                          24.0,
                                                                       thickness:
-                                                                          1,
+                                                                          1.0,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .lineColor,
@@ -1959,10 +1955,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                           child:
                                                                               Padding(
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                8,
-                                                                                0,
-                                                                                0,
-                                                                                0),
+                                                                                8.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
@@ -1978,7 +1974,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryText,
                                                                           size:
-                                                                              24,
+                                                                              24.0,
                                                                         ),
                                                                       ],
                                                                     ),
@@ -2004,26 +2000,26 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                 ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    24, 8, 0, 12),
+                                    24.0, 8.0, 0.0, 12.0),
                                 child: Container(
                                   width:
                                       MediaQuery.of(context).size.width * 0.25,
-                                  height: 100,
+                                  height: 100.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     boxShadow: [
                                       BoxShadow(
-                                        blurRadius: 4,
+                                        blurRadius: 4.0,
                                         color: Color(0x2B090F13),
-                                        offset: Offset(0, 2),
+                                        offset: Offset(0.0, 2.0),
                                       )
                                     ],
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        12, 12, 12, 0),
+                                        12.0, 12.0, 12.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -2049,7 +2045,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 0, 0),
+                                                    0.0, 12.0, 0.0, 0.0),
                                             child:
                                                 FutureBuilder<List<JobsRecord>>(
                                               future: (_model
@@ -2070,8 +2066,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 50,
-                                                      height: 50,
+                                                      width: 50.0,
+                                                      height: 50.0,
                                                       child:
                                                           CircularProgressIndicator(
                                                         color:
@@ -2088,7 +2084,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                 if (listViewJobsRecordList
                                                     .isEmpty) {
                                                   return Container(
-                                                    height: 300,
+                                                    height: 300.0,
                                                     child: EmptyTasksWidget(
                                                       title: 'No Jobs to Start',
                                                       body:
@@ -2121,7 +2117,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 0, 0, 8),
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    8.0),
                                                         child: Container(
                                                           width:
                                                               double.infinity,
@@ -2133,22 +2132,22 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        12),
+                                                                        12.0),
                                                             border: Border.all(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .alternate,
-                                                              width: 2,
+                                                              width: 2.0,
                                                             ),
                                                           ),
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        12,
-                                                                        12,
-                                                                        12,
-                                                                        12),
+                                                                        12.0,
+                                                                        12.0,
+                                                                        12.0,
+                                                                        12.0),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -2169,10 +2168,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            12,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            12.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           listViewJobsRecord
@@ -2209,24 +2208,24 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                       child:
                                                                           Container(
                                                                         height:
-                                                                            32,
+                                                                            32.0,
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
                                                                               FlutterFlowTheme.of(context).alternate,
                                                                           borderRadius:
-                                                                              BorderRadius.circular(32),
+                                                                              BorderRadius.circular(32.0),
                                                                         ),
                                                                         alignment: AlignmentDirectional(
-                                                                            0,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              12,
-                                                                              0,
-                                                                              12,
-                                                                              0),
+                                                                              12.0,
+                                                                              0.0,
+                                                                              12.0,
+                                                                              0.0),
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
@@ -2246,10 +2245,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          4,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child:
                                                                       AutoSizeText(
                                                                     listViewJobsRecord
@@ -2263,8 +2262,9 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                   ),
                                                                 ),
                                                                 Divider(
-                                                                  height: 24,
-                                                                  thickness: 1,
+                                                                  height: 24.0,
+                                                                  thickness:
+                                                                      1.0,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .lineColor,
@@ -2299,10 +2299,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            8,
-                                                                            0,
-                                                                            0,
-                                                                            0),
+                                                                            8.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           dateTimeFormat(
@@ -2322,7 +2322,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .secondaryText,
-                                                                      size: 24,
+                                                                      size:
+                                                                          24.0,
                                                                     ),
                                                                   ],
                                                                 ),
@@ -2347,26 +2348,26 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    24, 8, 0, 12),
+                                    24.0, 8.0, 0.0, 12.0),
                                 child: Container(
                                   width:
                                       MediaQuery.of(context).size.width * 0.25,
-                                  height: 100,
+                                  height: 100.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     boxShadow: [
                                       BoxShadow(
-                                        blurRadius: 4,
+                                        blurRadius: 4.0,
                                         color: Color(0x2B090F13),
-                                        offset: Offset(0, 2),
+                                        offset: Offset(0.0, 2.0),
                                       )
                                     ],
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        12, 12, 12, 0),
+                                        12.0, 12.0, 12.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -2392,7 +2393,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 0, 0),
+                                                    0.0, 12.0, 0.0, 0.0),
                                             child:
                                                 FutureBuilder<List<JobsRecord>>(
                                               future: (_model
@@ -2413,8 +2414,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 50,
-                                                      height: 50,
+                                                      width: 50.0,
+                                                      height: 50.0,
                                                       child:
                                                           CircularProgressIndicator(
                                                         color:
@@ -2437,7 +2438,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                   .size
                                                                   .width *
                                                               0.8,
-                                                      height: 300,
+                                                      height: 300.0,
                                                       child: EmptyTasksWidget(
                                                         title:
                                                             'No In Progress Jobs',
@@ -2472,7 +2473,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 4, 0, 8),
+                                                                    0.0,
+                                                                    4.0,
+                                                                    0.0,
+                                                                    8.0),
                                                         child: Container(
                                                           width:
                                                               double.infinity,
@@ -2483,22 +2487,22 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        12),
+                                                                        12.0),
                                                             border: Border.all(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .alternate,
-                                                              width: 2,
+                                                              width: 2.0,
                                                             ),
                                                           ),
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        12,
-                                                                        12,
-                                                                        12,
-                                                                        12),
+                                                                        12.0,
+                                                                        12.0,
+                                                                        12.0,
+                                                                        12.0),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -2519,10 +2523,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            12,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            12.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           listViewJobsRecord
@@ -2534,25 +2538,25 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                     ),
                                                                     Container(
                                                                       height:
-                                                                          32,
+                                                                          32.0,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .alternate,
                                                                         borderRadius:
-                                                                            BorderRadius.circular(32),
+                                                                            BorderRadius.circular(32.0),
                                                                       ),
                                                                       alignment:
                                                                           AlignmentDirectional(
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            12,
-                                                                            0,
-                                                                            12,
-                                                                            0),
+                                                                            12.0,
+                                                                            0.0,
+                                                                            12.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -2574,10 +2578,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          4,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     listViewJobsRecord
                                                                         .organisationName!,
@@ -2587,8 +2591,9 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                   ),
                                                                 ),
                                                                 Divider(
-                                                                  height: 24,
-                                                                  thickness: 1,
+                                                                  height: 24.0,
+                                                                  thickness:
+                                                                      1.0,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .lineColor,
@@ -2620,12 +2625,11 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                           ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              8,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          8.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         dateTimeFormat(
@@ -2642,8 +2646,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                     Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
                                                                           Icon(
                                                                         Icons
@@ -2651,7 +2655,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondaryText,
                                                                         size:
-                                                                            24,
+                                                                            24.0,
                                                                       ),
                                                                     ),
                                                                   ],
@@ -2677,26 +2681,26 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    24, 8, 24, 12),
+                                    24.0, 8.0, 24.0, 12.0),
                                 child: Container(
                                   width:
                                       MediaQuery.of(context).size.width * 0.25,
-                                  height: 100,
+                                  height: 100.0,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     boxShadow: [
                                       BoxShadow(
-                                        blurRadius: 4,
+                                        blurRadius: 4.0,
                                         color: Color(0x2B090F13),
-                                        offset: Offset(0, 2),
+                                        offset: Offset(0.0, 2.0),
                                       )
                                     ],
-                                    borderRadius: BorderRadius.circular(8),
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        12, 12, 12, 0),
+                                        12.0, 12.0, 12.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -2722,7 +2726,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 12, 0, 0),
+                                                    0.0, 12.0, 0.0, 0.0),
                                             child:
                                                 FutureBuilder<List<JobsRecord>>(
                                               future: (_model
@@ -2748,8 +2752,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                 if (!snapshot.hasData) {
                                                   return Center(
                                                     child: SizedBox(
-                                                      width: 50,
-                                                      height: 50,
+                                                      width: 50.0,
+                                                      height: 50.0,
                                                       child:
                                                           CircularProgressIndicator(
                                                         color:
@@ -2772,7 +2776,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                   .size
                                                                   .width *
                                                               0.8,
-                                                      height: 300,
+                                                      height: 300.0,
                                                       child:
                                                           CompletedTasksWidget(
                                                         title:
@@ -2808,7 +2812,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    0, 4, 0, 8),
+                                                                    0.0,
+                                                                    4.0,
+                                                                    0.0,
+                                                                    8.0),
                                                         child: Container(
                                                           width:
                                                               double.infinity,
@@ -2820,22 +2827,22 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        12),
+                                                                        12.0),
                                                             border: Border.all(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .alternate,
-                                                              width: 2,
+                                                              width: 2.0,
                                                             ),
                                                           ),
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        12,
-                                                                        12,
-                                                                        12,
-                                                                        12),
+                                                                        12.0,
+                                                                        12.0,
+                                                                        12.0,
+                                                                        12.0),
                                                             child: Column(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -2856,10 +2863,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            12,
-                                                                            0),
+                                                                            0.0,
+                                                                            0.0,
+                                                                            12.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           listViewJobsRecord
@@ -2871,25 +2878,25 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                     ),
                                                                     Container(
                                                                       height:
-                                                                          32,
+                                                                          32.0,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .alternate,
                                                                         borderRadius:
-                                                                            BorderRadius.circular(32),
+                                                                            BorderRadius.circular(32.0),
                                                                       ),
                                                                       alignment:
                                                                           AlignmentDirectional(
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
                                                                           Padding(
                                                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            12,
-                                                                            0,
-                                                                            12,
-                                                                            0),
+                                                                            12.0,
+                                                                            0.0,
+                                                                            12.0,
+                                                                            0.0),
                                                                         child:
                                                                             Text(
                                                                           FFLocalizations.of(context)
@@ -2911,10 +2918,10 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                 Padding(
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          0,
-                                                                          4,
-                                                                          0,
-                                                                          0),
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                   child: Text(
                                                                     listViewJobsRecord
                                                                         .organisationName!,
@@ -2924,8 +2931,9 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                   ),
                                                                 ),
                                                                 Divider(
-                                                                  height: 24,
-                                                                  thickness: 1,
+                                                                  height: 24.0,
+                                                                  thickness:
+                                                                      1.0,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .lineColor,
@@ -2957,12 +2965,11 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                           ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              8,
-                                                                              0,
-                                                                              0,
-                                                                              0),
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          8.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
                                                                       child:
                                                                           Text(
                                                                         dateTimeFormat(
@@ -2979,8 +2986,8 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                     Align(
                                                                       alignment:
                                                                           AlignmentDirectional(
-                                                                              0,
-                                                                              0),
+                                                                              0.0,
+                                                                              0.0),
                                                                       child:
                                                                           Icon(
                                                                         Icons
@@ -2988,7 +2995,7 @@ class _MainActivityTrackerWidgetState extends State<MainActivityTrackerWidget>
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondaryText,
                                                                         size:
-                                                                            24,
+                                                                            24.0,
                                                                       ),
                                                                     ),
                                                                   ],
