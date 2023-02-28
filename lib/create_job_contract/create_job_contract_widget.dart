@@ -152,7 +152,7 @@ class _CreateJobContractWidgetState extends State<CreateJobContractWidget>
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    'chs4kaw0' /* Job Contract */,
+                                    '0eqe53g0' /* Job Contract */,
                                   ),
                                   style: FlutterFlowTheme.of(context).title2,
                                 ),
