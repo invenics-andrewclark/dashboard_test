@@ -25,55 +25,6 @@ class _$OrganisationsRecordSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
-    value = object.organisationName;
-    if (value != null) {
-      result
-        ..add('organisation_name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.organisationLogo;
-    if (value != null) {
-      result
-        ..add('organisation_logo')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.phoneNumber;
-    if (value != null) {
-      result
-        ..add('phone_number')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.email;
-    if (value != null) {
-      result
-        ..add('email')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.createdDate;
-    if (value != null) {
-      result
-        ..add('created_date')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(DateTime)));
-    }
-    value = object.pinCode;
-    if (value != null) {
-      result
-        ..add('pin_code')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.area;
-    if (value != null) {
-      result
-        ..add('area')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.state;
     if (value != null) {
       result
@@ -81,17 +32,10 @@ class _$OrganisationsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.district;
+    value = object.country;
     if (value != null) {
       result
-        ..add('district')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.address;
-    if (value != null) {
-      result
-        ..add('address')
+        ..add('country')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -102,28 +46,72 @@ class _$OrganisationsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.organisationRef;
+    value = object.email;
     if (value != null) {
       result
-        ..add('organisation_ref')
+        ..add('email')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                DocumentReference, const [const FullType.nullable(Object)])));
+            specifiedType: const FullType(String)));
     }
-    value = object.organisationCaptains;
+    value = object.area;
     if (value != null) {
       result
-        ..add('organisation_captains')
+        ..add('area')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(BuiltList, const [
-              const FullType(
-                  DocumentReference, const [const FullType.nullable(Object)])
-            ])));
+            specifiedType: const FullType(String)));
     }
-    value = object.industry;
+    value = object.phoneNumber;
     if (value != null) {
       result
-        ..add('industry')
+        ..add('phone_number')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.createdOn;
+    if (value != null) {
+      result
+        ..add('created_on')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.pinCode;
+    if (value != null) {
+      result
+        ..add('pin_code')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.organisationLogo;
+    if (value != null) {
+      result
+        ..add('organisation_logo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.district;
+    if (value != null) {
+      result
+        ..add('district')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.orgSector;
+    if (value != null) {
+      result
+        ..add('org_sector')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.organisationRegistrationId;
+    if (value != null) {
+      result
+        ..add('organisation_registration_id')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.organisationName;
+    if (value != null) {
+      result
+        ..add('organisation_name')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -150,65 +138,56 @@ class _$OrganisationsRecordSerializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'organisation_name':
-          result.organisationName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'organisation_logo':
-          result.organisationLogo = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'phone_number':
-          result.phoneNumber = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'email':
-          result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'created_date':
-          result.createdDate = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime?;
-          break;
-        case 'pin_code':
-          result.pinCode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'area':
-          result.area = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'state':
           result.state = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'district':
-          result.district = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'address':
-          result.address = serializers.deserialize(value,
+        case 'country':
+          result.country = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'contact_name':
           result.contactName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'organisation_ref':
-          result.organisationRef = serializers.deserialize(value,
-              specifiedType: const FullType(DocumentReference, const [
-                const FullType.nullable(Object)
-              ])) as DocumentReference<Object?>?;
+        case 'email':
+          result.email = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
-        case 'organisation_captains':
-          result.organisationCaptains.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [
-                const FullType(
-                    DocumentReference, const [const FullType.nullable(Object)])
-              ]))! as BuiltList<Object?>);
+        case 'area':
+          result.area = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
-        case 'industry':
-          result.industry = serializers.deserialize(value,
+        case 'phone_number':
+          result.phoneNumber = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'created_on':
+          result.createdOn = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'pin_code':
+          result.pinCode = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'organisation_logo':
+          result.organisationLogo = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'district':
+          result.district = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'org_sector':
+          result.orgSector = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'organisation_registration_id':
+          result.organisationRegistrationId = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
+          break;
+        case 'organisation_name':
+          result.organisationName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'Document__Reference__Field':
@@ -226,33 +205,31 @@ class _$OrganisationsRecordSerializer
 
 class _$OrganisationsRecord extends OrganisationsRecord {
   @override
-  final String? organisationName;
-  @override
-  final String? organisationLogo;
-  @override
-  final String? phoneNumber;
-  @override
-  final String? email;
-  @override
-  final DateTime? createdDate;
-  @override
-  final String? pinCode;
-  @override
-  final String? area;
-  @override
   final String? state;
   @override
-  final String? district;
-  @override
-  final String? address;
+  final String? country;
   @override
   final String? contactName;
   @override
-  final DocumentReference<Object?>? organisationRef;
+  final String? email;
   @override
-  final BuiltList<DocumentReference<Object?>>? organisationCaptains;
+  final String? area;
   @override
-  final String? industry;
+  final String? phoneNumber;
+  @override
+  final String? createdOn;
+  @override
+  final String? pinCode;
+  @override
+  final String? organisationLogo;
+  @override
+  final String? district;
+  @override
+  final String? orgSector;
+  @override
+  final int? organisationRegistrationId;
+  @override
+  final String? organisationName;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -261,20 +238,19 @@ class _$OrganisationsRecord extends OrganisationsRecord {
       (new OrganisationsRecordBuilder()..update(updates))._build();
 
   _$OrganisationsRecord._(
-      {this.organisationName,
-      this.organisationLogo,
-      this.phoneNumber,
-      this.email,
-      this.createdDate,
-      this.pinCode,
-      this.area,
-      this.state,
-      this.district,
-      this.address,
+      {this.state,
+      this.country,
       this.contactName,
-      this.organisationRef,
-      this.organisationCaptains,
-      this.industry,
+      this.email,
+      this.area,
+      this.phoneNumber,
+      this.createdOn,
+      this.pinCode,
+      this.organisationLogo,
+      this.district,
+      this.orgSector,
+      this.organisationRegistrationId,
+      this.organisationName,
       this.ffRef})
       : super._();
 
@@ -291,20 +267,19 @@ class _$OrganisationsRecord extends OrganisationsRecord {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is OrganisationsRecord &&
-        organisationName == other.organisationName &&
-        organisationLogo == other.organisationLogo &&
-        phoneNumber == other.phoneNumber &&
-        email == other.email &&
-        createdDate == other.createdDate &&
-        pinCode == other.pinCode &&
-        area == other.area &&
         state == other.state &&
-        district == other.district &&
-        address == other.address &&
+        country == other.country &&
         contactName == other.contactName &&
-        organisationRef == other.organisationRef &&
-        organisationCaptains == other.organisationCaptains &&
-        industry == other.industry &&
+        email == other.email &&
+        area == other.area &&
+        phoneNumber == other.phoneNumber &&
+        createdOn == other.createdOn &&
+        pinCode == other.pinCode &&
+        organisationLogo == other.organisationLogo &&
+        district == other.district &&
+        orgSector == other.orgSector &&
+        organisationRegistrationId == other.organisationRegistrationId &&
+        organisationName == other.organisationName &&
         ffRef == other.ffRef;
   }
 
@@ -322,46 +297,38 @@ class _$OrganisationsRecord extends OrganisationsRecord {
                                         $jc(
                                             $jc(
                                                 $jc(
-                                                    $jc(
-                                                        $jc(
-                                                            $jc(
-                                                                0,
-                                                                organisationName
-                                                                    .hashCode),
-                                                            organisationLogo
-                                                                .hashCode),
-                                                        phoneNumber.hashCode),
-                                                    email.hashCode),
-                                                createdDate.hashCode),
-                                            pinCode.hashCode),
-                                        area.hashCode),
-                                    state.hashCode),
-                                district.hashCode),
-                            address.hashCode),
-                        contactName.hashCode),
-                    organisationRef.hashCode),
-                organisationCaptains.hashCode),
-            industry.hashCode),
+                                                    $jc($jc(0, state.hashCode),
+                                                        country.hashCode),
+                                                    contactName.hashCode),
+                                                email.hashCode),
+                                            area.hashCode),
+                                        phoneNumber.hashCode),
+                                    createdOn.hashCode),
+                                pinCode.hashCode),
+                            organisationLogo.hashCode),
+                        district.hashCode),
+                    orgSector.hashCode),
+                organisationRegistrationId.hashCode),
+            organisationName.hashCode),
         ffRef.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'OrganisationsRecord')
-          ..add('organisationName', organisationName)
-          ..add('organisationLogo', organisationLogo)
-          ..add('phoneNumber', phoneNumber)
-          ..add('email', email)
-          ..add('createdDate', createdDate)
-          ..add('pinCode', pinCode)
-          ..add('area', area)
           ..add('state', state)
-          ..add('district', district)
-          ..add('address', address)
+          ..add('country', country)
           ..add('contactName', contactName)
-          ..add('organisationRef', organisationRef)
-          ..add('organisationCaptains', organisationCaptains)
-          ..add('industry', industry)
+          ..add('email', email)
+          ..add('area', area)
+          ..add('phoneNumber', phoneNumber)
+          ..add('createdOn', createdOn)
+          ..add('pinCode', pinCode)
+          ..add('organisationLogo', organisationLogo)
+          ..add('district', district)
+          ..add('orgSector', orgSector)
+          ..add('organisationRegistrationId', organisationRegistrationId)
+          ..add('organisationName', organisationName)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -371,68 +338,60 @@ class OrganisationsRecordBuilder
     implements Builder<OrganisationsRecord, OrganisationsRecordBuilder> {
   _$OrganisationsRecord? _$v;
 
-  String? _organisationName;
-  String? get organisationName => _$this._organisationName;
-  set organisationName(String? organisationName) =>
-      _$this._organisationName = organisationName;
+  String? _state;
+  String? get state => _$this._state;
+  set state(String? state) => _$this._state = state;
+
+  String? _country;
+  String? get country => _$this._country;
+  set country(String? country) => _$this._country = country;
+
+  String? _contactName;
+  String? get contactName => _$this._contactName;
+  set contactName(String? contactName) => _$this._contactName = contactName;
+
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
+
+  String? _area;
+  String? get area => _$this._area;
+  set area(String? area) => _$this._area = area;
+
+  String? _phoneNumber;
+  String? get phoneNumber => _$this._phoneNumber;
+  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
+
+  String? _createdOn;
+  String? get createdOn => _$this._createdOn;
+  set createdOn(String? createdOn) => _$this._createdOn = createdOn;
+
+  String? _pinCode;
+  String? get pinCode => _$this._pinCode;
+  set pinCode(String? pinCode) => _$this._pinCode = pinCode;
 
   String? _organisationLogo;
   String? get organisationLogo => _$this._organisationLogo;
   set organisationLogo(String? organisationLogo) =>
       _$this._organisationLogo = organisationLogo;
 
-  String? _phoneNumber;
-  String? get phoneNumber => _$this._phoneNumber;
-  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
-
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
-
-  DateTime? _createdDate;
-  DateTime? get createdDate => _$this._createdDate;
-  set createdDate(DateTime? createdDate) => _$this._createdDate = createdDate;
-
-  String? _pinCode;
-  String? get pinCode => _$this._pinCode;
-  set pinCode(String? pinCode) => _$this._pinCode = pinCode;
-
-  String? _area;
-  String? get area => _$this._area;
-  set area(String? area) => _$this._area = area;
-
-  String? _state;
-  String? get state => _$this._state;
-  set state(String? state) => _$this._state = state;
-
   String? _district;
   String? get district => _$this._district;
   set district(String? district) => _$this._district = district;
 
-  String? _address;
-  String? get address => _$this._address;
-  set address(String? address) => _$this._address = address;
+  String? _orgSector;
+  String? get orgSector => _$this._orgSector;
+  set orgSector(String? orgSector) => _$this._orgSector = orgSector;
 
-  String? _contactName;
-  String? get contactName => _$this._contactName;
-  set contactName(String? contactName) => _$this._contactName = contactName;
+  int? _organisationRegistrationId;
+  int? get organisationRegistrationId => _$this._organisationRegistrationId;
+  set organisationRegistrationId(int? organisationRegistrationId) =>
+      _$this._organisationRegistrationId = organisationRegistrationId;
 
-  DocumentReference<Object?>? _organisationRef;
-  DocumentReference<Object?>? get organisationRef => _$this._organisationRef;
-  set organisationRef(DocumentReference<Object?>? organisationRef) =>
-      _$this._organisationRef = organisationRef;
-
-  ListBuilder<DocumentReference<Object?>>? _organisationCaptains;
-  ListBuilder<DocumentReference<Object?>> get organisationCaptains =>
-      _$this._organisationCaptains ??=
-          new ListBuilder<DocumentReference<Object?>>();
-  set organisationCaptains(
-          ListBuilder<DocumentReference<Object?>>? organisationCaptains) =>
-      _$this._organisationCaptains = organisationCaptains;
-
-  String? _industry;
-  String? get industry => _$this._industry;
-  set industry(String? industry) => _$this._industry = industry;
+  String? _organisationName;
+  String? get organisationName => _$this._organisationName;
+  set organisationName(String? organisationName) =>
+      _$this._organisationName = organisationName;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -445,20 +404,19 @@ class OrganisationsRecordBuilder
   OrganisationsRecordBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _organisationName = $v.organisationName;
-      _organisationLogo = $v.organisationLogo;
-      _phoneNumber = $v.phoneNumber;
-      _email = $v.email;
-      _createdDate = $v.createdDate;
-      _pinCode = $v.pinCode;
-      _area = $v.area;
       _state = $v.state;
-      _district = $v.district;
-      _address = $v.address;
+      _country = $v.country;
       _contactName = $v.contactName;
-      _organisationRef = $v.organisationRef;
-      _organisationCaptains = $v.organisationCaptains?.toBuilder();
-      _industry = $v.industry;
+      _email = $v.email;
+      _area = $v.area;
+      _phoneNumber = $v.phoneNumber;
+      _createdOn = $v.createdOn;
+      _pinCode = $v.pinCode;
+      _organisationLogo = $v.organisationLogo;
+      _district = $v.district;
+      _orgSector = $v.orgSector;
+      _organisationRegistrationId = $v.organisationRegistrationId;
+      _organisationName = $v.organisationName;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -480,36 +438,22 @@ class OrganisationsRecordBuilder
   OrganisationsRecord build() => _build();
 
   _$OrganisationsRecord _build() {
-    _$OrganisationsRecord _$result;
-    try {
-      _$result = _$v ??
-          new _$OrganisationsRecord._(
-              organisationName: organisationName,
-              organisationLogo: organisationLogo,
-              phoneNumber: phoneNumber,
-              email: email,
-              createdDate: createdDate,
-              pinCode: pinCode,
-              area: area,
-              state: state,
-              district: district,
-              address: address,
-              contactName: contactName,
-              organisationRef: organisationRef,
-              organisationCaptains: _organisationCaptains?.build(),
-              industry: industry,
-              ffRef: ffRef);
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'organisationCaptains';
-        _organisationCaptains?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'OrganisationsRecord', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$OrganisationsRecord._(
+            state: state,
+            country: country,
+            contactName: contactName,
+            email: email,
+            area: area,
+            phoneNumber: phoneNumber,
+            createdOn: createdOn,
+            pinCode: pinCode,
+            organisationLogo: organisationLogo,
+            district: district,
+            orgSector: orgSector,
+            organisationRegistrationId: organisationRegistrationId,
+            organisationName: organisationName,
+            ffRef: ffRef);
     replace(_$result);
     return _$result;
   }

@@ -1,23 +1,23 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:rxdart/rxdart.dart';
 
-class DashboardAndrewFirebaseUser {
-  DashboardAndrewFirebaseUser(this.user);
+class JanDashDuplicateFirebaseUser {
+  JanDashDuplicateFirebaseUser(this.user);
   User? user;
   bool get loggedIn => user != null;
 }
 
-DashboardAndrewFirebaseUser? currentUser;
+JanDashDuplicateFirebaseUser? currentUser;
 bool get loggedIn => currentUser?.loggedIn ?? false;
-Stream<DashboardAndrewFirebaseUser> dashboardAndrewFirebaseUserStream() =>
+Stream<JanDashDuplicateFirebaseUser> janDashDuplicateFirebaseUserStream() =>
     FirebaseAuth.instance
         .authStateChanges()
         .debounce((user) => user == null && !loggedIn
             ? TimerStream(true, const Duration(seconds: 1))
             : Stream.value(user))
-        .map<DashboardAndrewFirebaseUser>(
+        .map<JanDashDuplicateFirebaseUser>(
       (user) {
-        currentUser = DashboardAndrewFirebaseUser(user);
+        currentUser = JanDashDuplicateFirebaseUser(user);
         return currentUser!;
       },
     );

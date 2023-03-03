@@ -21,10 +21,10 @@ abstract class ExperienceRecord
   String? get primarySkill;
 
   @BuiltValueField(wireName: 'start_date')
-  DateTime? get startDate;
+  String? get startDate;
 
   @BuiltValueField(wireName: 'end_date')
-  DateTime? get endDate;
+  String? get endDate;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -35,7 +35,9 @@ abstract class ExperienceRecord
   static void _initializeBuilder(ExperienceRecordBuilder builder) => builder
     ..companyName = ''
     ..jobTitle = ''
-    ..primarySkill = '';
+    ..primarySkill = ''
+    ..startDate = ''
+    ..endDate = '';
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
       parent != null
@@ -67,8 +69,8 @@ Map<String, dynamic> createExperienceRecordData({
   String? companyName,
   String? jobTitle,
   String? primarySkill,
-  DateTime? startDate,
-  DateTime? endDate,
+  String? startDate,
+  String? endDate,
 }) {
   final firestoreData = serializers.toFirestore(
     ExperienceRecord.serializer,

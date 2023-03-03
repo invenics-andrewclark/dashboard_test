@@ -9,8 +9,6 @@ part 'jobs_record.g.dart';
 abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   static Serializer<JobsRecord> get serializer => _$jobsRecordSerializer;
 
-  String? get salary;
-
   @BuiltValueField(wireName: 'job_description')
   String? get jobDescription;
 
@@ -19,9 +17,6 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
 
   @BuiltValueField(wireName: 'primary_skill_level')
   String? get primarySkillLevel;
-
-  @BuiltValueField(wireName: 'primary_skill')
-  String? get primarySkill;
 
   @BuiltValueField(wireName: 'organisation_name')
   String? get organisationName;
@@ -43,9 +38,6 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   String? get district;
 
   String? get state;
-
-  @BuiltValueField(wireName: 'min_experience')
-  String? get minExperience;
 
   @BuiltValueField(wireName: 'job_application_collection')
   String? get jobApplicationCollection;
@@ -96,10 +88,18 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   @BuiltValueField(wireName: 'min_qualification')
   String? get minQualification;
 
-  @BuiltValueField(wireName: 'job_ref')
-  DocumentReference? get jobRef;
+  JobApplicationStruct get application;
 
-  BuiltList<ApplicationsStruct>? get applications;
+  BuiltList<JobApplicationStruct>? get applications;
+
+  @BuiltValueField(wireName: 'job_id')
+  DocumentReference? get jobId;
+
+  @BuiltValueField(wireName: 'job_status')
+  String? get jobStatus;
+
+  @BuiltValueField(wireName: 'worker_id')
+  BuiltList<String>? get workerId;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -108,11 +108,9 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
   DocumentReference get parentReference => reference.parent.parent!;
 
   static void _initializeBuilder(JobsRecordBuilder builder) => builder
-    ..salary = ''
     ..jobDescription = ''
     ..jobImage = ''
     ..primarySkillLevel = ''
-    ..primarySkill = ''
     ..organisationName = ''
     ..jobTitle = ''
     ..modeOfSalary = ''
@@ -121,7 +119,6 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
     ..area = ''
     ..district = ''
     ..state = ''
-    ..minExperience = ''
     ..jobApplicationCollection = ''
     ..applicationList = ''
     ..numberOfVacancies = ''
@@ -137,7 +134,10 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
     ..medical = ''
     ..jobSubCateg = ''
     ..minQualification = ''
-    ..applications = ListBuilder();
+    ..application = JobApplicationStructBuilder()
+    ..applications = ListBuilder()
+    ..jobStatus = ''
+    ..workerId = ListBuilder();
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
       parent != null
@@ -165,11 +165,9 @@ abstract class JobsRecord implements Built<JobsRecord, JobsRecordBuilder> {
 }
 
 Map<String, dynamic> createJobsRecordData({
-  String? salary,
   String? jobDescription,
   String? jobImage,
   String? primarySkillLevel,
-  String? primarySkill,
   String? organisationName,
   String? jobTitle,
   String? modeOfSalary,
@@ -178,7 +176,6 @@ Map<String, dynamic> createJobsRecordData({
   String? area,
   String? district,
   String? state,
-  String? minExperience,
   String? jobApplicationCollection,
   String? applicationList,
   String? numberOfVacancies,
@@ -197,17 +194,17 @@ Map<String, dynamic> createJobsRecordData({
   String? jobSubCateg,
   DocumentReference? orgRefId,
   String? minQualification,
-  DocumentReference? jobRef,
+  JobApplicationStruct? application,
+  DocumentReference? jobId,
+  String? jobStatus,
 }) {
   final firestoreData = serializers.toFirestore(
     JobsRecord.serializer,
     JobsRecord(
       (j) => j
-        ..salary = salary
         ..jobDescription = jobDescription
         ..jobImage = jobImage
         ..primarySkillLevel = primarySkillLevel
-        ..primarySkill = primarySkill
         ..organisationName = organisationName
         ..jobTitle = jobTitle
         ..modeOfSalary = modeOfSalary
@@ -216,7 +213,6 @@ Map<String, dynamic> createJobsRecordData({
         ..area = area
         ..district = district
         ..state = state
-        ..minExperience = minExperience
         ..jobApplicationCollection = jobApplicationCollection
         ..applicationList = applicationList
         ..numberOfVacancies = numberOfVacancies
@@ -235,10 +231,16 @@ Map<String, dynamic> createJobsRecordData({
         ..jobSubCateg = jobSubCateg
         ..orgRefId = orgRefId
         ..minQualification = minQualification
-        ..jobRef = jobRef
-        ..applications = null,
+        ..application = JobApplicationStructBuilder()
+        ..applications = null
+        ..jobId = jobId
+        ..jobStatus = jobStatus
+        ..workerId = null,
     ),
   );
+
+  // Handle nested data for "application" field.
+  addJobApplicationStructData(firestoreData, application, 'application');
 
   return firestoreData;
 }

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>802856385303-15gou9uetnlivkbdfg2dl4lt7bff8f8u.apps.googleusercontent.com</string>
+	<string>802856385303-0vhi2gvdabq8ibbfjkp15ievqb8nmer1.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.802856385303-15gou9uetnlivkbdfg2dl4lt7bff8f8u</string>
+	<string>com.googleusercontent.apps.802856385303-0vhi2gvdabq8ibbfjkp15ievqb8nmer1</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>802856385303-48lhmoq32ur0j1noh76tn7hphao2ffkl.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mycompany.entprojecttracker</string>
+	<string>com.mycompany.jansaktidashboard</string>
 	<key>PROJECT_ID</key>
 	<string>jansakti-dev</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:802856385303:ios:34c606a5ad6ec274219552</string>
+	<string>1:802856385303:ios:96207df87e4e7b3a219552</string>
 </dict>
 </plist>

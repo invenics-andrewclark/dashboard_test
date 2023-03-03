@@ -17,15 +17,12 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
   @override
   Iterable<Object?> serialize(Serializers serializers, JobsRecord object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object?>[];
+    final result = <Object?>[
+      'application',
+      serializers.serialize(object.application,
+          specifiedType: const FullType(JobApplicationStruct)),
+    ];
     Object? value;
-    value = object.salary;
-    if (value != null) {
-      result
-        ..add('salary')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.jobDescription;
     if (value != null) {
       result
@@ -44,13 +41,6 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
     if (value != null) {
       result
         ..add('primary_skill_level')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.primarySkill;
-    if (value != null) {
-      result
-        ..add('primary_skill')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -107,13 +97,6 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
     if (value != null) {
       result
         ..add('state')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.minExperience;
-    if (value != null) {
-      result
-        ..add('min_experience')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -244,21 +227,36 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.jobRef;
-    if (value != null) {
-      result
-        ..add('job_ref')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                DocumentReference, const [const FullType.nullable(Object)])));
-    }
     value = object.applications;
     if (value != null) {
       result
         ..add('applications')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
-                BuiltList, const [const FullType(ApplicationsStruct)])));
+                BuiltList, const [const FullType(JobApplicationStruct)])));
+    }
+    value = object.jobId;
+    if (value != null) {
+      result
+        ..add('job_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
+    }
+    value = object.jobStatus;
+    if (value != null) {
+      result
+        ..add('job_status')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.workerId;
+    if (value != null) {
+      result
+        ..add('worker_id')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(String)])));
     }
     value = object.ffRef;
     if (value != null) {
@@ -282,10 +280,6 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'salary':
-          result.salary = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'job_description':
           result.jobDescription = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -296,10 +290,6 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
           break;
         case 'primary_skill_level':
           result.primarySkillLevel = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'primary_skill':
-          result.primarySkill = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'organisation_name':
@@ -332,10 +322,6 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
           break;
         case 'state':
           result.state = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'min_experience':
-          result.minExperience = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'job_application_collection':
@@ -412,16 +398,31 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
           result.minQualification = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'job_ref':
-          result.jobRef = serializers.deserialize(value,
-              specifiedType: const FullType(DocumentReference, const [
-                const FullType.nullable(Object)
-              ])) as DocumentReference<Object?>?;
+        case 'application':
+          result.application.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(JobApplicationStruct))!
+              as JobApplicationStruct);
           break;
         case 'applications':
           result.applications.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(ApplicationsStruct)]))!
+                      BuiltList, const [const FullType(JobApplicationStruct)]))!
+              as BuiltList<Object?>);
+          break;
+        case 'job_id':
+          result.jobId = serializers.deserialize(value,
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
+          break;
+        case 'job_status':
+          result.jobStatus = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'worker_id':
+          result.workerId.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(String)]))!
               as BuiltList<Object?>);
           break;
         case 'Document__Reference__Field':
@@ -439,15 +440,11 @@ class _$JobsRecordSerializer implements StructuredSerializer<JobsRecord> {
 
 class _$JobsRecord extends JobsRecord {
   @override
-  final String? salary;
-  @override
   final String? jobDescription;
   @override
   final String? jobImage;
   @override
   final String? primarySkillLevel;
-  @override
-  final String? primarySkill;
   @override
   final String? organisationName;
   @override
@@ -464,8 +461,6 @@ class _$JobsRecord extends JobsRecord {
   final String? district;
   @override
   final String? state;
-  @override
-  final String? minExperience;
   @override
   final String? jobApplicationCollection;
   @override
@@ -503,9 +498,15 @@ class _$JobsRecord extends JobsRecord {
   @override
   final String? minQualification;
   @override
-  final DocumentReference<Object?>? jobRef;
+  final JobApplicationStruct application;
   @override
-  final BuiltList<ApplicationsStruct>? applications;
+  final BuiltList<JobApplicationStruct>? applications;
+  @override
+  final DocumentReference<Object?>? jobId;
+  @override
+  final String? jobStatus;
+  @override
+  final BuiltList<String>? workerId;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -513,11 +514,9 @@ class _$JobsRecord extends JobsRecord {
       (new JobsRecordBuilder()..update(updates))._build();
 
   _$JobsRecord._(
-      {this.salary,
-      this.jobDescription,
+      {this.jobDescription,
       this.jobImage,
       this.primarySkillLevel,
-      this.primarySkill,
       this.organisationName,
       this.jobTitle,
       this.modeOfSalary,
@@ -526,7 +525,6 @@ class _$JobsRecord extends JobsRecord {
       this.area,
       this.district,
       this.state,
-      this.minExperience,
       this.jobApplicationCollection,
       this.applicationList,
       this.numberOfVacancies,
@@ -545,10 +543,16 @@ class _$JobsRecord extends JobsRecord {
       this.jobSubCateg,
       this.orgRefId,
       this.minQualification,
-      this.jobRef,
+      required this.application,
       this.applications,
+      this.jobId,
+      this.jobStatus,
+      this.workerId,
       this.ffRef})
-      : super._();
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        application, r'JobsRecord', 'application');
+  }
 
   @override
   JobsRecord rebuild(void Function(JobsRecordBuilder) updates) =>
@@ -561,11 +565,9 @@ class _$JobsRecord extends JobsRecord {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is JobsRecord &&
-        salary == other.salary &&
         jobDescription == other.jobDescription &&
         jobImage == other.jobImage &&
         primarySkillLevel == other.primarySkillLevel &&
-        primarySkill == other.primarySkill &&
         organisationName == other.organisationName &&
         jobTitle == other.jobTitle &&
         modeOfSalary == other.modeOfSalary &&
@@ -574,7 +576,6 @@ class _$JobsRecord extends JobsRecord {
         area == other.area &&
         district == other.district &&
         state == other.state &&
-        minExperience == other.minExperience &&
         jobApplicationCollection == other.jobApplicationCollection &&
         applicationList == other.applicationList &&
         numberOfVacancies == other.numberOfVacancies &&
@@ -593,8 +594,11 @@ class _$JobsRecord extends JobsRecord {
         jobSubCateg == other.jobSubCateg &&
         orgRefId == other.orgRefId &&
         minQualification == other.minQualification &&
-        jobRef == other.jobRef &&
+        application == other.application &&
         applications == other.applications &&
+        jobId == other.jobId &&
+        jobStatus == other.jobStatus &&
+        workerId == other.workerId &&
         ffRef == other.ffRef;
   }
 
@@ -618,36 +622,34 @@ class _$JobsRecord extends JobsRecord {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, salary.hashCode), jobDescription.hashCode), jobImage.hashCode), primarySkillLevel.hashCode), primarySkill.hashCode), organisationName.hashCode), jobTitle.hashCode), modeOfSalary.hashCode), jobCategory.hashCode), pinCode.hashCode), area.hashCode), district.hashCode), state.hashCode), minExperience.hashCode), jobApplicationCollection.hashCode), applicationList.hashCode),
-                                                                                numberOfVacancies.hashCode),
-                                                                            workingHours.hashCode),
-                                                                        startDate.hashCode),
-                                                                    endDate.hashCode),
-                                                                gender.hashCode),
-                                                            minSalary.hashCode),
-                                                        maxSalary.hashCode),
-                                                    minAge.hashCode),
-                                                maxAge.hashCode),
-                                            food.hashCode),
-                                        lodging.hashCode),
-                                    transportation.hashCode),
-                                medical.hashCode),
-                            jobSubCateg.hashCode),
-                        orgRefId.hashCode),
-                    minQualification.hashCode),
-                jobRef.hashCode),
-            applications.hashCode),
+                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, jobDescription.hashCode), jobImage.hashCode), primarySkillLevel.hashCode), organisationName.hashCode), jobTitle.hashCode), modeOfSalary.hashCode), jobCategory.hashCode), pinCode.hashCode), area.hashCode), district.hashCode), state.hashCode), jobApplicationCollection.hashCode), applicationList.hashCode), numberOfVacancies.hashCode), workingHours.hashCode), startDate.hashCode),
+                                                                                endDate.hashCode),
+                                                                            gender.hashCode),
+                                                                        minSalary.hashCode),
+                                                                    maxSalary.hashCode),
+                                                                minAge.hashCode),
+                                                            maxAge.hashCode),
+                                                        food.hashCode),
+                                                    lodging.hashCode),
+                                                transportation.hashCode),
+                                            medical.hashCode),
+                                        jobSubCateg.hashCode),
+                                    orgRefId.hashCode),
+                                minQualification.hashCode),
+                            application.hashCode),
+                        applications.hashCode),
+                    jobId.hashCode),
+                jobStatus.hashCode),
+            workerId.hashCode),
         ffRef.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'JobsRecord')
-          ..add('salary', salary)
           ..add('jobDescription', jobDescription)
           ..add('jobImage', jobImage)
           ..add('primarySkillLevel', primarySkillLevel)
-          ..add('primarySkill', primarySkill)
           ..add('organisationName', organisationName)
           ..add('jobTitle', jobTitle)
           ..add('modeOfSalary', modeOfSalary)
@@ -656,7 +658,6 @@ class _$JobsRecord extends JobsRecord {
           ..add('area', area)
           ..add('district', district)
           ..add('state', state)
-          ..add('minExperience', minExperience)
           ..add('jobApplicationCollection', jobApplicationCollection)
           ..add('applicationList', applicationList)
           ..add('numberOfVacancies', numberOfVacancies)
@@ -675,8 +676,11 @@ class _$JobsRecord extends JobsRecord {
           ..add('jobSubCateg', jobSubCateg)
           ..add('orgRefId', orgRefId)
           ..add('minQualification', minQualification)
-          ..add('jobRef', jobRef)
+          ..add('application', application)
           ..add('applications', applications)
+          ..add('jobId', jobId)
+          ..add('jobStatus', jobStatus)
+          ..add('workerId', workerId)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -684,10 +688,6 @@ class _$JobsRecord extends JobsRecord {
 
 class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
   _$JobsRecord? _$v;
-
-  String? _salary;
-  String? get salary => _$this._salary;
-  set salary(String? salary) => _$this._salary = salary;
 
   String? _jobDescription;
   String? get jobDescription => _$this._jobDescription;
@@ -702,10 +702,6 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
   String? get primarySkillLevel => _$this._primarySkillLevel;
   set primarySkillLevel(String? primarySkillLevel) =>
       _$this._primarySkillLevel = primarySkillLevel;
-
-  String? _primarySkill;
-  String? get primarySkill => _$this._primarySkill;
-  set primarySkill(String? primarySkill) => _$this._primarySkill = primarySkill;
 
   String? _organisationName;
   String? get organisationName => _$this._organisationName;
@@ -739,11 +735,6 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
   String? _state;
   String? get state => _$this._state;
   set state(String? state) => _$this._state = state;
-
-  String? _minExperience;
-  String? get minExperience => _$this._minExperience;
-  set minExperience(String? minExperience) =>
-      _$this._minExperience = minExperience;
 
   String? _jobApplicationCollection;
   String? get jobApplicationCollection => _$this._jobApplicationCollection;
@@ -823,15 +814,30 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
   set minQualification(String? minQualification) =>
       _$this._minQualification = minQualification;
 
-  DocumentReference<Object?>? _jobRef;
-  DocumentReference<Object?>? get jobRef => _$this._jobRef;
-  set jobRef(DocumentReference<Object?>? jobRef) => _$this._jobRef = jobRef;
+  JobApplicationStructBuilder? _application;
+  JobApplicationStructBuilder get application =>
+      _$this._application ??= new JobApplicationStructBuilder();
+  set application(JobApplicationStructBuilder? application) =>
+      _$this._application = application;
 
-  ListBuilder<ApplicationsStruct>? _applications;
-  ListBuilder<ApplicationsStruct> get applications =>
-      _$this._applications ??= new ListBuilder<ApplicationsStruct>();
-  set applications(ListBuilder<ApplicationsStruct>? applications) =>
+  ListBuilder<JobApplicationStruct>? _applications;
+  ListBuilder<JobApplicationStruct> get applications =>
+      _$this._applications ??= new ListBuilder<JobApplicationStruct>();
+  set applications(ListBuilder<JobApplicationStruct>? applications) =>
       _$this._applications = applications;
+
+  DocumentReference<Object?>? _jobId;
+  DocumentReference<Object?>? get jobId => _$this._jobId;
+  set jobId(DocumentReference<Object?>? jobId) => _$this._jobId = jobId;
+
+  String? _jobStatus;
+  String? get jobStatus => _$this._jobStatus;
+  set jobStatus(String? jobStatus) => _$this._jobStatus = jobStatus;
+
+  ListBuilder<String>? _workerId;
+  ListBuilder<String> get workerId =>
+      _$this._workerId ??= new ListBuilder<String>();
+  set workerId(ListBuilder<String>? workerId) => _$this._workerId = workerId;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -844,11 +850,9 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
   JobsRecordBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _salary = $v.salary;
       _jobDescription = $v.jobDescription;
       _jobImage = $v.jobImage;
       _primarySkillLevel = $v.primarySkillLevel;
-      _primarySkill = $v.primarySkill;
       _organisationName = $v.organisationName;
       _jobTitle = $v.jobTitle;
       _modeOfSalary = $v.modeOfSalary;
@@ -857,7 +861,6 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
       _area = $v.area;
       _district = $v.district;
       _state = $v.state;
-      _minExperience = $v.minExperience;
       _jobApplicationCollection = $v.jobApplicationCollection;
       _applicationList = $v.applicationList;
       _numberOfVacancies = $v.numberOfVacancies;
@@ -876,8 +879,11 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
       _jobSubCateg = $v.jobSubCateg;
       _orgRefId = $v.orgRefId;
       _minQualification = $v.minQualification;
-      _jobRef = $v.jobRef;
+      _application = $v.application.toBuilder();
       _applications = $v.applications?.toBuilder();
+      _jobId = $v.jobId;
+      _jobStatus = $v.jobStatus;
+      _workerId = $v.workerId?.toBuilder();
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -903,11 +909,9 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
     try {
       _$result = _$v ??
           new _$JobsRecord._(
-              salary: salary,
               jobDescription: jobDescription,
               jobImage: jobImage,
               primarySkillLevel: primarySkillLevel,
-              primarySkill: primarySkill,
               organisationName: organisationName,
               jobTitle: jobTitle,
               modeOfSalary: modeOfSalary,
@@ -916,7 +920,6 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
               area: area,
               district: district,
               state: state,
-              minExperience: minExperience,
               jobApplicationCollection: jobApplicationCollection,
               applicationList: applicationList,
               numberOfVacancies: numberOfVacancies,
@@ -935,14 +938,22 @@ class JobsRecordBuilder implements Builder<JobsRecord, JobsRecordBuilder> {
               jobSubCateg: jobSubCateg,
               orgRefId: orgRefId,
               minQualification: minQualification,
-              jobRef: jobRef,
+              application: application.build(),
               applications: _applications?.build(),
+              jobId: jobId,
+              jobStatus: jobStatus,
+              workerId: _workerId?.build(),
               ffRef: ffRef);
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'application';
+        application.build();
         _$failedField = 'applications';
         _applications?.build();
+
+        _$failedField = 'workerId';
+        _workerId?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'JobsRecord', _$failedField, e.toString());

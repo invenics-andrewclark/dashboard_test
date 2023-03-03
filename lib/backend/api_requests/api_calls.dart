@@ -11,10 +11,10 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class LocationAPICall {
   static Future<ApiCallResponse> call({
-    String? pinCode = '700123',
+    String? pinCode = '686576',
   }) {
     return ApiManager.instance.makeApiCall(
-      callName: 'locationAPI',
+      callName: 'Location API',
       apiUrl: 'https://api.postalpincode.in/pincode/${pinCode}',
       callType: ApiCallType.GET,
       headers: {},
@@ -34,9 +34,22 @@ class LocationAPICall {
         response,
         r'''$[0].PostOffice[0].Region''',
       );
+  static dynamic namelist(dynamic response) => getJsonField(
+        response,
+        r'''$[:].PostOffice[:].Name''',
+        true,
+      );
   static dynamic district(dynamic response) => getJsonField(
         response,
         r'''$[0].PostOffice[0].District''',
+      );
+  static dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$[:].Message''',
+      );
+  static dynamic status(dynamic response) => getJsonField(
+        response,
+        r'''$[0].Status''',
       );
 }
 

@@ -20,8 +20,8 @@ export 'serialization_util.dart';
 const kTransitionInfoKey = '__transition_info__';
 
 class AppStateNotifier extends ChangeNotifier {
-  DashboardAndrewFirebaseUser? initialUser;
-  DashboardAndrewFirebaseUser? user;
+  JanDashDuplicateFirebaseUser? initialUser;
+  JanDashDuplicateFirebaseUser? user;
   bool showSplashImage = true;
   String? _redirectLocation;
 
@@ -46,7 +46,7 @@ class AppStateNotifier extends ChangeNotifier {
   /// to perform subsequent actions (such as navigation) afterwards.
   void updateNotifyOnAuthChange(bool notify) => notifyOnAuthChange = notify;
 
-  void update(DashboardAndrewFirebaseUser newUser) {
+  void update(JanDashDuplicateFirebaseUser newUser) {
     initialUser ??= newUser;
     user = newUser;
     // Refresh the app on auth change unless explicitly marked otherwise.
@@ -69,378 +69,252 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, _) =>
-          appStateNotifier.loggedIn ? NavBarPage() : LoginWidget(),
+          appStateNotifier.loggedIn ? DashboardWidget() : SignInCopyWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : LoginWidget(),
+          builder: (context, _) => appStateNotifier.loggedIn
+              ? DashboardWidget()
+              : SignInCopyWidget(),
           routes: [
             FFRoute(
-              name: 'login',
-              path: 'login',
-              builder: (context, params) => LoginWidget(),
+              name: 'ScoutsDashboard',
+              path: 'scoutsDashboard',
+              builder: (context, params) => ScoutsDashboardWidget(),
             ),
             FFRoute(
-              name: 'forgotPassword',
-              path: 'forgotPassword',
-              builder: (context, params) => ForgotPasswordWidget(),
+              name: 'WorkersDashboard',
+              path: 'workersDashboard',
+              builder: (context, params) => WorkersDashboardWidget(),
             ),
             FFRoute(
-              name: 'mainActivityTracker',
-              path: 'mainActivityTracker',
-              requireAuth: true,
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'mainActivityTracker')
-                  : MainActivityTrackerWidget(),
-            ),
-            FFRoute(
-              name: 'captainWorkers',
-              path: 'captainWorkers',
-              requireAuth: true,
-              builder: (context, params) => CaptainWorkersWidget(
-                captainUserRef: params.getParam('captainUserRef',
-                    ParamType.DocumentReference, false, ['users']),
-                captainFullName:
-                    params.getParam('captainFullName', ParamType.String),
-                captainArea: params.getParam('captainArea', ParamType.String),
-                captainPhoto: params.getParam('captainPhoto', ParamType.String),
-                captainRef: params.getParam('captainRef',
-                    ParamType.DocumentReference, false, ['Captains']),
+              name: 'ScoutsProfile',
+              path: 'scoutsProfile',
+              asyncParams: {
+                'scoutdetails': getDoc(['Captains'], CaptainsRecord.serializer),
+              },
+              builder: (context, params) => ScoutsProfileWidget(
+                scoutdetails:
+                    params.getParam('scoutdetails', ParamType.Document),
               ),
             ),
             FFRoute(
-              name: 'createJob',
-              path: 'createJob',
-              requireAuth: true,
-              builder: (context, params) => CreateJobWidget(
-                organisationRef: params.getParam('organisationRef',
-                    ParamType.DocumentReference, false, ['Organisations']),
-                organisationName:
-                    params.getParam('organisationName', ParamType.String),
+              name: 'EditOrgan',
+              path: 'editOrgan',
+              asyncParams: {
+                'orgdetails':
+                    getDoc(['Organisations'], OrganisationsRecord.serializer),
+              },
+              builder: (context, params) => EditOrganWidget(
+                orgdetails: params.getParam('orgdetails', ParamType.Document),
               ),
             ),
             FFRoute(
-              name: 'jobDetails',
-              path: 'jobDetails',
-              requireAuth: true,
-              builder: (context, params) => JobDetailsWidget(
-                jobRef: params.getParam('jobRef', ParamType.DocumentReference,
-                    false, ['Organisations', 'Jobs']),
-                organisationRef: params.getParam('organisationRef',
-                    ParamType.DocumentReference, false, ['Organisations']),
-                jobTitle: params.getParam('jobTitle', ParamType.String),
-              ),
+              name: 'CaptainsDashboard',
+              path: 'captainsDashboard',
+              builder: (context, params) => CaptainsDashboardWidget(),
             ),
             FFRoute(
-              name: 'captainOTP',
-              path: 'captainOTP',
-              builder: (context, params) => CaptainOTPWidget(
-                captainFullName:
-                    params.getParam('captainFullName', ParamType.String),
-                captainMobilePhone:
-                    params.getParam('captainMobilePhone', ParamType.String),
-                captainEmail: params.getParam('captainEmail', ParamType.String),
-                captainDOB: params.getParam('captainDOB', ParamType.DateTime),
-                captainGender:
-                    params.getParam('captainGender', ParamType.String),
-                captainPinCode:
-                    params.getParam('captainPinCode', ParamType.String),
-                captainArea: params.getParam('captainArea', ParamType.String),
-                captainState: params.getParam('captainState', ParamType.String),
-                captainDistrict:
-                    params.getParam('captainDistrict', ParamType.String),
-                captainRecruitmentArea:
-                    params.getParam('captainRecruitmentArea', ParamType.String),
-                captainReferralCode:
-                    params.getParam('captainReferralCode', ParamType.String),
-                captainAadhar:
-                    params.getParam('captainAadhar', ParamType.String),
-                captainPan: params.getParam('captainPan', ParamType.String),
-                captainIFSCCode:
-                    params.getParam('captainIFSCCode', ParamType.String),
-                captainAccountNumber:
-                    params.getParam('captainAccountNumber', ParamType.String),
-                captainAccountName:
-                    params.getParam('captainAccountName', ParamType.String),
-                captainBankName:
-                    params.getParam('captainBankName', ParamType.String),
-                captainPhoto: params.getParam('captainPhoto', ParamType.String),
-              ),
-            ),
-            FFRoute(
-              name: 'myProfile',
-              path: 'myProfile',
-              requireAuth: true,
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'myProfile')
-                  : MyProfileWidget(),
-            ),
-            FFRoute(
-              name: 'addCaptain',
-              path: 'addCaptain',
-              builder: (context, params) => AddCaptainWidget(),
-            ),
-            FFRoute(
-              name: 'mainCaptain',
-              path: 'mainCaptain',
-              requireAuth: true,
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'mainCaptain')
-                  : MainCaptainWidget(),
-            ),
-            FFRoute(
-              name: 'mainScout',
-              path: 'mainScout',
-              requireAuth: true,
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'mainScout')
-                  : MainScoutWidget(),
-            ),
-            FFRoute(
-              name: 'captainProfile',
+              name: 'CaptainProfile',
               path: 'captainProfile',
-              requireAuth: true,
+              asyncParams: {
+                'captaindetails':
+                    getDoc(['Captains'], CaptainsRecord.serializer),
+              },
               builder: (context, params) => CaptainProfileWidget(
-                captainUserRef: params.getParam('captainUserRef',
-                    ParamType.DocumentReference, false, ['users']),
+                captaindetails:
+                    params.getParam('captaindetails', ParamType.Document),
               ),
             ),
             FFRoute(
-              name: 'mainOrganisationsPage',
-              path: 'mainOrganisationsPage',
-              requireAuth: true,
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'mainOrganisationsPage')
-                  : MainOrganisationsPageWidget(),
-            ),
-            FFRoute(
-              name: 'mainWorker',
-              path: 'mainWorker',
-              requireAuth: true,
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'mainWorker')
-                  : MainWorkerWidget(),
-            ),
-            FFRoute(
-              name: 'scoutWorkers',
-              path: 'scoutWorkers',
-              requireAuth: true,
-              builder: (context, params) => ScoutWorkersWidget(
-                scoutUserRef: params.getParam('scoutUserRef',
-                    ParamType.DocumentReference, false, ['users']),
-                scoutFullName:
-                    params.getParam('scoutFullName', ParamType.String),
-                scoutArea: params.getParam('scoutArea', ParamType.String),
-                scoutPhoto: params.getParam('scoutPhoto', ParamType.String),
+              name: 'EditCapatainProfile',
+              path: 'editCapatainProfile',
+              asyncParams: {
+                'editCaptain': getDoc(['Captains'], CaptainsRecord.serializer),
+              },
+              builder: (context, params) => EditCapatainProfileWidget(
+                editCaptain: params.getParam('editCaptain', ParamType.Document),
               ),
             ),
             FFRoute(
-              name: 'organisationJobs',
-              path: 'organisationJobs',
-              requireAuth: true,
-              builder: (context, params) => OrganisationJobsWidget(
-                organisationRef: params.getParam('organisationRef',
-                    ParamType.DocumentReference, false, ['Organisations']),
-                organisationName:
-                    params.getParam('organisationName', ParamType.String),
-                organisationLogo:
-                    params.getParam('organisationLogo', ParamType.String),
+              name: 'WorkerJobsDashboard',
+              path: 'workerJobsDashboard',
+              asyncParams: {
+                'jobdetails':
+                    getDoc(['Organisations', 'Jobs'], JobsRecord.serializer),
+              },
+              builder: (context, params) => WorkerJobsDashboardWidget(
+                jobrefdetails: params.getParam(
+                    'jobrefdetails',
+                    ParamType.DocumentReference,
+                    false,
+                    ['Organisations', 'Jobs']),
+                jobdetails: params.getParam('jobdetails', ParamType.Document),
               ),
             ),
             FFRoute(
-              name: 'workerJobs',
-              path: 'workerJobs',
-              requireAuth: true,
-              builder: (context, params) => WorkerJobsWidget(
-                workerRef: params.getParam(
-                    'workerRef', ParamType.DocumentReference, false, ['users']),
-                workerName: params.getParam('workerName', ParamType.String),
-                workerArea: params.getParam('workerArea', ParamType.String),
-                workerPhoto: params.getParam('workerPhoto', ParamType.String),
-              ),
+              name: 'AddOrgan',
+              path: 'addOrgan',
+              builder: (context, params) => AddOrganWidget(),
             ),
             FFRoute(
-              name: 'scoutProfile',
-              path: 'scoutProfile',
-              requireAuth: true,
-              builder: (context, params) => ScoutProfileWidget(
-                scoutUserRef: params.getParam('scoutUserRef',
-                    ParamType.DocumentReference, false, ['users']),
-              ),
-            ),
-            FFRoute(
-              name: 'editScoutProfile',
-              path: 'editScoutProfile',
-              requireAuth: true,
-              builder: (context, params) => EditScoutProfileWidget(
-                scoutUserRef: params.getParam('scoutUserRef',
-                    ParamType.DocumentReference, false, ['users']),
-              ),
-            ),
-            FFRoute(
-              name: 'workerProfile',
-              path: 'workerProfile',
-              requireAuth: true,
-              builder: (context, params) => WorkerProfileWidget(
-                workerUserRef: params.getParam('workerUserRef',
-                    ParamType.DocumentReference, false, ['users']),
-                workerRef: params.getParam('workerRef',
-                    ParamType.DocumentReference, false, ['Workers']),
-              ),
-            ),
-            FFRoute(
-              name: 'editOrganisation',
-              path: 'editOrganisation',
-              requireAuth: true,
-              builder: (context, params) => EditOrganisationWidget(
-                orgRef: params.getParam('orgRef', ParamType.DocumentReference,
-                    false, ['Organisations']),
-              ),
-            ),
-            FFRoute(
-              name: 'editWorkerProfile',
-              path: 'editWorkerProfile',
-              requireAuth: true,
-              builder: (context, params) => EditWorkerProfileWidget(
-                workerUserRef: params.getParam('workerUserRef',
-                    ParamType.DocumentReference, false, ['users']),
-              ),
-            ),
-            FFRoute(
-              name: 'addOrganisation',
-              path: 'addOrganisation',
-              requireAuth: true,
-              builder: (context, params) => AddOrganisationWidget(),
-            ),
-            FFRoute(
-              name: 'scoutOTP',
-              path: 'scoutOTP',
-              builder: (context, params) => ScoutOTPWidget(
-                captainFullName:
-                    params.getParam('captainFullName', ParamType.String),
-                captainMobilePhone:
-                    params.getParam('captainMobilePhone', ParamType.String),
-                captainEmail: params.getParam('captainEmail', ParamType.String),
-                captainDOB: params.getParam('captainDOB', ParamType.DateTime),
-                captainGender:
-                    params.getParam('captainGender', ParamType.String),
-                captainPinCode:
-                    params.getParam('captainPinCode', ParamType.String),
-                captainArea: params.getParam('captainArea', ParamType.String),
-                captainState: params.getParam('captainState', ParamType.String),
-                captainDistrict:
-                    params.getParam('captainDistrict', ParamType.String),
-                captainRecruitmentArea:
-                    params.getParam('captainRecruitmentArea', ParamType.String),
-                captainReferralCode:
-                    params.getParam('captainReferralCode', ParamType.String),
-                captainAadhar:
-                    params.getParam('captainAadhar', ParamType.String),
-                captainPan: params.getParam('captainPan', ParamType.String),
-                captainIFSCCode:
-                    params.getParam('captainIFSCCode', ParamType.String),
-                captainAccountNumber:
-                    params.getParam('captainAccountNumber', ParamType.String),
-                captainAccountName:
-                    params.getParam('captainAccountName', ParamType.String),
-                captainBankName:
-                    params.getParam('captainBankName', ParamType.String),
-                captainPhoto: params.getParam('captainPhoto', ParamType.String),
-              ),
-            ),
-            FFRoute(
-              name: 'organisationProfile',
-              path: 'organisationProfile',
-              requireAuth: true,
-              builder: (context, params) => OrganisationProfileWidget(
-                orgRef: params.getParam('orgRef', ParamType.DocumentReference,
-                    false, ['Organisations']),
-                orgPhoto: params.getParam('orgPhoto', ParamType.String),
-              ),
-            ),
-            FFRoute(
-              name: 'addScout',
-              path: 'addScout',
-              builder: (context, params) => AddScoutWidget(),
-            ),
-            FFRoute(
-              name: 'addWorker',
-              path: 'addWorker',
-              requireAuth: true,
-              builder: (context, params) => AddWorkerWidget(),
-            ),
-            FFRoute(
-              name: 'workerOTP',
-              path: 'workerOTP',
-              builder: (context, params) => WorkerOTPWidget(
-                workerFullName:
-                    params.getParam('workerFullName', ParamType.String),
-                workerMobilePhone:
-                    params.getParam('workerMobilePhone', ParamType.String),
-                workerEmail: params.getParam('workerEmail', ParamType.String),
-                workerDOB: params.getParam('workerDOB', ParamType.DateTime),
-                workerGender: params.getParam('workerGender', ParamType.String),
-                workerPinCode:
-                    params.getParam('workerPinCode', ParamType.String),
-                workerArea: params.getParam('workerArea', ParamType.String),
-                workerState: params.getParam('workerState', ParamType.String),
-                workerDistrict:
-                    params.getParam('workerDistrict', ParamType.String),
-                workerAadhar: params.getParam('workerAadhar', ParamType.String),
-                workerPan: params.getParam('workerPan', ParamType.String),
-                workerIFSCCode:
-                    params.getParam('workerIFSCCode', ParamType.String),
-                workerAccountNumber:
-                    params.getParam('workerAccountNumber', ParamType.String),
-                workerAccountName:
-                    params.getParam('workerAccountName', ParamType.String),
-                workerBankName:
-                    params.getParam('workerBankName', ParamType.String),
-                workerPhoto: params.getParam('workerPhoto', ParamType.String),
-              ),
-            ),
-            FFRoute(
-              name: 'editCaptainProfile',
-              path: 'editCaptainProfile',
-              requireAuth: true,
-              builder: (context, params) => EditCaptainProfileWidget(
-                captainUserRef: params.getParam('captainUserRef',
-                    ParamType.DocumentReference, false, ['users']),
-              ),
-            ),
-            FFRoute(
-              name: 'addSkillsExp',
-              path: 'addSkillsExp',
-              requireAuth: true,
-              builder: (context, params) => AddSkillsExpWidget(
-                workerRef: params.getParam(
-                    'workerRef', ParamType.DocumentReference, false, ['users']),
-                workerDoc: params.getParam('workerDoc',
-                    ParamType.DocumentReference, false, ['Workers']),
-              ),
-            ),
-            FFRoute(
-              name: 'createJobContract',
-              path: 'createJobContract',
-              builder: (context, params) => CreateJobContractWidget(
-                jobTitle: params.getParam('jobTitle', ParamType.String),
-                workerFullName:
-                    params.getParam('workerFullName', ParamType.String),
-                workerGender: params.getParam('workerGender', ParamType.String),
-                workerSkill: params.getParam('workerSkill', ParamType.String),
-                workerExperience:
-                    params.getParam('workerExperience', ParamType.String),
-                workerPhoto: params.getParam('workerPhoto', ParamType.String),
-                organisationRef: params.getParam('organisationRef',
-                    ParamType.DocumentReference, false, ['Organisations']),
-                workerRef: params.getParam('workerRef',
-                    ParamType.DocumentReference, false, ['Workers']),
-                jobRef: params.getParam('jobRef', ParamType.DocumentReference,
+              name: 'Workersprofile',
+              path: 'workersprofile',
+              asyncParams: {
+                'workerdetails': getDoc(['Workers'], WorkersRecord.serializer),
+              },
+              builder: (context, params) => WorkersprofileWidget(
+                workerdetails:
+                    params.getParam('workerdetails', ParamType.Document),
+                jobid: params.getParam('jobid', ParamType.DocumentReference,
                     false, ['Organisations', 'Jobs']),
-                orgRef: params.getParam('orgRef', ParamType.DocumentReference,
+                workers: params.getParam(
+                    'workers', ParamType.DocumentReference, false, ['Workers']),
+              ),
+            ),
+            FFRoute(
+              name: 'Authentication',
+              path: 'authentication',
+              builder: (context, params) => AuthenticationWidget(
+                num: params.getParam('num', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'Vacancies',
+              path: 'vacancies',
+              builder: (context, params) => VacanciesWidget(),
+            ),
+            FFRoute(
+              name: 'EditWorkerProfile',
+              path: 'editWorkerProfile',
+              asyncParams: {
+                'editWorker': getDoc(['Workers'], WorkersRecord.serializer),
+              },
+              builder: (context, params) => EditWorkerProfileWidget(
+                editWorker: params.getParam('editWorker', ParamType.Document),
+              ),
+            ),
+            FFRoute(
+              name: 'AddJob',
+              path: 'addJob',
+              asyncParams: {
+                'orgdetails':
+                    getDoc(['Organisations'], OrganisationsRecord.serializer),
+              },
+              builder: (context, params) => AddJobWidget(
+                orgdetails: params.getParam('orgdetails', ParamType.Document),
+              ),
+            ),
+            FFRoute(
+              name: 'OrganisationListCopy',
+              path: 'organisationListCopy',
+              builder: (context, params) => OrganisationListCopyWidget(),
+            ),
+            FFRoute(
+              name: 'Dashboard',
+              path: 'dashboard',
+              builder: (context, params) => DashboardWidget(),
+            ),
+            FFRoute(
+              name: 'EditScoutsProfile',
+              path: 'editScoutsProfile',
+              asyncParams: {
+                'editScout': getDoc(['Captains'], CaptainsRecord.serializer),
+              },
+              builder: (context, params) => EditScoutsProfileWidget(
+                editScout: params.getParam('editScout', ParamType.Document),
+              ),
+            ),
+            FFRoute(
+              name: 'SignInCopy',
+              path: 'signInCopy',
+              builder: (context, params) => SignInCopyWidget(),
+            ),
+            FFRoute(
+              name: 'SignUp',
+              path: 'signUp',
+              builder: (context, params) => SignUpWidget(),
+            ),
+            FFRoute(
+              name: 'JobsDashboardCopy',
+              path: 'jobsDashboardCopy',
+              asyncParams: {
+                'jobdetails':
+                    getDoc(['Organisations', 'Jobs'], JobsRecord.serializer),
+              },
+              builder: (context, params) => JobsDashboardCopyWidget(
+                jobdetails: params.getParam('jobdetails', ParamType.Document),
+              ),
+            ),
+            FFRoute(
+              name: 'AddProfile',
+              path: 'addProfile',
+              builder: (context, params) => AddProfileWidget(
+                phonenum: params.getParam('phonenum', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'OrganisationDashboard',
+              path: 'organisationDashboard',
+              asyncParams: {
+                'organisationdetails':
+                    getDoc(['Organisations'], OrganisationsRecord.serializer),
+              },
+              builder: (context, params) => OrganisationDashboardWidget(
+                organisationdetails:
+                    params.getParam('organisationdetails', ParamType.Document),
+                orgref: params.getParam('orgref', ParamType.DocumentReference,
                     false, ['Organisations']),
+              ),
+            ),
+            FFRoute(
+              name: 'WorkersprofileCopy',
+              path: 'workersprofileCopy',
+              asyncParams: {
+                'workerdetails': getDoc(['Workers'], WorkersRecord.serializer),
+              },
+              builder: (context, params) => WorkersprofileCopyWidget(
+                workerdetails:
+                    params.getParam('workerdetails', ParamType.Document),
+              ),
+            ),
+            FFRoute(
+              name: 'JobsDashboardCopyCopy',
+              path: 'jobsDashboardCopyCopy',
+              asyncParams: {
+                'jobdetails':
+                    getDoc(['Organisations', 'Jobs'], JobsRecord.serializer),
+              },
+              builder: (context, params) => JobsDashboardCopyCopyWidget(
+                jobdetails: params.getParam('jobdetails', ParamType.Document),
+              ),
+            ),
+            FFRoute(
+              name: 'fake',
+              path: 'fake',
+              builder: (context, params) => FakeWidget(),
+            ),
+            FFRoute(
+              name: 'JobsDashboardCopyCopyCopy',
+              path: 'jobsDashboardCopyCopyCopy',
+              asyncParams: {
+                'jobdetails':
+                    getDoc(['Organisations', 'Jobs'], JobsRecord.serializer),
+              },
+              builder: (context, params) => JobsDashboardCopyCopyCopyWidget(
+                jobdetails: params.getParam('jobdetails', ParamType.Document),
+              ),
+            ),
+            FFRoute(
+              name: 'JobsDash',
+              path: 'jobsDash',
+              asyncParams: {
+                'jobdetails':
+                    getDoc(['Organisations', 'Jobs'], JobsRecord.serializer),
+              },
+              builder: (context, params) => JobsDashWidget(
+                jobdetails: params.getParam('jobdetails', ParamType.Document),
               ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
@@ -601,7 +475,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/login';
+            return '/signInCopy';
           }
           return null;
         },
@@ -614,11 +488,13 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Container(
-                  color: FlutterFlowTheme.of(context).primaryColor,
-                  child: Image.asset(
-                    'assets/images/splash_app_Tracker@2x.png',
-                    fit: BoxFit.fitHeight,
+              ? Center(
+                  child: SizedBox(
+                    width: 50.0,
+                    height: 50.0,
+                    child: CircularProgressIndicator(
+                      color: FlutterFlowTheme.of(context).primaryColor,
+                    ),
                   ),
                 )
               : page;

@@ -21,24 +21,10 @@ class _$JobWorkerRecordSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
-    value = object.appliedDate;
+    value = object.salary;
     if (value != null) {
       result
-        ..add('applied_date')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(DateTime)));
-    }
-    value = object.applicationStatus;
-    if (value != null) {
-      result
-        ..add('application_status')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.comments;
-    if (value != null) {
-      result
-        ..add('comments')
+        ..add('salary')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -50,61 +36,12 @@ class _$JobWorkerRecordSerializer
             specifiedType: const FullType(
                 DocumentReference, const [const FullType.nullable(Object)])));
     }
-    value = object.workerName;
+    value = object.contractSigned;
     if (value != null) {
       result
-        ..add('worker_name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.gender;
-    if (value != null) {
-      result
-        ..add('gender')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.experienceLevel;
-    if (value != null) {
-      result
-        ..add('experience_level')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.workerImage;
-    if (value != null) {
-      result
-        ..add('worker_image')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.organisationName;
-    if (value != null) {
-      result
-        ..add('organisation_name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.jobName;
-    if (value != null) {
-      result
-        ..add('job_name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.orgName;
-    if (value != null) {
-      result
-        ..add('org_name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.keySkill;
-    if (value != null) {
-      result
-        ..add('key_skill')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add('contract_signed')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     value = object.orgReference;
     if (value != null) {
@@ -121,6 +58,83 @@ class _$JobWorkerRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
                 DocumentReference, const [const FullType.nullable(Object)])));
+    }
+    value = object.jobName;
+    if (value != null) {
+      result
+        ..add('job_name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.keySkill;
+    if (value != null) {
+      result
+        ..add('key_skill')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.orgName;
+    if (value != null) {
+      result
+        ..add('org_name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.appliedDate;
+    if (value != null) {
+      result
+        ..add('applied_date')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(DateTime)));
+    }
+    value = object.gender;
+    if (value != null) {
+      result
+        ..add('gender')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.workerArea;
+    if (value != null) {
+      result
+        ..add('worker_area')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.workerName;
+    if (value != null) {
+      result
+        ..add('worker_name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.workerPhoto;
+    if (value != null) {
+      result
+        ..add('worker_photo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.startDate;
+    if (value != null) {
+      result
+        ..add('start_date')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(DateTime)));
+    }
+    value = object.endDate;
+    if (value != null) {
+      result
+        ..add('end_date')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(DateTime)));
+    }
+    value = object.jobPhoto;
+    if (value != null) {
+      result
+        ..add('job_photo')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.ffRef;
     if (value != null) {
@@ -145,16 +159,8 @@ class _$JobWorkerRecordSerializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'applied_date':
-          result.appliedDate = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime?;
-          break;
-        case 'application_status':
-          result.applicationStatus = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'comments':
-          result.comments = serializers.deserialize(value,
+        case 'salary':
+          result.salary = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'worker_id':
@@ -163,37 +169,9 @@ class _$JobWorkerRecordSerializer
                 const FullType.nullable(Object)
               ])) as DocumentReference<Object?>?;
           break;
-        case 'worker_name':
-          result.workerName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'gender':
-          result.gender = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'experience_level':
-          result.experienceLevel = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'worker_image':
-          result.workerImage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'organisation_name':
-          result.organisationName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'job_name':
-          result.jobName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'org_name':
-          result.orgName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'key_skill':
-          result.keySkill = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+        case 'contract_signed':
+          result.contractSigned = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
         case 'org_reference':
           result.orgReference = serializers.deserialize(value,
@@ -206,6 +184,50 @@ class _$JobWorkerRecordSerializer
               specifiedType: const FullType(DocumentReference, const [
                 const FullType.nullable(Object)
               ])) as DocumentReference<Object?>?;
+          break;
+        case 'job_name':
+          result.jobName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'key_skill':
+          result.keySkill = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'org_name':
+          result.orgName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'applied_date':
+          result.appliedDate = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime?;
+          break;
+        case 'gender':
+          result.gender = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'worker_area':
+          result.workerArea = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'worker_name':
+          result.workerName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'worker_photo':
+          result.workerPhoto = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'start_date':
+          result.startDate = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime?;
+          break;
+        case 'end_date':
+          result.endDate = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime?;
+          break;
+        case 'job_photo':
+          result.jobPhoto = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
@@ -222,33 +244,37 @@ class _$JobWorkerRecordSerializer
 
 class _$JobWorkerRecord extends JobWorkerRecord {
   @override
-  final DateTime? appliedDate;
-  @override
-  final String? applicationStatus;
-  @override
-  final String? comments;
+  final String? salary;
   @override
   final DocumentReference<Object?>? workerId;
   @override
-  final String? workerName;
-  @override
-  final String? gender;
-  @override
-  final String? experienceLevel;
-  @override
-  final String? workerImage;
-  @override
-  final String? organisationName;
-  @override
-  final String? jobName;
-  @override
-  final String? orgName;
-  @override
-  final String? keySkill;
+  final bool? contractSigned;
   @override
   final DocumentReference<Object?>? orgReference;
   @override
   final DocumentReference<Object?>? jobReference;
+  @override
+  final String? jobName;
+  @override
+  final String? keySkill;
+  @override
+  final String? orgName;
+  @override
+  final DateTime? appliedDate;
+  @override
+  final String? gender;
+  @override
+  final String? workerArea;
+  @override
+  final String? workerName;
+  @override
+  final String? workerPhoto;
+  @override
+  final DateTime? startDate;
+  @override
+  final DateTime? endDate;
+  @override
+  final String? jobPhoto;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -256,20 +282,22 @@ class _$JobWorkerRecord extends JobWorkerRecord {
       (new JobWorkerRecordBuilder()..update(updates))._build();
 
   _$JobWorkerRecord._(
-      {this.appliedDate,
-      this.applicationStatus,
-      this.comments,
+      {this.salary,
       this.workerId,
-      this.workerName,
-      this.gender,
-      this.experienceLevel,
-      this.workerImage,
-      this.organisationName,
-      this.jobName,
-      this.orgName,
-      this.keySkill,
+      this.contractSigned,
       this.orgReference,
       this.jobReference,
+      this.jobName,
+      this.keySkill,
+      this.orgName,
+      this.appliedDate,
+      this.gender,
+      this.workerArea,
+      this.workerName,
+      this.workerPhoto,
+      this.startDate,
+      this.endDate,
+      this.jobPhoto,
       this.ffRef})
       : super._();
 
@@ -285,20 +313,22 @@ class _$JobWorkerRecord extends JobWorkerRecord {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is JobWorkerRecord &&
-        appliedDate == other.appliedDate &&
-        applicationStatus == other.applicationStatus &&
-        comments == other.comments &&
+        salary == other.salary &&
         workerId == other.workerId &&
-        workerName == other.workerName &&
-        gender == other.gender &&
-        experienceLevel == other.experienceLevel &&
-        workerImage == other.workerImage &&
-        organisationName == other.organisationName &&
-        jobName == other.jobName &&
-        orgName == other.orgName &&
-        keySkill == other.keySkill &&
+        contractSigned == other.contractSigned &&
         orgReference == other.orgReference &&
         jobReference == other.jobReference &&
+        jobName == other.jobName &&
+        keySkill == other.keySkill &&
+        orgName == other.orgName &&
+        appliedDate == other.appliedDate &&
+        gender == other.gender &&
+        workerArea == other.workerArea &&
+        workerName == other.workerName &&
+        workerPhoto == other.workerPhoto &&
+        startDate == other.startDate &&
+        endDate == other.endDate &&
+        jobPhoto == other.jobPhoto &&
         ffRef == other.ffRef;
   }
 
@@ -319,43 +349,51 @@ class _$JobWorkerRecord extends JobWorkerRecord {
                                                     $jc(
                                                         $jc(
                                                             $jc(
-                                                                0,
-                                                                appliedDate
+                                                                $jc(
+                                                                    $jc(
+                                                                        0,
+                                                                        salary
+                                                                            .hashCode),
+                                                                    workerId
+                                                                        .hashCode),
+                                                                contractSigned
                                                                     .hashCode),
-                                                            applicationStatus
+                                                            orgReference
                                                                 .hashCode),
-                                                        comments.hashCode),
-                                                    workerId.hashCode),
-                                                workerName.hashCode),
-                                            gender.hashCode),
-                                        experienceLevel.hashCode),
-                                    workerImage.hashCode),
-                                organisationName.hashCode),
-                            jobName.hashCode),
-                        orgName.hashCode),
-                    keySkill.hashCode),
-                orgReference.hashCode),
-            jobReference.hashCode),
+                                                        jobReference.hashCode),
+                                                    jobName.hashCode),
+                                                keySkill.hashCode),
+                                            orgName.hashCode),
+                                        appliedDate.hashCode),
+                                    gender.hashCode),
+                                workerArea.hashCode),
+                            workerName.hashCode),
+                        workerPhoto.hashCode),
+                    startDate.hashCode),
+                endDate.hashCode),
+            jobPhoto.hashCode),
         ffRef.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'JobWorkerRecord')
-          ..add('appliedDate', appliedDate)
-          ..add('applicationStatus', applicationStatus)
-          ..add('comments', comments)
+          ..add('salary', salary)
           ..add('workerId', workerId)
-          ..add('workerName', workerName)
-          ..add('gender', gender)
-          ..add('experienceLevel', experienceLevel)
-          ..add('workerImage', workerImage)
-          ..add('organisationName', organisationName)
-          ..add('jobName', jobName)
-          ..add('orgName', orgName)
-          ..add('keySkill', keySkill)
+          ..add('contractSigned', contractSigned)
           ..add('orgReference', orgReference)
           ..add('jobReference', jobReference)
+          ..add('jobName', jobName)
+          ..add('keySkill', keySkill)
+          ..add('orgName', orgName)
+          ..add('appliedDate', appliedDate)
+          ..add('gender', gender)
+          ..add('workerArea', workerArea)
+          ..add('workerName', workerName)
+          ..add('workerPhoto', workerPhoto)
+          ..add('startDate', startDate)
+          ..add('endDate', endDate)
+          ..add('jobPhoto', jobPhoto)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -365,57 +403,19 @@ class JobWorkerRecordBuilder
     implements Builder<JobWorkerRecord, JobWorkerRecordBuilder> {
   _$JobWorkerRecord? _$v;
 
-  DateTime? _appliedDate;
-  DateTime? get appliedDate => _$this._appliedDate;
-  set appliedDate(DateTime? appliedDate) => _$this._appliedDate = appliedDate;
-
-  String? _applicationStatus;
-  String? get applicationStatus => _$this._applicationStatus;
-  set applicationStatus(String? applicationStatus) =>
-      _$this._applicationStatus = applicationStatus;
-
-  String? _comments;
-  String? get comments => _$this._comments;
-  set comments(String? comments) => _$this._comments = comments;
+  String? _salary;
+  String? get salary => _$this._salary;
+  set salary(String? salary) => _$this._salary = salary;
 
   DocumentReference<Object?>? _workerId;
   DocumentReference<Object?>? get workerId => _$this._workerId;
   set workerId(DocumentReference<Object?>? workerId) =>
       _$this._workerId = workerId;
 
-  String? _workerName;
-  String? get workerName => _$this._workerName;
-  set workerName(String? workerName) => _$this._workerName = workerName;
-
-  String? _gender;
-  String? get gender => _$this._gender;
-  set gender(String? gender) => _$this._gender = gender;
-
-  String? _experienceLevel;
-  String? get experienceLevel => _$this._experienceLevel;
-  set experienceLevel(String? experienceLevel) =>
-      _$this._experienceLevel = experienceLevel;
-
-  String? _workerImage;
-  String? get workerImage => _$this._workerImage;
-  set workerImage(String? workerImage) => _$this._workerImage = workerImage;
-
-  String? _organisationName;
-  String? get organisationName => _$this._organisationName;
-  set organisationName(String? organisationName) =>
-      _$this._organisationName = organisationName;
-
-  String? _jobName;
-  String? get jobName => _$this._jobName;
-  set jobName(String? jobName) => _$this._jobName = jobName;
-
-  String? _orgName;
-  String? get orgName => _$this._orgName;
-  set orgName(String? orgName) => _$this._orgName = orgName;
-
-  String? _keySkill;
-  String? get keySkill => _$this._keySkill;
-  set keySkill(String? keySkill) => _$this._keySkill = keySkill;
+  bool? _contractSigned;
+  bool? get contractSigned => _$this._contractSigned;
+  set contractSigned(bool? contractSigned) =>
+      _$this._contractSigned = contractSigned;
 
   DocumentReference<Object?>? _orgReference;
   DocumentReference<Object?>? get orgReference => _$this._orgReference;
@@ -426,6 +426,50 @@ class JobWorkerRecordBuilder
   DocumentReference<Object?>? get jobReference => _$this._jobReference;
   set jobReference(DocumentReference<Object?>? jobReference) =>
       _$this._jobReference = jobReference;
+
+  String? _jobName;
+  String? get jobName => _$this._jobName;
+  set jobName(String? jobName) => _$this._jobName = jobName;
+
+  String? _keySkill;
+  String? get keySkill => _$this._keySkill;
+  set keySkill(String? keySkill) => _$this._keySkill = keySkill;
+
+  String? _orgName;
+  String? get orgName => _$this._orgName;
+  set orgName(String? orgName) => _$this._orgName = orgName;
+
+  DateTime? _appliedDate;
+  DateTime? get appliedDate => _$this._appliedDate;
+  set appliedDate(DateTime? appliedDate) => _$this._appliedDate = appliedDate;
+
+  String? _gender;
+  String? get gender => _$this._gender;
+  set gender(String? gender) => _$this._gender = gender;
+
+  String? _workerArea;
+  String? get workerArea => _$this._workerArea;
+  set workerArea(String? workerArea) => _$this._workerArea = workerArea;
+
+  String? _workerName;
+  String? get workerName => _$this._workerName;
+  set workerName(String? workerName) => _$this._workerName = workerName;
+
+  String? _workerPhoto;
+  String? get workerPhoto => _$this._workerPhoto;
+  set workerPhoto(String? workerPhoto) => _$this._workerPhoto = workerPhoto;
+
+  DateTime? _startDate;
+  DateTime? get startDate => _$this._startDate;
+  set startDate(DateTime? startDate) => _$this._startDate = startDate;
+
+  DateTime? _endDate;
+  DateTime? get endDate => _$this._endDate;
+  set endDate(DateTime? endDate) => _$this._endDate = endDate;
+
+  String? _jobPhoto;
+  String? get jobPhoto => _$this._jobPhoto;
+  set jobPhoto(String? jobPhoto) => _$this._jobPhoto = jobPhoto;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -438,20 +482,22 @@ class JobWorkerRecordBuilder
   JobWorkerRecordBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _appliedDate = $v.appliedDate;
-      _applicationStatus = $v.applicationStatus;
-      _comments = $v.comments;
+      _salary = $v.salary;
       _workerId = $v.workerId;
-      _workerName = $v.workerName;
-      _gender = $v.gender;
-      _experienceLevel = $v.experienceLevel;
-      _workerImage = $v.workerImage;
-      _organisationName = $v.organisationName;
-      _jobName = $v.jobName;
-      _orgName = $v.orgName;
-      _keySkill = $v.keySkill;
+      _contractSigned = $v.contractSigned;
       _orgReference = $v.orgReference;
       _jobReference = $v.jobReference;
+      _jobName = $v.jobName;
+      _keySkill = $v.keySkill;
+      _orgName = $v.orgName;
+      _appliedDate = $v.appliedDate;
+      _gender = $v.gender;
+      _workerArea = $v.workerArea;
+      _workerName = $v.workerName;
+      _workerPhoto = $v.workerPhoto;
+      _startDate = $v.startDate;
+      _endDate = $v.endDate;
+      _jobPhoto = $v.jobPhoto;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -475,20 +521,22 @@ class JobWorkerRecordBuilder
   _$JobWorkerRecord _build() {
     final _$result = _$v ??
         new _$JobWorkerRecord._(
-            appliedDate: appliedDate,
-            applicationStatus: applicationStatus,
-            comments: comments,
+            salary: salary,
             workerId: workerId,
-            workerName: workerName,
-            gender: gender,
-            experienceLevel: experienceLevel,
-            workerImage: workerImage,
-            organisationName: organisationName,
-            jobName: jobName,
-            orgName: orgName,
-            keySkill: keySkill,
+            contractSigned: contractSigned,
             orgReference: orgReference,
             jobReference: jobReference,
+            jobName: jobName,
+            keySkill: keySkill,
+            orgName: orgName,
+            appliedDate: appliedDate,
+            gender: gender,
+            workerArea: workerArea,
+            workerName: workerName,
+            workerPhoto: workerPhoto,
+            startDate: startDate,
+            endDate: endDate,
+            jobPhoto: jobPhoto,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

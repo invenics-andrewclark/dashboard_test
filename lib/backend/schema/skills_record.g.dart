@@ -27,19 +27,19 @@ class _$SkillsRecordSerializer implements StructuredSerializer<SkillsRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.experienceLevel;
+    value = object.experience;
     if (value != null) {
       result
-        ..add('experience_level')
+        ..add('experience')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.experienceYears;
+    value = object.isPrimary;
     if (value != null) {
       result
-        ..add('experience_years')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add('is_primary')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     value = object.primarySkill;
     if (value != null) {
@@ -75,13 +75,13 @@ class _$SkillsRecordSerializer implements StructuredSerializer<SkillsRecord> {
           result.skillName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'experience_level':
-          result.experienceLevel = serializers.deserialize(value,
+        case 'experience':
+          result.experience = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'experience_years':
-          result.experienceYears = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+        case 'is_primary':
+          result.isPrimary = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
           break;
         case 'primary_skill':
           result.primarySkill = serializers.deserialize(value,
@@ -104,9 +104,9 @@ class _$SkillsRecord extends SkillsRecord {
   @override
   final String? skillName;
   @override
-  final String? experienceLevel;
+  final String? experience;
   @override
-  final String? experienceYears;
+  final bool? isPrimary;
   @override
   final String? primarySkill;
   @override
@@ -117,8 +117,8 @@ class _$SkillsRecord extends SkillsRecord {
 
   _$SkillsRecord._(
       {this.skillName,
-      this.experienceLevel,
-      this.experienceYears,
+      this.experience,
+      this.isPrimary,
       this.primarySkill,
       this.ffRef})
       : super._();
@@ -135,8 +135,8 @@ class _$SkillsRecord extends SkillsRecord {
     if (identical(other, this)) return true;
     return other is SkillsRecord &&
         skillName == other.skillName &&
-        experienceLevel == other.experienceLevel &&
-        experienceYears == other.experienceYears &&
+        experience == other.experience &&
+        isPrimary == other.isPrimary &&
         primarySkill == other.primarySkill &&
         ffRef == other.ffRef;
   }
@@ -145,8 +145,8 @@ class _$SkillsRecord extends SkillsRecord {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, skillName.hashCode), experienceLevel.hashCode),
-                experienceYears.hashCode),
+            $jc($jc($jc(0, skillName.hashCode), experience.hashCode),
+                isPrimary.hashCode),
             primarySkill.hashCode),
         ffRef.hashCode));
   }
@@ -155,8 +155,8 @@ class _$SkillsRecord extends SkillsRecord {
   String toString() {
     return (newBuiltValueToStringHelper(r'SkillsRecord')
           ..add('skillName', skillName)
-          ..add('experienceLevel', experienceLevel)
-          ..add('experienceYears', experienceYears)
+          ..add('experience', experience)
+          ..add('isPrimary', isPrimary)
           ..add('primarySkill', primarySkill)
           ..add('ffRef', ffRef))
         .toString();
@@ -171,15 +171,13 @@ class SkillsRecordBuilder
   String? get skillName => _$this._skillName;
   set skillName(String? skillName) => _$this._skillName = skillName;
 
-  String? _experienceLevel;
-  String? get experienceLevel => _$this._experienceLevel;
-  set experienceLevel(String? experienceLevel) =>
-      _$this._experienceLevel = experienceLevel;
+  String? _experience;
+  String? get experience => _$this._experience;
+  set experience(String? experience) => _$this._experience = experience;
 
-  String? _experienceYears;
-  String? get experienceYears => _$this._experienceYears;
-  set experienceYears(String? experienceYears) =>
-      _$this._experienceYears = experienceYears;
+  bool? _isPrimary;
+  bool? get isPrimary => _$this._isPrimary;
+  set isPrimary(bool? isPrimary) => _$this._isPrimary = isPrimary;
 
   String? _primarySkill;
   String? get primarySkill => _$this._primarySkill;
@@ -197,8 +195,8 @@ class SkillsRecordBuilder
     final $v = _$v;
     if ($v != null) {
       _skillName = $v.skillName;
-      _experienceLevel = $v.experienceLevel;
-      _experienceYears = $v.experienceYears;
+      _experience = $v.experience;
+      _isPrimary = $v.isPrimary;
       _primarySkill = $v.primarySkill;
       _ffRef = $v.ffRef;
       _$v = null;
@@ -224,8 +222,8 @@ class SkillsRecordBuilder
     final _$result = _$v ??
         new _$SkillsRecord._(
             skillName: skillName,
-            experienceLevel: experienceLevel,
-            experienceYears: experienceYears,
+            experience: experience,
+            isPrimary: isPrimary,
             primarySkill: primarySkill,
             ffRef: ffRef);
     replace(_$result);

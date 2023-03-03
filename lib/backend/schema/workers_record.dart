@@ -10,28 +10,28 @@ abstract class WorkersRecord
     implements Built<WorkersRecord, WorkersRecordBuilder> {
   static Serializer<WorkersRecord> get serializer => _$workersRecordSerializer;
 
+  @BuiltValueField(wireName: 'User_Ref')
+  DocumentReference? get userRef;
+
   @BuiltValueField(wireName: 'full_name')
   String? get fullName;
 
   String? get phone;
 
-  String? get gender;
-
-  String? get photo;
+  String? get dob;
 
   String? get email;
-
-  @BuiltValueField(wireName: 'created_date')
-  DateTime? get createdDate;
 
   @BuiltValueField(wireName: 'pin_code')
   String? get pinCode;
 
+  String? get photo;
+
   String? get area;
 
-  String? get state;
-
   String? get district;
+
+  String? get state;
 
   String? get aadhar;
 
@@ -53,25 +53,39 @@ abstract class WorkersRecord
   @BuiltValueField(wireName: 'highest_qualification')
   String? get highestQualification;
 
-  @BuiltValueField(wireName: 'date_available_from')
-  DateTime? get dateAvailableFrom;
+  String? get gender;
 
-  @BuiltValueField(wireName: 'job_worker_id')
-  DocumentReference? get jobWorkerId;
+  @BuiltValueField(wireName: 'created_date')
+  DateTime? get createdDate;
 
-  @BuiltValueField(wireName: 'user_ref')
-  DocumentReference? get userRef;
+  @BuiltValueField(wireName: 'captain_scout_ref')
+  DocumentReference? get captainScoutRef;
+
+  bool? get addprimary;
+
+  int? get addsecondary;
+
+  DocumentReference? get workref;
+
+  @BuiltValueField(wireName: 'captain_name')
+  String? get captainName;
+
+  String? get date;
 
   @BuiltValueField(wireName: 'organisation_id')
   DocumentReference? get organisationId;
 
-  @BuiltValueField(wireName: 'is_working')
-  bool? get isWorking;
+  @BuiltValueField(wireName: 'job_worker_id')
+  DocumentReference? get jobWorkerId;
 
-  String? get dob;
+  AllSkillsStruct get skills;
 
-  @BuiltValueField(wireName: 'captain_scout_ref')
-  DocumentReference? get captainScoutRef;
+  AllExpeienceStruct get experiences;
+
+  @BuiltValueField(wireName: 'job_applied')
+  BuiltList<WorkerJobApplicationStruct>? get jobApplied;
+
+  int? get age;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -80,13 +94,13 @@ abstract class WorkersRecord
   static void _initializeBuilder(WorkersRecordBuilder builder) => builder
     ..fullName = ''
     ..phone = ''
-    ..gender = ''
-    ..photo = ''
+    ..dob = ''
     ..email = ''
     ..pinCode = ''
+    ..photo = ''
     ..area = ''
-    ..state = ''
     ..district = ''
+    ..state = ''
     ..aadhar = ''
     ..panNumber = ''
     ..accountName = ''
@@ -94,8 +108,15 @@ abstract class WorkersRecord
     ..bankName = ''
     ..ifscCode = ''
     ..highestQualification = ''
-    ..isWorking = false
-    ..dob = '';
+    ..gender = ''
+    ..addprimary = false
+    ..addsecondary = 0
+    ..captainName = ''
+    ..date = ''
+    ..skills = AllSkillsStructBuilder()
+    ..experiences = AllExpeienceStructBuilder()
+    ..jobApplied = ListBuilder()
+    ..age = 0;
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Workers');
@@ -119,16 +140,16 @@ abstract class WorkersRecord
 }
 
 Map<String, dynamic> createWorkersRecordData({
+  DocumentReference? userRef,
   String? fullName,
   String? phone,
-  String? gender,
-  String? photo,
+  String? dob,
   String? email,
-  DateTime? createdDate,
   String? pinCode,
+  String? photo,
   String? area,
-  String? state,
   String? district,
+  String? state,
   String? aadhar,
   String? panNumber,
   String? accountName,
@@ -136,28 +157,34 @@ Map<String, dynamic> createWorkersRecordData({
   String? bankName,
   String? ifscCode,
   String? highestQualification,
-  DateTime? dateAvailableFrom,
-  DocumentReference? jobWorkerId,
-  DocumentReference? userRef,
-  DocumentReference? organisationId,
-  bool? isWorking,
-  String? dob,
+  String? gender,
+  DateTime? createdDate,
   DocumentReference? captainScoutRef,
+  bool? addprimary,
+  int? addsecondary,
+  DocumentReference? workref,
+  String? captainName,
+  String? date,
+  DocumentReference? organisationId,
+  DocumentReference? jobWorkerId,
+  AllSkillsStruct? skills,
+  AllExpeienceStruct? experiences,
+  int? age,
 }) {
   final firestoreData = serializers.toFirestore(
     WorkersRecord.serializer,
     WorkersRecord(
       (w) => w
+        ..userRef = userRef
         ..fullName = fullName
         ..phone = phone
-        ..gender = gender
-        ..photo = photo
+        ..dob = dob
         ..email = email
-        ..createdDate = createdDate
         ..pinCode = pinCode
+        ..photo = photo
         ..area = area
-        ..state = state
         ..district = district
+        ..state = state
         ..aadhar = aadhar
         ..panNumber = panNumber
         ..accountName = accountName
@@ -165,15 +192,28 @@ Map<String, dynamic> createWorkersRecordData({
         ..bankName = bankName
         ..ifscCode = ifscCode
         ..highestQualification = highestQualification
-        ..dateAvailableFrom = dateAvailableFrom
-        ..jobWorkerId = jobWorkerId
-        ..userRef = userRef
+        ..gender = gender
+        ..createdDate = createdDate
+        ..captainScoutRef = captainScoutRef
+        ..addprimary = addprimary
+        ..addsecondary = addsecondary
+        ..workref = workref
+        ..captainName = captainName
+        ..date = date
         ..organisationId = organisationId
-        ..isWorking = isWorking
-        ..dob = dob
-        ..captainScoutRef = captainScoutRef,
+        ..jobWorkerId = jobWorkerId
+        ..skills = AllSkillsStructBuilder()
+        ..experiences = AllExpeienceStructBuilder()
+        ..jobApplied = null
+        ..age = age,
     ),
   );
+
+  // Handle nested data for "skills" field.
+  addAllSkillsStructData(firestoreData, skills, 'skills');
+
+  // Handle nested data for "experiences" field.
+  addAllExpeienceStructData(firestoreData, experiences, 'experiences');
 
   return firestoreData;
 }

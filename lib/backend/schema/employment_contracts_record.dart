@@ -12,16 +12,11 @@ abstract class EmploymentContractsRecord
   static Serializer<EmploymentContractsRecord> get serializer =>
       _$employmentContractsRecordSerializer;
 
-  @BuiltValueField(wireName: 'contract_signed')
-  bool? get contractSigned;
+  @BuiltValueField(wireName: 'job_id')
+  DocumentReference? get jobId;
 
-  int? get salary;
-
-  @BuiltValueField(wireName: 'mode_of_salary')
-  String? get modeOfSalary;
-
-  @BuiltValueField(wireName: 'job_reference')
-  DocumentReference? get jobReference;
+  @BuiltValueField(wireName: 'organisation_id')
+  DocumentReference? get organisationId;
 
   @BuiltValueField(wireName: 'start_date')
   DateTime? get startDate;
@@ -29,26 +24,16 @@ abstract class EmploymentContractsRecord
   @BuiltValueField(wireName: 'end_date')
   DateTime? get endDate;
 
-  @BuiltValueField(wireName: 'worker_name')
-  String? get workerName;
+  String? get salary;
 
-  @BuiltValueField(wireName: 'worker_gender')
-  String? get workerGender;
+  @BuiltValueField(wireName: 'salary_type')
+  String? get salaryType;
 
-  @BuiltValueField(wireName: 'worker_skill')
-  String? get workerSkill;
+  @BuiltValueField(wireName: 'is_contract_signed')
+  bool? get isContractSigned;
 
-  @BuiltValueField(wireName: 'worker_skill_experience')
-  String? get workerSkillExperience;
-
-  @BuiltValueField(wireName: 'worker_image')
-  String? get workerImage;
-
-  @BuiltValueField(wireName: 'organisation_reference')
-  DocumentReference? get organisationReference;
-
-  @BuiltValueField(wireName: 'worker_reference')
-  DocumentReference? get workerReference;
+  @BuiltValueField(wireName: 'worker_id')
+  DocumentReference? get workerId;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -58,14 +43,9 @@ abstract class EmploymentContractsRecord
 
   static void _initializeBuilder(EmploymentContractsRecordBuilder builder) =>
       builder
-        ..contractSigned = false
-        ..salary = 0
-        ..modeOfSalary = ''
-        ..workerName = ''
-        ..workerGender = ''
-        ..workerSkill = ''
-        ..workerSkillExperience = ''
-        ..workerImage = '';
+        ..salary = ''
+        ..salaryType = ''
+        ..isContractSigned = false;
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
       parent != null
@@ -96,37 +76,27 @@ abstract class EmploymentContractsRecord
 }
 
 Map<String, dynamic> createEmploymentContractsRecordData({
-  bool? contractSigned,
-  int? salary,
-  String? modeOfSalary,
-  DocumentReference? jobReference,
+  DocumentReference? jobId,
+  DocumentReference? organisationId,
   DateTime? startDate,
   DateTime? endDate,
-  String? workerName,
-  String? workerGender,
-  String? workerSkill,
-  String? workerSkillExperience,
-  String? workerImage,
-  DocumentReference? organisationReference,
-  DocumentReference? workerReference,
+  String? salary,
+  String? salaryType,
+  bool? isContractSigned,
+  DocumentReference? workerId,
 }) {
   final firestoreData = serializers.toFirestore(
     EmploymentContractsRecord.serializer,
     EmploymentContractsRecord(
       (e) => e
-        ..contractSigned = contractSigned
-        ..salary = salary
-        ..modeOfSalary = modeOfSalary
-        ..jobReference = jobReference
+        ..jobId = jobId
+        ..organisationId = organisationId
         ..startDate = startDate
         ..endDate = endDate
-        ..workerName = workerName
-        ..workerGender = workerGender
-        ..workerSkill = workerSkill
-        ..workerSkillExperience = workerSkillExperience
-        ..workerImage = workerImage
-        ..organisationReference = organisationReference
-        ..workerReference = workerReference,
+        ..salary = salary
+        ..salaryType = salaryType
+        ..isContractSigned = isContractSigned
+        ..workerId = workerId,
     ),
   );
 

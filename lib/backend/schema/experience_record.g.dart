@@ -47,14 +47,14 @@ class _$ExperienceRecordSerializer
       result
         ..add('start_date')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(DateTime)));
+            specifiedType: const FullType(String)));
     }
     value = object.endDate;
     if (value != null) {
       result
         ..add('end_date')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(DateTime)));
+            specifiedType: const FullType(String)));
     }
     value = object.ffRef;
     if (value != null) {
@@ -93,11 +93,11 @@ class _$ExperienceRecordSerializer
           break;
         case 'start_date':
           result.startDate = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime?;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'end_date':
           result.endDate = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime?;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
@@ -120,9 +120,9 @@ class _$ExperienceRecord extends ExperienceRecord {
   @override
   final String? primarySkill;
   @override
-  final DateTime? startDate;
+  final String? startDate;
   @override
-  final DateTime? endDate;
+  final String? endDate;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -200,13 +200,13 @@ class ExperienceRecordBuilder
   String? get primarySkill => _$this._primarySkill;
   set primarySkill(String? primarySkill) => _$this._primarySkill = primarySkill;
 
-  DateTime? _startDate;
-  DateTime? get startDate => _$this._startDate;
-  set startDate(DateTime? startDate) => _$this._startDate = startDate;
+  String? _startDate;
+  String? get startDate => _$this._startDate;
+  set startDate(String? startDate) => _$this._startDate = startDate;
 
-  DateTime? _endDate;
-  DateTime? get endDate => _$this._endDate;
-  set endDate(DateTime? endDate) => _$this._endDate = endDate;
+  String? _endDate;
+  String? get endDate => _$this._endDate;
+  set endDate(String? endDate) => _$this._endDate = endDate;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;

@@ -11,45 +11,51 @@ abstract class JobWorkerRecord
   static Serializer<JobWorkerRecord> get serializer =>
       _$jobWorkerRecordSerializer;
 
-  @BuiltValueField(wireName: 'applied_date')
-  DateTime? get appliedDate;
-
-  @BuiltValueField(wireName: 'application_status')
-  String? get applicationStatus;
-
-  String? get comments;
+  String? get salary;
 
   @BuiltValueField(wireName: 'worker_id')
   DocumentReference? get workerId;
 
-  @BuiltValueField(wireName: 'worker_name')
-  String? get workerName;
-
-  String? get gender;
-
-  @BuiltValueField(wireName: 'experience_level')
-  String? get experienceLevel;
-
-  @BuiltValueField(wireName: 'worker_image')
-  String? get workerImage;
-
-  @BuiltValueField(wireName: 'organisation_name')
-  String? get organisationName;
-
-  @BuiltValueField(wireName: 'job_name')
-  String? get jobName;
-
-  @BuiltValueField(wireName: 'org_name')
-  String? get orgName;
-
-  @BuiltValueField(wireName: 'key_skill')
-  String? get keySkill;
+  @BuiltValueField(wireName: 'contract_signed')
+  bool? get contractSigned;
 
   @BuiltValueField(wireName: 'org_reference')
   DocumentReference? get orgReference;
 
   @BuiltValueField(wireName: 'job_reference')
   DocumentReference? get jobReference;
+
+  @BuiltValueField(wireName: 'job_name')
+  String? get jobName;
+
+  @BuiltValueField(wireName: 'key_skill')
+  String? get keySkill;
+
+  @BuiltValueField(wireName: 'org_name')
+  String? get orgName;
+
+  @BuiltValueField(wireName: 'applied_date')
+  DateTime? get appliedDate;
+
+  String? get gender;
+
+  @BuiltValueField(wireName: 'worker_area')
+  String? get workerArea;
+
+  @BuiltValueField(wireName: 'worker_name')
+  String? get workerName;
+
+  @BuiltValueField(wireName: 'worker_photo')
+  String? get workerPhoto;
+
+  @BuiltValueField(wireName: 'start_date')
+  DateTime? get startDate;
+
+  @BuiltValueField(wireName: 'end_date')
+  DateTime? get endDate;
+
+  @BuiltValueField(wireName: 'job_photo')
+  String? get jobPhoto;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -58,16 +64,16 @@ abstract class JobWorkerRecord
   DocumentReference get parentReference => reference.parent.parent!;
 
   static void _initializeBuilder(JobWorkerRecordBuilder builder) => builder
-    ..applicationStatus = ''
-    ..comments = ''
-    ..workerName = ''
-    ..gender = ''
-    ..experienceLevel = ''
-    ..workerImage = ''
-    ..organisationName = ''
+    ..salary = ''
+    ..contractSigned = false
     ..jobName = ''
+    ..keySkill = ''
     ..orgName = ''
-    ..keySkill = '';
+    ..gender = ''
+    ..workerArea = ''
+    ..workerName = ''
+    ..workerPhoto = ''
+    ..jobPhoto = '';
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
       parent != null
@@ -96,39 +102,43 @@ abstract class JobWorkerRecord
 }
 
 Map<String, dynamic> createJobWorkerRecordData({
-  DateTime? appliedDate,
-  String? applicationStatus,
-  String? comments,
+  String? salary,
   DocumentReference? workerId,
-  String? workerName,
-  String? gender,
-  String? experienceLevel,
-  String? workerImage,
-  String? organisationName,
-  String? jobName,
-  String? orgName,
-  String? keySkill,
+  bool? contractSigned,
   DocumentReference? orgReference,
   DocumentReference? jobReference,
+  String? jobName,
+  String? keySkill,
+  String? orgName,
+  DateTime? appliedDate,
+  String? gender,
+  String? workerArea,
+  String? workerName,
+  String? workerPhoto,
+  DateTime? startDate,
+  DateTime? endDate,
+  String? jobPhoto,
 }) {
   final firestoreData = serializers.toFirestore(
     JobWorkerRecord.serializer,
     JobWorkerRecord(
       (j) => j
-        ..appliedDate = appliedDate
-        ..applicationStatus = applicationStatus
-        ..comments = comments
+        ..salary = salary
         ..workerId = workerId
-        ..workerName = workerName
-        ..gender = gender
-        ..experienceLevel = experienceLevel
-        ..workerImage = workerImage
-        ..organisationName = organisationName
-        ..jobName = jobName
-        ..orgName = orgName
-        ..keySkill = keySkill
+        ..contractSigned = contractSigned
         ..orgReference = orgReference
-        ..jobReference = jobReference,
+        ..jobReference = jobReference
+        ..jobName = jobName
+        ..keySkill = keySkill
+        ..orgName = orgName
+        ..appliedDate = appliedDate
+        ..gender = gender
+        ..workerArea = workerArea
+        ..workerName = workerName
+        ..workerPhoto = workerPhoto
+        ..startDate = startDate
+        ..endDate = endDate
+        ..jobPhoto = jobPhoto,
     ),
   );
 

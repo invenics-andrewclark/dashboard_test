@@ -21,6 +21,14 @@ class _$CaptainsRecordSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
+    value = object.userRef;
+    if (value != null) {
+      result
+        ..add('User_Ref')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
+    }
     value = object.fullName;
     if (value != null) {
       result
@@ -35,17 +43,17 @@ class _$CaptainsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.dob;
+    if (value != null) {
+      result
+        ..add('dob')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.gender;
     if (value != null) {
       result
         ..add('gender')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.photo;
-    if (value != null) {
-      result
-        ..add('photo')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -56,12 +64,12 @@ class _$CaptainsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.createdDate;
+    value = object.photo;
     if (value != null) {
       result
-        ..add('created_date')
+        ..add('photo')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(DateTime)));
+            specifiedType: const FullType(String)));
     }
     value = object.pinCode;
     if (value != null) {
@@ -77,17 +85,17 @@ class _$CaptainsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.state;
-    if (value != null) {
-      result
-        ..add('state')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.district;
     if (value != null) {
       result
         ..add('district')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.state;
+    if (value != null) {
+      result
+        ..add('state')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -154,38 +162,18 @@ class _$CaptainsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.organisationId;
+    value = object.createdDate;
     if (value != null) {
       result
-        ..add('organisation_id')
+        ..add('created_date')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                DocumentReference, const [const FullType.nullable(Object)])));
+            specifiedType: const FullType(DateTime)));
     }
-    value = object.jobId;
+    value = object.age;
     if (value != null) {
       result
-        ..add('job_id')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(BuiltList, const [
-              const FullType(
-                  DocumentReference, const [const FullType.nullable(Object)])
-            ])));
-    }
-    value = object.userRef;
-    if (value != null) {
-      result
-        ..add('User_Ref')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                DocumentReference, const [const FullType.nullable(Object)])));
-    }
-    value = object.dob;
-    if (value != null) {
-      result
-        ..add('dob')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add('age')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     value = object.ffRef;
     if (value != null) {
@@ -210,6 +198,12 @@ class _$CaptainsRecordSerializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
+        case 'User_Ref':
+          result.userRef = serializers.deserialize(value,
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
+          break;
         case 'full_name':
           result.fullName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -218,21 +212,21 @@ class _$CaptainsRecordSerializer
           result.phone = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'gender':
-          result.gender = serializers.deserialize(value,
+        case 'dob':
+          result.dob = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'photo':
-          result.photo = serializers.deserialize(value,
+        case 'gender':
+          result.gender = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'email':
           result.email = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'created_date':
-          result.createdDate = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime?;
+        case 'photo':
+          result.photo = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'pin_code':
           result.pinCode = serializers.deserialize(value,
@@ -242,12 +236,12 @@ class _$CaptainsRecordSerializer
           result.area = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'state':
-          result.state = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'district':
           result.district = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'state':
+          result.state = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'aadhar':
@@ -286,28 +280,13 @@ class _$CaptainsRecordSerializer
           result.tag = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'organisation_id':
-          result.organisationId = serializers.deserialize(value,
-              specifiedType: const FullType(DocumentReference, const [
-                const FullType.nullable(Object)
-              ])) as DocumentReference<Object?>?;
+        case 'created_date':
+          result.createdDate = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime?;
           break;
-        case 'job_id':
-          result.jobId.replace(serializers.deserialize(value,
-              specifiedType: const FullType(BuiltList, const [
-                const FullType(
-                    DocumentReference, const [const FullType.nullable(Object)])
-              ]))! as BuiltList<Object?>);
-          break;
-        case 'User_Ref':
-          result.userRef = serializers.deserialize(value,
-              specifiedType: const FullType(DocumentReference, const [
-                const FullType.nullable(Object)
-              ])) as DocumentReference<Object?>?;
-          break;
-        case 'dob':
-          result.dob = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+        case 'age':
+          result.age = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
@@ -324,25 +303,27 @@ class _$CaptainsRecordSerializer
 
 class _$CaptainsRecord extends CaptainsRecord {
   @override
+  final DocumentReference<Object?>? userRef;
+  @override
   final String? fullName;
   @override
   final String? phone;
   @override
-  final String? gender;
+  final String? dob;
   @override
-  final String? photo;
+  final String? gender;
   @override
   final String? email;
   @override
-  final DateTime? createdDate;
+  final String? photo;
   @override
   final String? pinCode;
   @override
   final String? area;
   @override
-  final String? state;
-  @override
   final String? district;
+  @override
+  final String? state;
   @override
   final String? aadhar;
   @override
@@ -362,13 +343,9 @@ class _$CaptainsRecord extends CaptainsRecord {
   @override
   final String? tag;
   @override
-  final DocumentReference<Object?>? organisationId;
+  final DateTime? createdDate;
   @override
-  final BuiltList<DocumentReference<Object?>>? jobId;
-  @override
-  final DocumentReference<Object?>? userRef;
-  @override
-  final String? dob;
+  final int? age;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -376,16 +353,17 @@ class _$CaptainsRecord extends CaptainsRecord {
       (new CaptainsRecordBuilder()..update(updates))._build();
 
   _$CaptainsRecord._(
-      {this.fullName,
+      {this.userRef,
+      this.fullName,
       this.phone,
+      this.dob,
       this.gender,
-      this.photo,
       this.email,
-      this.createdDate,
+      this.photo,
       this.pinCode,
       this.area,
-      this.state,
       this.district,
+      this.state,
       this.aadhar,
       this.panNumber,
       this.accountName,
@@ -395,10 +373,8 @@ class _$CaptainsRecord extends CaptainsRecord {
       this.referralCode,
       this.recruitmentArea,
       this.tag,
-      this.organisationId,
-      this.jobId,
-      this.userRef,
-      this.dob,
+      this.createdDate,
+      this.age,
       this.ffRef})
       : super._();
 
@@ -414,16 +390,17 @@ class _$CaptainsRecord extends CaptainsRecord {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CaptainsRecord &&
+        userRef == other.userRef &&
         fullName == other.fullName &&
         phone == other.phone &&
+        dob == other.dob &&
         gender == other.gender &&
-        photo == other.photo &&
         email == other.email &&
-        createdDate == other.createdDate &&
+        photo == other.photo &&
         pinCode == other.pinCode &&
         area == other.area &&
-        state == other.state &&
         district == other.district &&
+        state == other.state &&
         aadhar == other.aadhar &&
         panNumber == other.panNumber &&
         accountName == other.accountName &&
@@ -433,10 +410,8 @@ class _$CaptainsRecord extends CaptainsRecord {
         referralCode == other.referralCode &&
         recruitmentArea == other.recruitmentArea &&
         tag == other.tag &&
-        organisationId == other.organisationId &&
-        jobId == other.jobId &&
-        userRef == other.userRef &&
-        dob == other.dob &&
+        createdDate == other.createdDate &&
+        age == other.age &&
         ffRef == other.ffRef;
   }
 
@@ -460,41 +435,42 @@ class _$CaptainsRecord extends CaptainsRecord {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc(0, fullName.hashCode), phone.hashCode), gender.hashCode), photo.hashCode), email.hashCode),
-                                                                                createdDate.hashCode),
-                                                                            pinCode.hashCode),
-                                                                        area.hashCode),
-                                                                    state.hashCode),
-                                                                district.hashCode),
-                                                            aadhar.hashCode),
-                                                        panNumber.hashCode),
-                                                    accountName.hashCode),
-                                                accountNumber.hashCode),
-                                            bankName.hashCode),
-                                        ifscCode.hashCode),
-                                    referralCode.hashCode),
-                                recruitmentArea.hashCode),
-                            tag.hashCode),
-                        organisationId.hashCode),
-                    jobId.hashCode),
-                userRef.hashCode),
-            dob.hashCode),
+                                                                            $jc($jc($jc($jc($jc(0, userRef.hashCode), fullName.hashCode), phone.hashCode), dob.hashCode),
+                                                                                gender.hashCode),
+                                                                            email.hashCode),
+                                                                        photo.hashCode),
+                                                                    pinCode.hashCode),
+                                                                area.hashCode),
+                                                            district.hashCode),
+                                                        state.hashCode),
+                                                    aadhar.hashCode),
+                                                panNumber.hashCode),
+                                            accountName.hashCode),
+                                        accountNumber.hashCode),
+                                    bankName.hashCode),
+                                ifscCode.hashCode),
+                            referralCode.hashCode),
+                        recruitmentArea.hashCode),
+                    tag.hashCode),
+                createdDate.hashCode),
+            age.hashCode),
         ffRef.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CaptainsRecord')
+          ..add('userRef', userRef)
           ..add('fullName', fullName)
           ..add('phone', phone)
+          ..add('dob', dob)
           ..add('gender', gender)
-          ..add('photo', photo)
           ..add('email', email)
-          ..add('createdDate', createdDate)
+          ..add('photo', photo)
           ..add('pinCode', pinCode)
           ..add('area', area)
-          ..add('state', state)
           ..add('district', district)
+          ..add('state', state)
           ..add('aadhar', aadhar)
           ..add('panNumber', panNumber)
           ..add('accountName', accountName)
@@ -504,10 +480,8 @@ class _$CaptainsRecord extends CaptainsRecord {
           ..add('referralCode', referralCode)
           ..add('recruitmentArea', recruitmentArea)
           ..add('tag', tag)
-          ..add('organisationId', organisationId)
-          ..add('jobId', jobId)
-          ..add('userRef', userRef)
-          ..add('dob', dob)
+          ..add('createdDate', createdDate)
+          ..add('age', age)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -517,6 +491,10 @@ class CaptainsRecordBuilder
     implements Builder<CaptainsRecord, CaptainsRecordBuilder> {
   _$CaptainsRecord? _$v;
 
+  DocumentReference<Object?>? _userRef;
+  DocumentReference<Object?>? get userRef => _$this._userRef;
+  set userRef(DocumentReference<Object?>? userRef) => _$this._userRef = userRef;
+
   String? _fullName;
   String? get fullName => _$this._fullName;
   set fullName(String? fullName) => _$this._fullName = fullName;
@@ -525,21 +503,21 @@ class CaptainsRecordBuilder
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
+  String? _dob;
+  String? get dob => _$this._dob;
+  set dob(String? dob) => _$this._dob = dob;
+
   String? _gender;
   String? get gender => _$this._gender;
   set gender(String? gender) => _$this._gender = gender;
-
-  String? _photo;
-  String? get photo => _$this._photo;
-  set photo(String? photo) => _$this._photo = photo;
 
   String? _email;
   String? get email => _$this._email;
   set email(String? email) => _$this._email = email;
 
-  DateTime? _createdDate;
-  DateTime? get createdDate => _$this._createdDate;
-  set createdDate(DateTime? createdDate) => _$this._createdDate = createdDate;
+  String? _photo;
+  String? get photo => _$this._photo;
+  set photo(String? photo) => _$this._photo = photo;
 
   String? _pinCode;
   String? get pinCode => _$this._pinCode;
@@ -549,13 +527,13 @@ class CaptainsRecordBuilder
   String? get area => _$this._area;
   set area(String? area) => _$this._area = area;
 
-  String? _state;
-  String? get state => _$this._state;
-  set state(String? state) => _$this._state = state;
-
   String? _district;
   String? get district => _$this._district;
   set district(String? district) => _$this._district = district;
+
+  String? _state;
+  String? get state => _$this._state;
+  set state(String? state) => _$this._state = state;
 
   String? _aadhar;
   String? get aadhar => _$this._aadhar;
@@ -595,24 +573,13 @@ class CaptainsRecordBuilder
   String? get tag => _$this._tag;
   set tag(String? tag) => _$this._tag = tag;
 
-  DocumentReference<Object?>? _organisationId;
-  DocumentReference<Object?>? get organisationId => _$this._organisationId;
-  set organisationId(DocumentReference<Object?>? organisationId) =>
-      _$this._organisationId = organisationId;
+  DateTime? _createdDate;
+  DateTime? get createdDate => _$this._createdDate;
+  set createdDate(DateTime? createdDate) => _$this._createdDate = createdDate;
 
-  ListBuilder<DocumentReference<Object?>>? _jobId;
-  ListBuilder<DocumentReference<Object?>> get jobId =>
-      _$this._jobId ??= new ListBuilder<DocumentReference<Object?>>();
-  set jobId(ListBuilder<DocumentReference<Object?>>? jobId) =>
-      _$this._jobId = jobId;
-
-  DocumentReference<Object?>? _userRef;
-  DocumentReference<Object?>? get userRef => _$this._userRef;
-  set userRef(DocumentReference<Object?>? userRef) => _$this._userRef = userRef;
-
-  String? _dob;
-  String? get dob => _$this._dob;
-  set dob(String? dob) => _$this._dob = dob;
+  int? _age;
+  int? get age => _$this._age;
+  set age(int? age) => _$this._age = age;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -625,16 +592,17 @@ class CaptainsRecordBuilder
   CaptainsRecordBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _userRef = $v.userRef;
       _fullName = $v.fullName;
       _phone = $v.phone;
+      _dob = $v.dob;
       _gender = $v.gender;
-      _photo = $v.photo;
       _email = $v.email;
-      _createdDate = $v.createdDate;
+      _photo = $v.photo;
       _pinCode = $v.pinCode;
       _area = $v.area;
-      _state = $v.state;
       _district = $v.district;
+      _state = $v.state;
       _aadhar = $v.aadhar;
       _panNumber = $v.panNumber;
       _accountName = $v.accountName;
@@ -644,10 +612,8 @@ class CaptainsRecordBuilder
       _referralCode = $v.referralCode;
       _recruitmentArea = $v.recruitmentArea;
       _tag = $v.tag;
-      _organisationId = $v.organisationId;
-      _jobId = $v.jobId?.toBuilder();
-      _userRef = $v.userRef;
-      _dob = $v.dob;
+      _createdDate = $v.createdDate;
+      _age = $v.age;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -669,45 +635,31 @@ class CaptainsRecordBuilder
   CaptainsRecord build() => _build();
 
   _$CaptainsRecord _build() {
-    _$CaptainsRecord _$result;
-    try {
-      _$result = _$v ??
-          new _$CaptainsRecord._(
-              fullName: fullName,
-              phone: phone,
-              gender: gender,
-              photo: photo,
-              email: email,
-              createdDate: createdDate,
-              pinCode: pinCode,
-              area: area,
-              state: state,
-              district: district,
-              aadhar: aadhar,
-              panNumber: panNumber,
-              accountName: accountName,
-              accountNumber: accountNumber,
-              bankName: bankName,
-              ifscCode: ifscCode,
-              referralCode: referralCode,
-              recruitmentArea: recruitmentArea,
-              tag: tag,
-              organisationId: organisationId,
-              jobId: _jobId?.build(),
-              userRef: userRef,
-              dob: dob,
-              ffRef: ffRef);
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'jobId';
-        _jobId?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'CaptainsRecord', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$CaptainsRecord._(
+            userRef: userRef,
+            fullName: fullName,
+            phone: phone,
+            dob: dob,
+            gender: gender,
+            email: email,
+            photo: photo,
+            pinCode: pinCode,
+            area: area,
+            district: district,
+            state: state,
+            aadhar: aadhar,
+            panNumber: panNumber,
+            accountName: accountName,
+            accountNumber: accountNumber,
+            bankName: bankName,
+            ifscCode: ifscCode,
+            referralCode: referralCode,
+            recruitmentArea: recruitmentArea,
+            tag: tag,
+            createdDate: createdDate,
+            age: age,
+            ffRef: ffRef);
     replace(_$result);
     return _$result;
   }

@@ -11,15 +11,12 @@ import 'backend/firebase/firebase_config.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initFirebase();
-
-  await FlutterFlowTheme.initialize();
 
   final appState = FFAppState(); // Initialize FFAppState
 
@@ -40,9 +37,9 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Locale? _locale;
-  ThemeMode _themeMode = FlutterFlowTheme.themeMode;
+  ThemeMode _themeMode = ThemeMode.system;
 
-  late Stream<DashboardAndrewFirebaseUser> userStream;
+  late Stream<JanDashDuplicateFirebaseUser> userStream;
 
   late AppStateNotifier _appStateNotifier;
   late GoRouter _router;
@@ -54,7 +51,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     _appStateNotifier = AppStateNotifier();
     _router = createRouter(_appStateNotifier);
-    userStream = dashboardAndrewFirebaseUserStream()
+    userStream = janDashDuplicateFirebaseUserStream()
       ..listen((user) => _appStateNotifier.update(user));
     jwtTokenStream.listen((_) {});
     Future.delayed(
@@ -76,13 +73,12 @@ class _MyAppState extends State<MyApp> {
 
   void setThemeMode(ThemeMode mode) => setState(() {
         _themeMode = mode;
-        FlutterFlowTheme.saveThemeMode(mode);
       });
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Dashboard-Andrew',
+      title: 'Jansakti Dashboard',
       localizationsDelegates: [
         FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
@@ -90,162 +86,11 @@ class _MyAppState extends State<MyApp> {
         GlobalCupertinoLocalizations.delegate,
       ],
       locale: _locale,
-      supportedLocales: const [
-        Locale('en'),
-        Locale('hi'),
-        Locale('ta'),
-        Locale('ur'),
-      ],
+      supportedLocales: const [Locale('en', '')],
       theme: ThemeData(brightness: Brightness.light),
-      darkTheme: ThemeData(brightness: Brightness.dark),
       themeMode: _themeMode,
       routeInformationParser: _router.routeInformationParser,
       routerDelegate: _router.routerDelegate,
-    );
-  }
-}
-
-class NavBarPage extends StatefulWidget {
-  NavBarPage({Key? key, this.initialPage, this.page}) : super(key: key);
-
-  final String? initialPage;
-  final Widget? page;
-
-  @override
-  _NavBarPageState createState() => _NavBarPageState();
-}
-
-/// This is the private State class that goes with NavBarPage.
-class _NavBarPageState extends State<NavBarPage> {
-  String _currentPageName = 'mainActivityTracker';
-  late Widget? _currentPage;
-
-  @override
-  void initState() {
-    super.initState();
-    _currentPageName = widget.initialPage ?? _currentPageName;
-    _currentPage = widget.page;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final tabs = {
-      'mainActivityTracker': MainActivityTrackerWidget(),
-      'myProfile': MyProfileWidget(),
-      'mainCaptain': MainCaptainWidget(),
-      'mainScout': MainScoutWidget(),
-      'mainOrganisationsPage': MainOrganisationsPageWidget(),
-      'mainWorker': MainWorkerWidget(),
-    };
-    final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
-    return Scaffold(
-      body: _currentPage ?? tabs[_currentPageName],
-      bottomNavigationBar: Visibility(
-        visible: responsiveVisibility(
-          context: context,
-          tabletLandscape: false,
-          desktop: false,
-        ),
-        child: BottomNavigationBar(
-          currentIndex: currentIndex,
-          onTap: (i) => setState(() {
-            _currentPage = null;
-            _currentPageName = tabs.keys.toList()[i];
-          }),
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-          selectedItemColor: FlutterFlowTheme.of(context).primaryColor,
-          unselectedItemColor: FlutterFlowTheme.of(context).secondaryText,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          type: BottomNavigationBarType.fixed,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.view_week_outlined,
-                size: 24.0,
-              ),
-              activeIcon: Icon(
-                Icons.view_week_rounded,
-                size: 24.0,
-              ),
-              label: FFLocalizations.of(context).getText(
-                '6mv3j0ec' /* Activity */,
-              ),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_circle_outlined,
-                size: 24.0,
-              ),
-              activeIcon: Icon(
-                Icons.account_circle_rounded,
-                size: 24.0,
-              ),
-              label: FFLocalizations.of(context).getText(
-                '3e1n01mf' /* Home */,
-              ),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.group_outlined,
-                size: 24.0,
-              ),
-              activeIcon: Icon(
-                Icons.group_rounded,
-                size: 24.0,
-              ),
-              label: FFLocalizations.of(context).getText(
-                '50biycd8' /* My Team */,
-              ),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.group_outlined,
-                size: 24.0,
-              ),
-              activeIcon: Icon(
-                Icons.group_rounded,
-                size: 24.0,
-              ),
-              label: FFLocalizations.of(context).getText(
-                'xzhfbr1o' /* My Team */,
-              ),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.folder_open,
-                size: 24.0,
-              ),
-              activeIcon: Icon(
-                Icons.folder_rounded,
-                size: 24.0,
-              ),
-              label: FFLocalizations.of(context).getText(
-                'hmxr55qt' /* Organisations */,
-              ),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.group_outlined,
-                size: 24.0,
-              ),
-              activeIcon: Icon(
-                Icons.group_rounded,
-                size: 24.0,
-              ),
-              label: FFLocalizations.of(context).getText(
-                '4p4uigoa' /* My Team */,
-              ),
-              tooltip: '',
-            )
-          ],
-        ),
-      ),
     );
   }
 }

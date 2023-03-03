@@ -13,11 +13,10 @@ abstract class SkillsRecord
   @BuiltValueField(wireName: 'skill_name')
   String? get skillName;
 
-  @BuiltValueField(wireName: 'experience_level')
-  String? get experienceLevel;
+  String? get experience;
 
-  @BuiltValueField(wireName: 'experience_years')
-  String? get experienceYears;
+  @BuiltValueField(wireName: 'is_primary')
+  bool? get isPrimary;
 
   @BuiltValueField(wireName: 'primary_skill')
   String? get primarySkill;
@@ -30,8 +29,8 @@ abstract class SkillsRecord
 
   static void _initializeBuilder(SkillsRecordBuilder builder) => builder
     ..skillName = ''
-    ..experienceLevel = ''
-    ..experienceYears = ''
+    ..experience = ''
+    ..isPrimary = false
     ..primarySkill = '';
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -62,8 +61,8 @@ abstract class SkillsRecord
 
 Map<String, dynamic> createSkillsRecordData({
   String? skillName,
-  String? experienceLevel,
-  String? experienceYears,
+  String? experience,
+  bool? isPrimary,
   String? primarySkill,
 }) {
   final firestoreData = serializers.toFirestore(
@@ -71,8 +70,8 @@ Map<String, dynamic> createSkillsRecordData({
     SkillsRecord(
       (s) => s
         ..skillName = skillName
-        ..experienceLevel = experienceLevel
-        ..experienceYears = experienceYears
+        ..experience = experience
+        ..isPrimary = isPrimary
         ..primarySkill = primarySkill,
     ),
   );

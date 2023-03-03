@@ -4,12 +4,13 @@ import 'package:from_css_color/from_css_color.dart';
 import 'users_record.dart';
 import 'captains_record.dart';
 import 'workers_record.dart';
-import 'organisations_record.dart';
-import 'employment_contracts_record.dart';
-import 'job_worker_record.dart';
 import 'skills_record.dart';
 import 'experience_record.dart';
+import 'organisations_record.dart';
 import 'jobs_record.dart';
+import 'job_worker_record.dart';
+import 'employment_contracts_record.dart';
+import 'jobimage_record.dart';
 
 import 'index.dart';
 
@@ -23,13 +24,20 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   UsersRecord,
   CaptainsRecord,
   WorkersRecord,
-  OrganisationsRecord,
-  EmploymentContractsRecord,
-  JobWorkerRecord,
   SkillsRecord,
   ExperienceRecord,
+  OrganisationsRecord,
   JobsRecord,
-  ApplicationsStruct,
+  JobWorkerRecord,
+  EmploymentContractsRecord,
+  JobimageRecord,
+  SkillStruct,
+  ExperienceStruct,
+  AllSkillsStruct,
+  AllExpeienceStruct,
+  JobApplicationStruct,
+  AllApplicationStruct,
+  WorkerJobApplicationStruct,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())
