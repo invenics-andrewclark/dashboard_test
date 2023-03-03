@@ -93,7 +93,7 @@ class _EditaddressWidgetState extends State<EditaddressWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Text(
-                      'Pin Code',
+                      'Pincode',
                       style: FlutterFlowTheme.of(context).title3,
                     ),
                   ],

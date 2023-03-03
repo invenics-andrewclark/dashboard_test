@@ -362,7 +362,7 @@ class _AddProfileWidgetState extends State<AddProfileWidget> {
                                                           title:
                                                               Text('Alert !'),
                                                           content: Text(
-                                                              'Do you want to change the Profile photo?'),
+                                                              'Do you want to change the profile photo?'),
                                                           actions: [
                                                             TextButton(
                                                               onPressed: () =>
@@ -525,7 +525,7 @@ class _AddProfileWidgetState extends State<AddProfileWidget> {
                                                                       title: Text(
                                                                           'Alert !'),
                                                                       content: Text(
-                                                                          'Do you want to change the Profile photo?'),
+                                                                          'Do you want to change the profile photo?'),
                                                                       actions: [
                                                                         TextButton(
                                                                           onPressed: () => Navigator.pop(
@@ -701,7 +701,7 @@ class _AddProfileWidgetState extends State<AddProfileWidget> {
                                                           title:
                                                               Text('Alert !'),
                                                           content: Text(
-                                                              'Do you want to delete Profile photo?'),
+                                                              'Do you want to delete profile photo?'),
                                                           actions: [
                                                             TextButton(
                                                               onPressed: () =>
@@ -881,7 +881,7 @@ class _AddProfileWidgetState extends State<AddProfileWidget> {
                                                           MainAxisSize.max,
                                                       children: [
                                                         Text(
-                                                          'Full Name',
+                                                          'Full name',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3,
@@ -996,7 +996,7 @@ class _AddProfileWidgetState extends State<AddProfileWidget> {
                                                       MainAxisSize.max,
                                                   children: [
                                                     Text(
-                                                      'Phone Number',
+                                                      'Phone number',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1208,7 +1208,7 @@ class _AddProfileWidgetState extends State<AddProfileWidget> {
                                                           AlignmentDirectional(
                                                               -0.02, 0.07),
                                                       child: Text(
-                                                        'Date of Birth',
+                                                        'Date of birth',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1819,7 +1819,7 @@ class _AddProfileWidgetState extends State<AddProfileWidget> {
                                                             AlignmentDirectional(
                                                                 -0.02, 0.07),
                                                         child: Text(
-                                                          'Recruitment Area',
+                                                          'Recruitment area',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3,
@@ -1986,7 +1986,7 @@ class _AddProfileWidgetState extends State<AddProfileWidget> {
                                                             FontWeight.w300,
                                                       ),
                                                   hintText:
-                                                      'Enter your aadhaar number',
+                                                      'Enter your aadhar number',
                                                   hintStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .bodyText2
@@ -2083,7 +2083,7 @@ class _AddProfileWidgetState extends State<AddProfileWidget> {
                                                           AlignmentDirectional(
                                                               -0.02, 0.07),
                                                       child: Text(
-                                                        'Pan Card number',
+                                                        'Pan card number',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -2597,7 +2597,7 @@ class _AddProfileWidgetState extends State<AddProfileWidget> {
                                                           AlignmentDirectional(
                                                               -0.02, 0.07),
                                                       child: Text(
-                                                        'IFSC Code',
+                                                        'IFSC code',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -2872,7 +2872,7 @@ class _AddProfileWidgetState extends State<AddProfileWidget> {
                                                   title: Text(
                                                       'Aadhar already exist'),
                                                   content: Text(
-                                                      'Aadhr given is already in use'),
+                                                      'Aadhar given is already in use'),
                                                   actions: [
                                                     TextButton(
                                                       onPressed: () =>

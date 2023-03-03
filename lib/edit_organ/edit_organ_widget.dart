@@ -349,7 +349,7 @@ class _EditOrganWidgetState extends State<EditOrganWidget> {
                                                       return AlertDialog(
                                                         title: Text('Alert !'),
                                                         content: Text(
-                                                            'Do you want to change the Profile photo?'),
+                                                            'Do you want to change the profile photo?'),
                                                         actions: [
                                                           TextButton(
                                                             onPressed: () =>
@@ -502,7 +502,7 @@ class _EditOrganWidgetState extends State<EditOrganWidget> {
                                                                     title: Text(
                                                                         'Alert !'),
                                                                     content: Text(
-                                                                        'Do you want to change the Profile photo?'),
+                                                                        'Do you want to change the profile photo?'),
                                                                     actions: [
                                                                       TextButton(
                                                                         onPressed: () => Navigator.pop(
@@ -682,7 +682,7 @@ class _EditOrganWidgetState extends State<EditOrganWidget> {
                                                       return AlertDialog(
                                                         title: Text('Alert !'),
                                                         content: Text(
-                                                            'Do you want to delete Profile photo?'),
+                                                            'Do you want to delete profile photo?'),
                                                         actions: [
                                                           TextButton(
                                                             onPressed: () =>
@@ -858,7 +858,7 @@ class _EditOrganWidgetState extends State<EditOrganWidget> {
                                                             MainAxisSize.max,
                                                         children: [
                                                           Text(
-                                                            'Organisation Name',
+                                                            'Organisation name',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .title3,
@@ -965,7 +965,7 @@ class _EditOrganWidgetState extends State<EditOrganWidget> {
                                                         MainAxisSize.max,
                                                     children: [
                                                       Text(
-                                                        'Organisation Registration Id',
+                                                        'Organisation registration Id',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1070,7 +1070,7 @@ class _EditOrganWidgetState extends State<EditOrganWidget> {
                                                         MainAxisSize.max,
                                                     children: [
                                                       Text(
-                                                        'Contact Number',
+                                                        'Contact number',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1176,7 +1176,7 @@ class _EditOrganWidgetState extends State<EditOrganWidget> {
                                                         MainAxisSize.max,
                                                     children: [
                                                       Text(
-                                                        'Organisation Email',
+                                                        'Organisation email',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1281,7 +1281,7 @@ class _EditOrganWidgetState extends State<EditOrganWidget> {
                                                         MainAxisSize.max,
                                                     children: [
                                                       Text(
-                                                        'Created On',
+                                                        'Created on',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)

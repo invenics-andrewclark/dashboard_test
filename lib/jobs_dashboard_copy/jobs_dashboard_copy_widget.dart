@@ -1019,7 +1019,7 @@ class _JobsDashboardCopyWidgetState extends State<JobsDashboardCopyWidget> {
                                                                                                   style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                                         fontFamily: 'Poppins',
                                                                                                         fontSize: 20.0,
-                                                                                                        fontWeight: FontWeight.w600,
+                                                                                                        fontWeight: FontWeight.normal,
                                                                                                       ),
                                                                                                 ),
                                                                                               ),
@@ -1052,7 +1052,7 @@ class _JobsDashboardCopyWidgetState extends State<JobsDashboardCopyWidget> {
                                                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                                                   fontFamily: 'Poppins',
                                                                                                                   fontSize: 18.0,
-                                                                                                                  fontWeight: FontWeight.w600,
+                                                                                                                  fontWeight: FontWeight.normal,
                                                                                                                 ),
                                                                                                           ),
                                                                                                         ],

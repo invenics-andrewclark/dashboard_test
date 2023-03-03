@@ -504,7 +504,7 @@ class _JobsDashWidgetState extends State<JobsDashWidget> {
                                                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                                                   fontFamily: 'Poppins',
                                                                                                                   fontSize: 20.0,
-                                                                                                                  fontWeight: FontWeight.normal,
+                                                                                                                  fontWeight: FontWeight.w500,
                                                                                                                 ),
                                                                                                           ),
                                                                                                         ),
@@ -810,7 +810,7 @@ class _JobsDashWidgetState extends State<JobsDashWidget> {
                                                                                                               style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                                                     fontFamily: 'Poppins',
                                                                                                                     fontSize: 20.0,
-                                                                                                                    fontWeight: FontWeight.normal,
+                                                                                                                    fontWeight: FontWeight.w500,
                                                                                                                   ),
                                                                                                             ),
                                                                                                           ),
@@ -1095,7 +1095,7 @@ class _JobsDashWidgetState extends State<JobsDashWidget> {
                                                                                                       style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                                             fontFamily: 'Poppins',
                                                                                                             fontSize: 20.0,
-                                                                                                            fontWeight: FontWeight.w600,
+                                                                                                            fontWeight: FontWeight.w500,
                                                                                                           ),
                                                                                                     ),
                                                                                                   ),
@@ -1128,7 +1128,7 @@ class _JobsDashWidgetState extends State<JobsDashWidget> {
                                                                                                                 style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                                                       fontFamily: 'Poppins',
                                                                                                                       fontSize: 18.0,
-                                                                                                                      fontWeight: FontWeight.w600,
+                                                                                                                      fontWeight: FontWeight.normal,
                                                                                                                     ),
                                                                                                               ),
                                                                                                             ],
@@ -1656,7 +1656,7 @@ class _JobsDashWidgetState extends State<JobsDashWidget> {
                                                                                                           style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                                                 fontFamily: 'Poppins',
                                                                                                                 fontSize: 20.0,
-                                                                                                                fontWeight: FontWeight.normal,
+                                                                                                                fontWeight: FontWeight.w500,
                                                                                                               ),
                                                                                                         ),
                                                                                                       ),

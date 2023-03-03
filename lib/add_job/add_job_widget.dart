@@ -279,7 +279,7 @@ class _AddJobWidgetState extends State<AddJobWidget> {
                                                             title:
                                                                 Text('Alert !'),
                                                             content: Text(
-                                                                'Do you want to change the Profile photo?'),
+                                                                'Do you want to change the profile photo?'),
                                                             actions: [
                                                               TextButton(
                                                                 onPressed: () =>

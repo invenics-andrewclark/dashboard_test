@@ -86,7 +86,7 @@ class _OrganisationListCopyWidgetState
                             model: _model.headingbarModel,
                             updateCallback: () => setState(() {}),
                             child: HeadingbarWidget(
-                              text: 'LIST OF ORGANISATION',
+                              text: 'LIST OF ORGANISATIONS',
                             ),
                           ),
                           Expanded(
@@ -219,7 +219,7 @@ class _OrganisationListCopyWidgetState
                                                           height: 100.0,
                                                           child: NoListWidget(
                                                             text:
-                                                                'Organisation',
+                                                                'organisations',
                                                           ),
                                                         ),
                                                       );

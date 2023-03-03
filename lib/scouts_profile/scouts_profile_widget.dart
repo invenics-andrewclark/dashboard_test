@@ -90,7 +90,7 @@ class _ScoutsProfileWidgetState extends State<ScoutsProfileWidget> {
                             model: _model.headingbarModel,
                             updateCallback: () => setState(() {}),
                             child: HeadingbarWidget(
-                              text: 'SCOUTS DETAIL',
+                              text: 'SCOUT  DETAILS',
                             ),
                           ),
                           Container(

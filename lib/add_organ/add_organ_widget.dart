@@ -350,7 +350,7 @@ class _AddOrganWidgetState extends State<AddOrganWidget> {
                                                           title:
                                                               Text('Alert !'),
                                                           content: Text(
-                                                              'Do you want to change the Profile photo?'),
+                                                              'Do you want to change the profile photo?'),
                                                           actions: [
                                                             TextButton(
                                                               onPressed: () =>
@@ -513,7 +513,7 @@ class _AddOrganWidgetState extends State<AddOrganWidget> {
                                                                       title: Text(
                                                                           'Alert !'),
                                                                       content: Text(
-                                                                          'Do you want to change the Profile photo?'),
+                                                                          'Do you want to change the profile photo?'),
                                                                       actions: [
                                                                         TextButton(
                                                                           onPressed: () => Navigator.pop(
@@ -689,7 +689,7 @@ class _AddOrganWidgetState extends State<AddOrganWidget> {
                                                           title:
                                                               Text('Alert !'),
                                                           content: Text(
-                                                              'Do you want to delete Profile photo?'),
+                                                              'Do you want to delete the profile photo?'),
                                                           actions: [
                                                             TextButton(
                                                               onPressed: () =>
@@ -902,7 +902,7 @@ class _AddOrganWidgetState extends State<AddOrganWidget> {
                                                     obscureText: false,
                                                     decoration: InputDecoration(
                                                       hintText:
-                                                          'Enter Organisation Name',
+                                                          'Enter organisation name',
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1207,7 +1207,7 @@ class _AddOrganWidgetState extends State<AddOrganWidget> {
                                                           MainAxisSize.max,
                                                       children: [
                                                         Text(
-                                                          'Organisation Email',
+                                                          'Organisation email',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3,
@@ -1311,7 +1311,7 @@ class _AddOrganWidgetState extends State<AddOrganWidget> {
                                                           MainAxisSize.max,
                                                       children: [
                                                         Text(
-                                                          'Created On',
+                                                          'Created on',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3,

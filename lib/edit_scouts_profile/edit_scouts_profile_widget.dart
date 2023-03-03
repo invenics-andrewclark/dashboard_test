@@ -371,7 +371,7 @@ class _EditScoutsProfileWidgetState extends State<EditScoutsProfileWidget> {
                                                           title:
                                                               Text('Alert !'),
                                                           content: Text(
-                                                              'Do you want to change the Profile photo?'),
+                                                              'Do you want to change the profile photo?'),
                                                           actions: [
                                                             TextButton(
                                                               onPressed: () =>
@@ -534,7 +534,7 @@ class _EditScoutsProfileWidgetState extends State<EditScoutsProfileWidget> {
                                                                       title: Text(
                                                                           'Alert !'),
                                                                       content: Text(
-                                                                          'Do you want to change the Profile photo?'),
+                                                                          'Do you want to change the profile photo?'),
                                                                       actions: [
                                                                         TextButton(
                                                                           onPressed: () => Navigator.pop(
@@ -710,7 +710,7 @@ class _EditScoutsProfileWidgetState extends State<EditScoutsProfileWidget> {
                                                           title:
                                                               Text('Alert !'),
                                                           content: Text(
-                                                              'Do you want to delete Profile photo?'),
+                                                              'Do you want to delete profile photo?'),
                                                           actions: [
                                                             TextButton(
                                                               onPressed: () =>
@@ -891,7 +891,7 @@ class _EditScoutsProfileWidgetState extends State<EditScoutsProfileWidget> {
                                                         MainAxisSize.max,
                                                     children: [
                                                       Text(
-                                                        'Full Name',
+                                                        'Full name',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -997,7 +997,7 @@ class _EditScoutsProfileWidgetState extends State<EditScoutsProfileWidget> {
                                                         MainAxisSize.max,
                                                     children: [
                                                       Text(
-                                                        'Phone Number',
+                                                        'Phone number',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1213,7 +1213,7 @@ class _EditScoutsProfileWidgetState extends State<EditScoutsProfileWidget> {
                                                             AlignmentDirectional(
                                                                 -0.02, 0.07),
                                                         child: Text(
-                                                          'Date of Birth',
+                                                          'Date of birth',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3
@@ -1634,7 +1634,7 @@ class _EditScoutsProfileWidgetState extends State<EditScoutsProfileWidget> {
                                                             AlignmentDirectional(
                                                                 -0.02, 0.07),
                                                         child: Text(
-                                                          'Recruitment Area',
+                                                          'Recruitment area',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3
@@ -1893,7 +1893,7 @@ class _EditScoutsProfileWidgetState extends State<EditScoutsProfileWidget> {
                                                             AlignmentDirectional(
                                                                 -0.02, 0.07),
                                                         child: Text(
-                                                          'Pan Card number',
+                                                          'Pan card number',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3,
@@ -2281,7 +2281,7 @@ class _EditScoutsProfileWidgetState extends State<EditScoutsProfileWidget> {
                                                             AlignmentDirectional(
                                                                 -0.02, 0.07),
                                                         child: Text(
-                                                          'Bank Name',
+                                                          'Bank name',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3,

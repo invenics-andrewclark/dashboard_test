@@ -237,7 +237,7 @@ class _WebNavWidgetState extends State<WebNavWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'ORGANISATION',
+                              'ORGANISATIONS',
                               style: FlutterFlowTheme.of(context)
                                   .bodyText2
                                   .override(

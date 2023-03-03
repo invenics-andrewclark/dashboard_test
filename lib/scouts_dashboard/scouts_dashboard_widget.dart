@@ -128,7 +128,7 @@ class _ScoutsDashboardWidgetState extends State<ScoutsDashboardWidget> {
                                             },
                                             text: 'ADD NEW SCOUT',
                                             options: FFButtonOptions(
-                                              width: 200.0,
+                                              width: 250.0,
                                               height: 50.0,
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
@@ -137,17 +137,9 @@ class _ScoutsDashboardWidgetState extends State<ScoutsDashboardWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryColor,
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .subtitle2
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    fontSize: 18.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle1,
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)

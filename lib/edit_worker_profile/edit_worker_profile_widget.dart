@@ -364,7 +364,7 @@ class _EditWorkerProfileWidgetState extends State<EditWorkerProfileWidget> {
                                                       return AlertDialog(
                                                         title: Text('Alert !'),
                                                         content: Text(
-                                                            'Do you want to change the Profile photo?'),
+                                                            'Do you want to change the profile photo?'),
                                                         actions: [
                                                           TextButton(
                                                             onPressed: () =>
@@ -518,7 +518,7 @@ class _EditWorkerProfileWidgetState extends State<EditWorkerProfileWidget> {
                                                                     title: Text(
                                                                         'Alert !'),
                                                                     content: Text(
-                                                                        'Do you want to change the Profile photo?'),
+                                                                        'Do you want to change the profile photo?'),
                                                                     actions: [
                                                                       TextButton(
                                                                         onPressed: () => Navigator.pop(
@@ -697,7 +697,7 @@ class _EditWorkerProfileWidgetState extends State<EditWorkerProfileWidget> {
                                                       return AlertDialog(
                                                         title: Text('Alert !'),
                                                         content: Text(
-                                                            'Do you want to delete Profile photo?'),
+                                                            'Do you want to delete profile photo?'),
                                                         actions: [
                                                           TextButton(
                                                             onPressed: () =>
@@ -861,7 +861,7 @@ class _EditWorkerProfileWidgetState extends State<EditWorkerProfileWidget> {
                                                         MainAxisSize.max,
                                                     children: [
                                                       Text(
-                                                        'Full Name',
+                                                        'Full name',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -967,7 +967,7 @@ class _EditWorkerProfileWidgetState extends State<EditWorkerProfileWidget> {
                                                         MainAxisSize.max,
                                                     children: [
                                                       Text(
-                                                        'Phone Number',
+                                                        'Phone number',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1190,7 +1190,7 @@ class _EditWorkerProfileWidgetState extends State<EditWorkerProfileWidget> {
                                                             AlignmentDirectional(
                                                                 -0.02, 0.07),
                                                         child: Text(
-                                                          'Date of Birth',
+                                                          'Date of birth',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3
@@ -1631,7 +1631,7 @@ class _EditWorkerProfileWidgetState extends State<EditWorkerProfileWidget> {
                                                             AlignmentDirectional(
                                                                 -0.02, 0.07),
                                                         child: Text(
-                                                          'Highest Qualification',
+                                                          'Highest qualification',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3
@@ -1715,7 +1715,7 @@ class _EditWorkerProfileWidgetState extends State<EditWorkerProfileWidget> {
                                                             AlignmentDirectional(
                                                                 -0.02, 0.07),
                                                         child: Text(
-                                                          'Refferal Code',
+                                                          'Refferal code',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3
@@ -1737,7 +1737,7 @@ class _EditWorkerProfileWidgetState extends State<EditWorkerProfileWidget> {
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     hintText:
-                                                        'Enter Captain’s Code (Optional)',
+                                                        'Enter captain’s code (optional)',
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyText2
@@ -1987,7 +1987,7 @@ class _EditWorkerProfileWidgetState extends State<EditWorkerProfileWidget> {
                                                             AlignmentDirectional(
                                                                 -0.02, 0.07),
                                                         child: Text(
-                                                          'Pan Card number',
+                                                          'Pan card number',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3,
@@ -2355,7 +2355,7 @@ class _EditWorkerProfileWidgetState extends State<EditWorkerProfileWidget> {
                                                             AlignmentDirectional(
                                                                 -0.02, 0.07),
                                                         child: Text(
-                                                          'Bank Name',
+                                                          'Bank name',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3,
@@ -2468,7 +2468,7 @@ class _EditWorkerProfileWidgetState extends State<EditWorkerProfileWidget> {
                                                             AlignmentDirectional(
                                                                 -0.02, 0.07),
                                                         child: Text(
-                                                          'IFSC Code',
+                                                          'IFSC code',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .title3,
